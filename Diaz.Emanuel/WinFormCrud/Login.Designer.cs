@@ -34,7 +34,6 @@
             label2 = new Label();
             botonIngresar = new Button();
             linkCrearUsuario = new LinkLabel();
-            buttonSerializar = new Button();
             SuspendLayout();
             // 
             // textBoxUsuario
@@ -90,22 +89,11 @@
             linkCrearUsuario.Text = "Crear usuario";
             linkCrearUsuario.LinkClicked += linkCrearUsuario_LinkClicked;
             // 
-            // buttonSerializar
-            // 
-            buttonSerializar.Location = new Point(91, 12);
-            buttonSerializar.Name = "buttonSerializar";
-            buttonSerializar.Size = new Size(75, 23);
-            buttonSerializar.TabIndex = 6;
-            buttonSerializar.Text = "Serializar";
-            buttonSerializar.UseVisualStyleBackColor = true;
-            buttonSerializar.Click += buttonSerializar_Click;
-            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(399, 272);
-            Controls.Add(buttonSerializar);
             Controls.Add(linkCrearUsuario);
             Controls.Add(botonIngresar);
             Controls.Add(label2);
@@ -126,6 +114,5 @@
         private Label label2;
         private Button botonIngresar;
         private LinkLabel linkCrearUsuario;
-        private Button buttonSerializar;
     }
 }

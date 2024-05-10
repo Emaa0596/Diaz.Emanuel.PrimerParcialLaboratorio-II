@@ -9,3 +9,4 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\refint\Usuarios.dll
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\Usuarios.pdb
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\ref\Usuarios.dll
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\Usuarios.sourcelink.json

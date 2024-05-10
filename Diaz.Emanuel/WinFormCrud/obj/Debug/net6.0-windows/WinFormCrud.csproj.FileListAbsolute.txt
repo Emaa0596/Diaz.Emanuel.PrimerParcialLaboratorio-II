@@ -20,3 +20,4 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.pdb
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.genruntimeconfig.cache
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\ref\WinFormCrud.dll
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.sourcelink.json
