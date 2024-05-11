@@ -17,15 +17,16 @@ namespace WinFormCrud
         public FormLogin()
         {
             InitializeComponent();
-        }
-
-        public FormLogin(List<Usuario> usuarios)
-        {
-            InitializeComponent();
-            this.usuarios = usuarios;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.usuarios = new List<Usuario>();
         }
 
         public List<Usuario> Usuarios { get { return this.usuarios; } }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            this.usuarios = Datos.DeserializarDatos();
+        }
 
         private void botonIngresar_Click(object sender, EventArgs e)
         {
@@ -34,11 +35,17 @@ namespace WinFormCrud
             string contraseña = this.textBoxContraseña.Text;
             Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(correoElectronico, contraseña);
             //List<Usuario> listaDeUsuarios = DeserializarJson();
-            bool buscadorUsuarios = BuscarUsuarios(this.usuarios, nuevoUsuario);
+            bool buscadorUsuarios = Datos.BuscarUsuarios(nuevoUsuario);
             if (buscadorUsuarios)
             {
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                FormularioPrincipal FrmPrincipal = new FormularioPrincipal();
+                this.Hide();
+                DialogResult cierreApp = FrmPrincipal.ShowDialog();
+                if (cierreApp == DialogResult.OK)
+                {
+                    Application.Exit();
+                }
             }
             else
             {
@@ -46,38 +53,11 @@ namespace WinFormCrud
             }
         }
 
-        private bool BuscarUsuarios(List<Usuario> listaUsuarios, Usuario nuevoUsuario)
-        {
-            bool coincidencia = false;
-            foreach (Usuario usuarioGuardado in listaUsuarios)
-            {
-                if (usuarioGuardado.correoElectronico == nuevoUsuario.correoElectronico && usuarioGuardado.clave == nuevoUsuario.clave)
-                {
-                    coincidencia = true;
-                }
-            }
-            return coincidencia;
-        }
-
-        private List<Usuario> DeserializarJson()
-        {
-            List<Usuario> lista = new List<Usuario>();
-            using(StreamReader json = new StreamReader(@"C:\\Users\\NoxiePC\\Desktop\\Archivos\\Usuarios.json"))
-            {
-                string strJson = json.ReadToEnd();
-                List<Usuario> listaJson = System.Text.Json.JsonSerializer.Deserialize<List<Usuario>>(strJson);
-                foreach (Usuario usuarios in listaJson)
-                {
-                    lista.Add(usuarios);
-                }
-            }
-            return lista;
-        }
-
         private void linkCrearUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormCrearUsuario nuevoUsuario = new FormCrearUsuario(this.usuarios);
             nuevoUsuario.ShowDialog();
         }
+
     }
 }

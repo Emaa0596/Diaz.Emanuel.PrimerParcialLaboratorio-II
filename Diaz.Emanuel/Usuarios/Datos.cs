@@ -31,17 +31,13 @@ namespace Usuarios
 
         public static void SerializarDatos(Usuario user)
         {
+            List<Usuario> listaDeUsuarios = DeserializarDatos();
+            listaDeUsuarios.Add(user);
+
             using (StreamWriter json = new StreamWriter("C:\\Users\\NoxiePC\\Desktop\\Archivos\\Usuarios.json"))
             {
-                string archivoJson = System.Text.Json.JsonSerializer.Serialize(Datos.ListaUsuarios);
-
-                foreach(Usuario usuario in ListaUsuarios)
-                {
-                    string archivo = System.Text.Json.JsonSerializer.Serialize(usuario);
-                    json.WriteLine(archivo);
-                }
-
-                //json.WriteLine(archivoJson);
+                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaDeUsuarios);
+                json.WriteLine(archivoJson);
             }
         }
 
@@ -60,12 +56,13 @@ namespace Usuarios
             return lista;
         }
 
-        public static bool BuscarUsuarios(Usuario usuario, List<Usuario> lista)
+        public static bool BuscarUsuarios(Usuario usuario)
         {
+            List<Usuario> listaDeUsuarios = DeserializarDatos();
             bool coincidencia = false;
-            foreach (Usuario usuarioGuardado in lista)
+            foreach (Usuario usuarioGuardado in listaDeUsuarios)
             {
-                if(usuarioGuardado.correoElectronico == usuario.correoElectronico)
+                if(usuarioGuardado.correoElectronico == usuario.correoElectronico && usuarioGuardado.clave == usuario.clave)
                 {
                     coincidencia = true;
                 }
@@ -75,7 +72,7 @@ namespace Usuarios
 
         public static void AgregarUsuario(Usuario usuario)
         {
-            Datos.listaUsuarios.Add(usuario);
+            Datos.SerializarDatos(usuario);
         }
     }
 }

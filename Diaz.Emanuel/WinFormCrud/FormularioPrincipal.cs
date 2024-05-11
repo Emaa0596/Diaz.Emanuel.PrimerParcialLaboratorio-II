@@ -9,7 +9,9 @@ namespace WinFormCrud
         public FormularioPrincipal()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.usuarios = new List<Usuario>();
+
         }
 
 
@@ -21,12 +23,22 @@ namespace WinFormCrud
 
         private void FormularioPrincipal_Load(object sender, EventArgs e)
         {
+            this.usuarios = Datos.DeserializarDatos();
             //Usuario nuevoUsuario = new Usuario("Emanuel", "Diaz", "emanueldiaz0596@gmail.com", "1234", "Administrador");
             //this.usuarios.Add(nuevoUsuario);
             //SerializarDatos();
-            this.usuarios = Datos.DeserializarDatos();
-            FormLogin UsuarioLogueado = new FormLogin(this.usuarios);
-            UsuarioLogueado.ShowDialog();
+            //FormLogin UsuarioLogueado = new FormLogin();
+            //DialogResult logueo = UsuarioLogueado.ShowDialog();
+            //if(logueo != DialogResult.OK)
+            //{
+            //    //if( MessageBox.Show("Desea salir de la aplicacion?","Salir",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            //    //{
+            //    //     this.Dispose();
+            //    //}
+            //    UsuarioLogueado = new FormLogin();
+            //    logueo = UsuarioLogueado.ShowDialog();
+            //    this.Dispose();
+            //}
         }
 
         public bool BuscarUsuarios(Usuario usuario)
@@ -42,30 +54,17 @@ namespace WinFormCrud
             return coincidencia;
         }
 
-        private void SerializarDatos()
+        private void FormularioPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using(StreamWriter json = new StreamWriter(@"C:\\Users\\NoxiePC\\Desktop\\Archivos\\Usuarios.json"))
+            if (MessageBox.Show("¿Desea cerrar la aplicacion?","Confirmacion",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.No)
             {
-                string archivo = System.Text.Json.JsonSerializer.Serialize(this.usuarios);
-                json.WriteLine(archivo);
+                e.Cancel = true;
+            }
+            else 
+            {
+                this.DialogResult = DialogResult.OK;
             }
         }
-
-        private List<Usuario> DeserializarJson()
-        {
-            List<Usuario> lista = new List<Usuario>();
-            using (StreamReader json = new StreamReader(@"C:\\Users\\NoxiePC\\Desktop\\Archivos\\Usuarios.json"))
-            {
-                string strJson = json.ReadToEnd();
-                List<Usuario> listaJson = System.Text.Json.JsonSerializer.Deserialize<List<Usuario>>(strJson);
-                foreach (Usuario usuarios in listaJson)
-                {
-                    lista.Add(usuarios);
-                }
-            }
-            return lista;
-        }
-
 
     }
 }

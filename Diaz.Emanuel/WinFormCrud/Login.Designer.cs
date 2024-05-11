@@ -102,6 +102,8 @@
             Controls.Add(textBoxUsuario);
             Name = "FormLogin";
             Text = "Login";
+            //FormClosing += FormLogin_FormClosing;
+            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -36,7 +36,7 @@ namespace WinFormCrud
             string contraseña = this.textBoxContraseña.Text;
             string perfil = this.comboBoxPerfil.Text;
             Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(nombre, apellido, email,contraseña, perfil);
-            buscador = BuscarUsuarios(nuevoUsuario);
+            buscador = Datos.BuscarUsuarios(nuevoUsuario);
             if( buscador )
             {
                 MessageBox.Show("Ya existe un usuario con el mismo correo electronico", "Error", MessageBoxButtons.OK);
@@ -44,9 +44,8 @@ namespace WinFormCrud
             else
             {
                 Datos.AgregarUsuario(nuevoUsuario);
-                Datos.SerializarDatos(nuevoUsuario);
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Dispose();
             }
         }
 

@@ -37,6 +37,7 @@
             ClientSize = new Size(678, 421);
             Name = "FormularioPrincipal";
             Text = "Form1";
+            FormClosing += FormularioPrincipal_FormClosing;
             Load += FormularioPrincipal_Load;
             ResumeLayout(false);
         }
