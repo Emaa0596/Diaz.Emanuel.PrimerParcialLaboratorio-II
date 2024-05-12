@@ -1,6 +1,6 @@
 ﻿namespace WinFormCrud
 {
-    partial class FormCrearUsuario
+    partial class FrmCrearUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -151,6 +151,7 @@
             Controls.Add(textBoxNombre);
             Name = "FormCrearUsuario";
             Text = "FormCrearUsuario";
+            Load += FormCrearUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }

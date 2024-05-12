@@ -3,17 +3,18 @@ using Usuarios;
 
 namespace WinFormCrud
 {
-    public partial class FormularioPrincipal : Form
+    public partial class FrmPrincipal : Form
     {
         private List<Usuario> usuarios;
-        public FormularioPrincipal()
+        private Usuario usuarioLogueado;
+        public FrmPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.usuarios = new List<Usuario>();
-
+            this.usuarioLogueado = usuarioIngresado;
+            
         }
-
 
         public List<Usuario> ListaUsuarios
         {
@@ -24,21 +25,8 @@ namespace WinFormCrud
         private void FormularioPrincipal_Load(object sender, EventArgs e)
         {
             this.usuarios = Datos.DeserializarDatos();
-            //Usuario nuevoUsuario = new Usuario("Emanuel", "Diaz", "emanueldiaz0596@gmail.com", "1234", "Administrador");
-            //this.usuarios.Add(nuevoUsuario);
-            //SerializarDatos();
-            //FormLogin UsuarioLogueado = new FormLogin();
-            //DialogResult logueo = UsuarioLogueado.ShowDialog();
-            //if(logueo != DialogResult.OK)
-            //{
-            //    //if( MessageBox.Show("Desea salir de la aplicacion?","Salir",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            //    //{
-            //    //     this.Dispose();
-            //    //}
-            //    UsuarioLogueado = new FormLogin();
-            //    logueo = UsuarioLogueado.ShowDialog();
-            //    this.Dispose();
-            //}
+            this.usuarioLogueado = ObtenerUsuario();
+            this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
         }
 
         public bool BuscarUsuarios(Usuario usuario)
@@ -52,6 +40,31 @@ namespace WinFormCrud
                 }
             }
             return coincidencia;
+        }
+
+        private Usuario ObtenerUsuario()
+        {
+            Usuario usuarioConectado = new Usuario();
+            foreach (Usuario usuario in this.usuarios)
+            {
+                if(usuario.correoElectronico == this.usuarioLogueado.correoElectronico)
+                {
+                    usuarioConectado = usuario;
+                    break;
+                }
+            }
+            return usuarioConectado;
+
+        }
+
+        private string ObtenerDiaYUsuario()
+        {
+            DateTime hoy = DateTime.Today;
+            string usuarioConectado = this.usuarioLogueado.Nombre;
+            string diaActual = hoy.ToString("dd-MM-yyyy");
+            string diaYUsuario = $"{usuarioConectado} || {diaActual}";
+            return diaYUsuario;
+
         }
 
         private void FormularioPrincipal_FormClosing(object sender, FormClosingEventArgs e)

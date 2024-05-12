@@ -12,19 +12,19 @@ using Usuarios;
 
 namespace WinFormCrud
 {
-    public partial class FormCrearUsuario : Form
-    {   
+    public partial class FrmCrearUsuario : Form
+    {
         List<Usuario> usuarios;
-        public FormCrearUsuario()
+        public FrmCrearUsuario()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.usuarios = new List<Usuario>();
         }
 
-        public FormCrearUsuario(List<Usuario> listaDeUsuarios)
+        private void FormCrearUsuario_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.usuarios = listaDeUsuarios;
+            this.usuarios = Datos.DeserializarDatos();
         }
 
         private void buttonCrearUsuario_Click(object sender, EventArgs e)
@@ -35,9 +35,9 @@ namespace WinFormCrud
             string email = this.textBoxCorreoElectronico.Text;
             string contraseña = this.textBoxContraseña.Text;
             string perfil = this.comboBoxPerfil.Text;
-            Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(nombre, apellido, email,contraseña, perfil);
+            Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(nombre, apellido, email, contraseña, perfil);
             buscador = Datos.BuscarUsuarios(nuevoUsuario);
-            if( buscador )
+            if (buscador)
             {
                 MessageBox.Show("Ya existe un usuario con el mismo correo electronico", "Error", MessageBoxButtons.OK);
             }
@@ -49,17 +49,6 @@ namespace WinFormCrud
             }
         }
 
-        private bool BuscarUsuarios(Usuario nuevoUsuario)
-        {
-            bool coincidencia = false;
-            foreach (Usuario usuarioGuardado in this.usuarios)
-            {
-                if (usuarioGuardado.correoElectronico == nuevoUsuario.correoElectronico)
-                {
-                    coincidencia = true;
-                }
-            }
-            return coincidencia;
-        }
+
     }
 }

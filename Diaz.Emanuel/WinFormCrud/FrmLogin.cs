@@ -11,10 +11,10 @@ using Usuarios;
 
 namespace WinFormCrud
 {
-    public partial class FormLogin : Form
+    public partial class FrmLogin : Form
     {
         private List<Usuario> usuarios;
-        public FormLogin()
+        public FrmLogin()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -39,7 +39,7 @@ namespace WinFormCrud
             if (buscadorUsuarios)
             {
                 this.DialogResult = DialogResult.OK;
-                FormularioPrincipal FrmPrincipal = new FormularioPrincipal();
+                FrmPrincipal FrmPrincipal = new FrmPrincipal(nuevoUsuario);
                 this.Hide();
                 DialogResult cierreApp = FrmPrincipal.ShowDialog();
                 if (cierreApp == DialogResult.OK)
@@ -55,7 +55,7 @@ namespace WinFormCrud
 
         private void linkCrearUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FormCrearUsuario nuevoUsuario = new FormCrearUsuario(this.usuarios);
+            FrmCrearUsuario nuevoUsuario = new FrmCrearUsuario();
             nuevoUsuario.ShowDialog();
         }
 

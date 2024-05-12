@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Usuarios
@@ -19,24 +20,16 @@ namespace Usuarios
         {
             get { return listaUsuarios; }
         }
-        public static Usuario CrearUsuario()
-        {
-            
-            Usuario nuevoUsuario = new Usuario("Emanuel", "Diaz", "emanueldiaz0596@gmail.com", "1234", "administrador");
-            //nuevoUsuario.AgregarUsuario();
-            
-            listaUsuarios.Add(nuevoUsuario);
-            return nuevoUsuario;
-        }
 
         public static void SerializarDatos(Usuario user)
         {
             List<Usuario> listaDeUsuarios = DeserializarDatos();
             listaDeUsuarios.Add(user);
-
-            using (StreamWriter json = new StreamWriter("C:\\Users\\NoxiePC\\Desktop\\Archivos\\Usuarios.json"))
+            JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
+            formatoDeSerializado.WriteIndented = true;
+            using (StreamWriter json = new StreamWriter(@".\Usuarios.json"))
             {
-                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaDeUsuarios);
+                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaDeUsuarios,formatoDeSerializado);
                 json.WriteLine(archivoJson);
             }
         }
@@ -44,7 +37,7 @@ namespace Usuarios
         public static List<Usuario> DeserializarDatos()
         {   
             List<Usuario> lista = new List<Usuario>();
-            using (StreamReader json = new StreamReader("C:\\Users\\NoxiePC\\Desktop\\Archivos\\Usuarios.json"))
+            using (StreamReader json = new StreamReader(@".\Usuarios.json"))
             {
                 string strjson = json.ReadToEnd();
                 List<Usuario> listajson = System.Text.Json.JsonSerializer.Deserialize<List<Usuario>>(strjson);

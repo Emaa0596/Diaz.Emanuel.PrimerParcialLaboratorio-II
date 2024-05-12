@@ -6,9 +6,6 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\Usuarios.dll
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\Usuarios.pdb
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.csproj.AssemblyReference.cache
-C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FormCrearUsuario.resources
-C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FormularioPrincipal.resources
-C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FormLogin.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.csproj.GenerateResource.cache
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.AssemblyInfoInputs.cache
@@ -21,3 +18,6 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.genruntimeconfig.cache
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\ref\WinFormCrud.dll
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.sourcelink.json
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmCrearUsuario.resources
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmLogin.resources
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmPrincipal.resources
