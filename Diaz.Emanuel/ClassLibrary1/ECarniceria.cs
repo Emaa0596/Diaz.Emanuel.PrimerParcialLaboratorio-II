@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Tiendas
 {
-    internal class ECarniceria
+    internal enum ECarniceria
     {
+        BolaDeLomo = 6000,
+        AsadoTira = 7000,
+        Vacio = 7500,
+        CarnePicada = 5000,
+        Paleta = 6500,
+        Chorizo = 3500,
+        Morcilla = 3000,
+        Entraña = 8000,
+        Molleja = 8000,
+        TapaDeAsado = 6000
     }
 }

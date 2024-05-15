@@ -1,6 +1,6 @@
 ﻿namespace Tiendas
 {
-    public class Tienda
+    public abstract class Tienda
     {
         public string direccion;
         public int cantidadDeEmpleados;
@@ -13,5 +13,9 @@
             this.cantidadDeEmpleados = cantidadDeEmpleados;
             this.tipoDeproductos = tipoDeproductos;
         }
+
+        protected abstract string DatosDeLatienda();
+
+
     }
 }

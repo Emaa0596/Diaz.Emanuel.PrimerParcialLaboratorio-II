@@ -15,6 +15,8 @@ namespace Tiendas
         Medialunas = 400,
         Vigilantes = 400,
         BolaDeFraile = 400,
-        Galletitas = 350
+        Galletitas = 350,
+        Tortas = 9000,
+        Prepizza = 1500
     }
 }
