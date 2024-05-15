@@ -22,7 +22,7 @@ namespace Tiendas
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
             this.productos = listaProductos;
-            this.promociones = "";
+            this.promociones = " ";
         }
 
         public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, string promociones)

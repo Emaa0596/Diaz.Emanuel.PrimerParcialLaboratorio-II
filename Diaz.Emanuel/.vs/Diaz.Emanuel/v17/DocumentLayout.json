@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|solutionrelative:classlibrary1\\almacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\classlibrary1\\carniceria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\classlibrary1\\carniceria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|solutionrelative:classlibrary1\\carniceria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,11 +15,11 @@
       "RelativeMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|solutionrelative:classlibrary1\\ecarniceria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\classlibrary1\\ealmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\classlibrary1\\ealmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|solutionrelative:classlibrary1\\ealmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\classlibrary1\\epanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\classlibrary1\\epanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|solutionrelative:classlibrary1\\epanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "ClassLibrary1\\Almacen.cs",
               "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\ClassLibrary1\\Almacen.cs",
               "RelativeToolTip": "ClassLibrary1\\Almacen.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAiAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-15T15:29:39.962Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "ClassLibrary1\\Carniceria.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T15:04:02.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T15:04:02.144Z"
             },
             {
               "$type": "Document",
@@ -76,8 +75,7 @@
               "RelativeToolTip": "ClassLibrary1\\EAlmacen.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T14:20:07.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T14:20:07.595Z"
             },
             {
               "$type": "Document",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "ClassLibrary1\\ECarniceria.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T20:50:45.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T20:50:45.274Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "ClassLibrary1\\EPanaderia.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T20:09:59.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T20:09:59.014Z"
             },
             {
               "$type": "Document",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "ClassLibrary1\\Panaderia.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAQwC4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T20:06:47.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T20:06:47.872Z"
             },
             {
               "$type": "Document",
@@ -128,8 +123,7 @@
               "RelativeToolTip": "ClassLibrary1\\Tienda.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T19:04:19.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T19:04:19.326Z"
             }
           ]
         }
