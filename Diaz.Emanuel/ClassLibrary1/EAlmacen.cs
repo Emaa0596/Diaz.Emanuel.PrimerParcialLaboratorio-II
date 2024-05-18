@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tiendas
 {
-    internal enum EAlmacen
+    public enum EAlmacen
     {
         Arroz = 2000,
         Arvejas = 1500,

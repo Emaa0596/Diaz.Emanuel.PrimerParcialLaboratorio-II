@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tiendas
 {
-    internal enum ECarniceria
+    public enum ECarniceria
     {
         BolaDeLomo = 6000,
         AsadoTira = 7000,

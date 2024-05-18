@@ -43,7 +43,53 @@ namespace Tiendas
 
         protected override string DatosDeLatienda()
         {
-            return $"La panaderia ubicada en {base.direccion} tiene {base.cantidadDeEmpleados} empleados y vende productos panificados";
+            return $"La panaderia ubicada en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende productos panificados";
         }
+
+        public override string ToString()
+        {
+            string dato = this.DatosDeLatienda();
+            dato += $"\nLa/s forma de pago actualmente son: {this.formasDePago}";
+            return dato;
+        }
+
+        public override bool Equals(object obj)
+        {
+            bool retorno = false;
+            if (base.Equals(obj) == true)
+            {
+                Panaderia nuevaPanaderia = (Panaderia)obj;
+                if(nuevaPanaderia.formasDePago == this.formasDePago)
+                {
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }
+
+        public static bool operator == (Panaderia panaderia, Panaderia otraPanaderia)
+        {
+            bool retorno = false;
+            if (panaderia.Equals(otraPanaderia))
+            {
+                if (panaderia.direccion == otraPanaderia.direccion && panaderia.productos.Count == otraPanaderia.productos.Count)
+                {
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }
+
+        public static bool operator !=(Panaderia panaderia, Panaderia otraPanaderia)
+        {
+            return !(panaderia == otraPanaderia);
+        }
+
+        public static implicit operator Almacen(Panaderia panaderia)
+        {
+            Almacen nuevoAlmacen = new Almacen(panaderia.direccion, panaderia.cantidadDeEmpleados, "Articulos varios", "Ninguna");
+            return nuevoAlmacen;
+        }
+
     }
 }
