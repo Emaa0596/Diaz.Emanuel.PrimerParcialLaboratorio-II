@@ -8,7 +8,7 @@ namespace Tiendas
 {
     public class Almacen : Tienda
     {
-        private List<EAlmacen> productos;
+        internal List<EAlmacen> productos;
         public string promociones;
 
         public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<EAlmacen> listaProductos, string promociones) 

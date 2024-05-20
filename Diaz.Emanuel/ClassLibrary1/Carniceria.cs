@@ -8,7 +8,7 @@ namespace Tiendas
 {
     public class Carniceria : Tienda
     {
-        private List<ECarniceria> productos;
+        internal List<ECarniceria> productos;
         public string descuento;
         public string tipoDeCarne;
 

@@ -13,7 +13,7 @@ namespace WinFormCrud
             this.StartPosition = FormStartPosition.CenterScreen;
             this.usuarios = new List<Usuario>();
             this.usuarioLogueado = usuarioIngresado;
-            
+
         }
 
         public List<Usuario> ListaUsuarios
@@ -27,6 +27,19 @@ namespace WinFormCrud
             this.usuarios = Datos.DeserializarDatos();
             this.usuarioLogueado = ObtenerUsuario();
             this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
+
+            Image imgFrmPrincipal = new Bitmap(this.BackgroundImage, new Size(694, 460));
+            this.BackgroundImage = imgFrmPrincipal;
+
+            Image imgEscaladaAlmacen = new Bitmap(btnAlmacen.Image, new Size(60, 50));
+            btnAlmacen.Image = imgEscaladaAlmacen;
+            Image imgEscaladaCarne = new Bitmap(btnCarniceria.Image, new Size(70, 50));
+            btnCarniceria.Image = imgEscaladaCarne;
+
+            Image imgBtnCanasta = new Bitmap(btnCanasta.Image, new Size(694, 460));
+            btnCarniceria.Image = imgBtnCanasta;
+
+            
         }
 
         public bool BuscarUsuarios(Usuario usuario)
@@ -47,7 +60,7 @@ namespace WinFormCrud
             Usuario usuarioConectado = new Usuario();
             foreach (Usuario usuario in this.usuarios)
             {
-                if(usuario.correoElectronico == this.usuarioLogueado.correoElectronico)
+                if (usuario.correoElectronico == this.usuarioLogueado.correoElectronico)
                 {
                     usuarioConectado = usuario;
                     break;
@@ -69,15 +82,24 @@ namespace WinFormCrud
 
         private void FormularioPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Desea cerrar la aplicacion?","Confirmacion",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (MessageBox.Show("¿Desea cerrar la aplicacion?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
             {
                 e.Cancel = true;
             }
-            else 
+            else
             {
                 this.DialogResult = DialogResult.OK;
             }
         }
 
+        private void btnCarniceria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Tiendas
 {
     public class Panaderia : Tienda
     {
-        private List<EPanaderia> productos;
+        internal List<EPanaderia> productos;
         string formasDePago;
 
         /*
