@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Productos;
 
 namespace Tiendas
 {
     public class Almacen : Tienda
     {
-        internal List<EAlmacen> productos;
+        internal List<ProductosAlmacen> productos;
         public string promociones;
 
-        public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<EAlmacen> listaProductos, string promociones) 
+        public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> listaProductos, string promociones) 
             :base(direccion, cantidadEmpleados, tipoDeProductos)
         {
             this.productos = listaProductos;
             this.promociones = promociones;
         }
 
-        public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<EAlmacen> listaProductos)
+        public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> listaProductos)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
             this.productos = listaProductos;
@@ -28,7 +29,7 @@ namespace Tiendas
         public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, string promociones)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
-            this.productos = new List<EAlmacen>();
+            this.productos = new List<ProductosAlmacen>();
             this.promociones = promociones;
         }
 

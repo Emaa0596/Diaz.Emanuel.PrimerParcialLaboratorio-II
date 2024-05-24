@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Productos;
 
 namespace Tiendas
 {
     public class Carniceria : Tienda
     {
-        internal List<ECarniceria> productos;
+        internal List<ProductosCarniceria> productos;
         public string descuento;
         public string tipoDeCarne;
 
-        public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ECarniceria> productosDisponibles, string tipoDeCarne)
+        public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosCarniceria> productosDisponibles, string tipoDeCarne)
             :base(direccion,cantidadEmpleados, tipoDeProductos)
         {
             this.productos = productosDisponibles;
@@ -20,7 +21,7 @@ namespace Tiendas
             this.tipoDeCarne = tipoDeCarne;
         }
 
-        public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ECarniceria> productosDisponibles, string porcentajeDescuento, string tipoDeCarne)
+        public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosCarniceria> productosDisponibles, string porcentajeDescuento, string tipoDeCarne)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
             this.productos = productosDisponibles;
@@ -31,7 +32,7 @@ namespace Tiendas
         public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, string porcentajeDescuento)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
-            this.productos = new List<ECarniceria> ();
+            this.productos = new List<ProductosCarniceria> ();
             this.descuento = porcentajeDescuento;
             this.tipoDeCarne = "Variada";
         }

@@ -91,13 +91,14 @@
             btnPanaderia.Text = "Panaderia";
             btnPanaderia.TextAlign = ContentAlignment.MiddleRight;
             btnPanaderia.UseVisualStyleBackColor = false;
+            btnPanaderia.Click += btnPanaderia_Click;
             // 
             // btnCanasta
             // 
-            btnCanasta.BackColor = Color.SeaGreen;
+            btnCanasta.BackColor = Color.CadetBlue;
             btnCanasta.FlatAppearance.BorderSize = 0;
-            btnCanasta.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCanasta.ForeColor = Color.OrangeRed;
+            btnCanasta.Font = new Font("Humnst777 Blk BT", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            btnCanasta.ForeColor = Color.Gold;
             btnCanasta.Image = (Image)resources.GetObject("btnCanasta.Image");
             btnCanasta.ImageAlign = ContentAlignment.MiddleLeft;
             btnCanasta.Location = new Point(80, 115);
@@ -121,7 +122,7 @@
             Controls.Add(btnCarniceria);
             Controls.Add(LblUsuarioConectado);
             Name = "FrmPrincipal";
-            Text = "Form1";
+            Text = "Tienda";
             FormClosing += FormularioPrincipal_FormClosing;
             Load += FormularioPrincipal_Load;
             ResumeLayout(false);

@@ -1,5 +1,7 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using Usuarios;
+using Tiendas;
+using Productos;
 
 namespace WinFormCrud
 {
@@ -7,13 +9,15 @@ namespace WinFormCrud
     {
         private List<Usuario> usuarios;
         private Usuario usuarioLogueado;
+        private Canasta carrito;
+
         public FrmPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.usuarios = new List<Usuario>();
             this.usuarioLogueado = usuarioIngresado;
-
+            this.carrito = new Canasta();
         }
 
         public List<Usuario> ListaUsuarios
@@ -27,19 +31,6 @@ namespace WinFormCrud
             this.usuarios = Datos.DeserializarDatos();
             this.usuarioLogueado = ObtenerUsuario();
             this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
-
-            Image imgFrmPrincipal = new Bitmap(this.BackgroundImage, new Size(694, 460));
-            this.BackgroundImage = imgFrmPrincipal;
-
-            Image imgEscaladaAlmacen = new Bitmap(btnAlmacen.Image, new Size(60, 50));
-            btnAlmacen.Image = imgEscaladaAlmacen;
-            Image imgEscaladaCarne = new Bitmap(btnCarniceria.Image, new Size(70, 50));
-            btnCarniceria.Image = imgEscaladaCarne;
-
-            Image imgBtnCanasta = new Bitmap(btnCanasta.Image, new Size(694, 460));
-            btnCarniceria.Image = imgBtnCanasta;
-
-            
         }
 
         public bool BuscarUsuarios(Usuario usuario)
@@ -94,12 +85,24 @@ namespace WinFormCrud
 
         private void btnCarniceria_Click(object sender, EventArgs e)
         {
+            FrmCarniceria frmCarniceria = new FrmCarniceria();
+            frmCarniceria.productos = frmCarniceria.CrearProductos();
+            frmCarniceria.ShowDialog();
 
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
+            FrmAlmacen frmAlmacen = new FrmAlmacen();
+            frmAlmacen.productos = frmAlmacen.CrearProductos();
+            frmAlmacen.ShowDialog();
+        }
 
+        private void btnPanaderia_Click(object sender, EventArgs e)
+        {
+            FrmPanaderia frmPanaderia = new FrmPanaderia();
+            frmPanaderia.productos = frmPanaderia.CrearProductos();
+            frmPanaderia.ShowDialog();
         }
     }
 }

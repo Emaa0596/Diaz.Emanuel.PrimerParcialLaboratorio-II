@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9U8cGtx+cpuf3UfYPZwl6/OdQLkqHyOvvQeall2/P3NOCr0mQwbY+b5I/F+7IxRKVZAq4vjZpF08d9BO9UQTPw==",
+  "dgSpecHash": "a3uqS5OyXMk=",
   "success": true,
   "projectFilePath": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\WinFormCrud.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\NoxiePC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\NoxiePC\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\NoxiePC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\NoxiePC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.30\\microsoft.netcore.app.host.win-x64.6.0.30.nupkg.sha512"
+  ],
   "logs": []
 }
