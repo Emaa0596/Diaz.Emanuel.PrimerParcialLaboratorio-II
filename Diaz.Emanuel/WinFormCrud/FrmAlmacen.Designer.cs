@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlmacen));
             SuspendLayout();
             // 
             // FrmAlmacen
@@ -35,6 +36,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(580, 383);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmAlmacen";
             Text = "Almacen";
             Load += FrmAlmacen_Load;

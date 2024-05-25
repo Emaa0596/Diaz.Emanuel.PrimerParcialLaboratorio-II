@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCanasta));
             lstCanasta = new ListBox();
             lblTxtAPagar = new Label();
             lblTotalAPagarDouble = new Label();
@@ -147,6 +148,7 @@
             Controls.Add(lblTxtAPagar);
             Controls.Add(lstCanasta);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCanasta";
             Text = "FrmCanasta";
             menuStrip1.ResumeLayout(false);

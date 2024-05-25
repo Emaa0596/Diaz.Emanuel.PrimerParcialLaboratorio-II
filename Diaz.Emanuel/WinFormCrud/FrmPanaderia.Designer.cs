@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPanaderia));
             SuspendLayout();
             // 
             // FrmPanaderia
@@ -35,6 +36,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(568, 356);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPanaderia";
             Text = "Panaderia";
             Load += FrmPanaderia_Load;

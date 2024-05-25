@@ -167,6 +167,7 @@
             Controls.Add(btnAlmacen);
             Controls.Add(btnCarniceria);
             Controls.Add(LblUsuarioConectado);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPrincipal";
             Text = "Tienda";
             FormClosing += FormularioPrincipal_FormClosing;
