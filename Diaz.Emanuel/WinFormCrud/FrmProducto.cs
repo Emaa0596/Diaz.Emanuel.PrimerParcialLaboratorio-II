@@ -8,17 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tiendas;
 
 namespace WinFormCrud
 {
     public partial class FrmProducto : Form
     {
+        public List<ProductosAlmacen> listaAlmacen;
+        public List<ProductosCarniceria> listaCarniceria;
+        public List<ProductosPanaderia> listaPanaderia;
+        protected Canasta carrito;
+
         public List<Productos.Producto> productos;
         public FrmProducto()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.productos = new List<Productos.Producto>();
+
+            this.listaAlmacen = new List<ProductosAlmacen>();
+            this.listaCarniceria = new List<ProductosCarniceria>();
+            this.listaPanaderia = new List<ProductosPanaderia>();
+            this.carrito = new Canasta();
         }
 
         public FrmProducto(List<Productos.Producto> productos)
@@ -26,6 +37,11 @@ namespace WinFormCrud
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.productos = productos;
+
+            this.listaAlmacen = new List<ProductosAlmacen>();
+            this.listaCarniceria = new List<ProductosCarniceria>();
+            this.listaPanaderia = new List<ProductosPanaderia>();
+            this.carrito = new Canasta();
         }
 
         public List<Productos.Producto> ListaProductos
@@ -36,60 +52,55 @@ namespace WinFormCrud
 
         private void FrmProducto_Load(object sender, EventArgs e)
         {
-            ActualizarVisor();
-        }
-
-        public virtual List<Producto> CrearProductos()
-        {
-            List<Producto> lista = new List<Producto>();
-            return lista;        
+            //ActualizarVisor();
         }
 
 
-        private void ActualizarVisor()
+
+
+        protected virtual void ActualizarVisor()
         {
             lstProductos.Items.Clear();
-            foreach (Productos.Producto productos in this.productos)
+            foreach (ProductosCarniceria productos in this.listaCarniceria)
+            {
+                string item = productos.Mostrar();
+                lstProductos.Items.Add(item);
+            }
+            foreach (ProductosAlmacen productos in this.listaAlmacen)
+            {
+                string item = productos.Mostrar();
+                lstProductos.Items.Add(item);
+            }
+            foreach (ProductosPanaderia productos in this.listaPanaderia)
             {
                 string item = productos.Mostrar();
                 lstProductos.Items.Add(item);
             }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        protected virtual void btnAgregar_Click(object sender, EventArgs e)
         {
             int indice = lstProductos.SelectedIndex;
             if (indice != -1)
             {
-                this.productos[indice].Cantidad += 1;
+                //this.productos[indice].Cantidad += 1;
+                ActualizarVisor();
+                lstProductos.SelectedIndex = indice;
+            }
+        }
+
+        protected virtual void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int indice = lstProductos.SelectedIndex;
+            if (this.productos[indice].Cantidad > 1)
+            {
+                //this.productos[indice].Cantidad -= 1;
                 ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
             }
             else
             {
-                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK);
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int indice = lstProductos.SelectedIndex;
-            if (indice != -1)
-            {
-                if (this.productos[indice].Cantidad > 0)
-                {
-                    this.productos[indice].Cantidad -= 1;
-                    ActualizarVisor();
-                }
-                else
-                {
-                    MessageBox.Show("No hay ningun producto de este tipo agregado a la canasta", "Error", MessageBoxButtons.OK);
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Seleccione el producto que desea eliminar", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("No hay ningun producto de este tipo agregado a la canasta", "Error", MessageBoxButtons.OK);
             }
 
         }

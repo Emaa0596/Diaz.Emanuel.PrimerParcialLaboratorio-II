@@ -39,6 +39,7 @@
             // textBoxUsuario
             // 
             textBoxUsuario.Location = new Point(99, 79);
+            textBoxUsuario.MaxLength = 30;
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(201, 23);
             textBoxUsuario.TabIndex = 0;
@@ -46,7 +47,9 @@
             // textBoxContraseña
             // 
             textBoxContraseña.Location = new Point(99, 160);
+            textBoxContraseña.MaxLength = 20;
             textBoxContraseña.Name = "textBoxContraseña";
+            textBoxContraseña.PasswordChar = '*';
             textBoxContraseña.Size = new Size(201, 23);
             textBoxContraseña.TabIndex = 1;
             // 
@@ -89,7 +92,7 @@
             linkCrearUsuario.Text = "Crear usuario";
             linkCrearUsuario.LinkClicked += linkCrearUsuario_LinkClicked;
             // 
-            // FormLogin
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -100,9 +103,8 @@
             Controls.Add(label1);
             Controls.Add(textBoxContraseña);
             Controls.Add(textBoxUsuario);
-            Name = "FormLogin";
+            Name = "FrmLogin";
             Text = "Login";
-            //FormClosing += FormLogin_FormClosing;
             Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();

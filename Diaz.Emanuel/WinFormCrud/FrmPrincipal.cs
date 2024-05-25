@@ -10,7 +10,15 @@ namespace WinFormCrud
         private List<Usuario> usuarios;
         private Usuario usuarioLogueado;
         private Canasta carrito;
-
+        private FrmCarniceria frmCarniceria;
+        private FrmAlmacen frmAlmacen;
+        private FrmPanaderia frmPanaderia;
+        private Almacen almacen;
+        private Carniceria carniceria;
+        private Panaderia panaderia;
+        private bool banderaAlmacen;
+        private bool banderaCarniceria;
+        private bool banderaPanaderia;
         public FrmPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
@@ -18,6 +26,15 @@ namespace WinFormCrud
             this.usuarios = new List<Usuario>();
             this.usuarioLogueado = usuarioIngresado;
             this.carrito = new Canasta();
+            this.banderaAlmacen = false;
+            this.banderaCarniceria = false;
+            this.banderaPanaderia = false;
+            this.frmCarniceria = new FrmCarniceria(this.carrito);
+            this.frmAlmacen = new FrmAlmacen(this.carrito);
+            this.frmPanaderia = new FrmPanaderia(this.carrito);
+            this.almacen = new Almacen("25 de mayo 989", 4, "Panificados", this.frmAlmacen.CrearProductos());
+            this.carniceria = new Carniceria("Dorrego 1245", 7, "Carne", this.frmCarniceria.CrearProductos(), "Vacuna");
+            this.panaderia = new Panaderia("Bustamante 45",3, "Panificados", this.frmPanaderia.CrearProductos(), "Efectivo");
         }
 
         public List<Usuario> ListaUsuarios
@@ -85,24 +102,71 @@ namespace WinFormCrud
 
         private void btnCarniceria_Click(object sender, EventArgs e)
         {
-            FrmCarniceria frmCarniceria = new FrmCarniceria();
-            frmCarniceria.productos = frmCarniceria.CrearProductos();
-            frmCarniceria.ShowDialog();
+            if (!this.banderaCarniceria)
+            {
+                this.frmCarniceria.listaCarniceria = this.frmCarniceria.CrearProductos();
+                this.banderaCarniceria = true;
+                this.frmCarniceria.ShowDialog();
+            }
+            else
+            {
+                this.frmCarniceria.ShowDialog();
+            }
+
 
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            FrmAlmacen frmAlmacen = new FrmAlmacen();
-            frmAlmacen.productos = frmAlmacen.CrearProductos();
-            frmAlmacen.ShowDialog();
+            if (!this.banderaAlmacen)
+            {
+                this.frmAlmacen.listaAlmacen = this.frmAlmacen.CrearProductos();
+                this.banderaAlmacen = true;
+                this.frmAlmacen.ShowDialog();
+            }
+            else
+            {
+                this.frmAlmacen.ShowDialog();
+            }
         }
 
         private void btnPanaderia_Click(object sender, EventArgs e)
         {
-            FrmPanaderia frmPanaderia = new FrmPanaderia();
-            frmPanaderia.productos = frmPanaderia.CrearProductos();
-            frmPanaderia.ShowDialog();
+            if (!this.banderaPanaderia)
+            {
+                this.frmPanaderia.listaPanaderia = this.frmPanaderia.CrearProductos();
+                this.banderaPanaderia = true;
+                this.frmPanaderia.ShowDialog();
+            }
+            else
+            {
+                this.frmPanaderia.ShowDialog();
+            }
+        }
+
+        private void btnCanasta_Click(object sender, EventArgs e)
+        {
+            FrmCanasta canasta = new FrmCanasta(this.carrito);
+            canasta.ActualizarCarrito();
+            canasta.ShowDialog();
+        }
+
+        private void PBoxInfoAlmacen_Click(object sender, EventArgs e)
+        {
+            string texto = this.almacen.ToString();
+            MessageBox.Show(texto, "Informacion de la tienda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void PBoxInfoPanaderia_Click(object sender, EventArgs e)
+        {
+            string texto = this.panaderia.ToString();
+            MessageBox.Show(texto, "Informacion de la tienda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void PBoxInfoCarniceria_Click(object sender, EventArgs e)
+        {
+            string texto = this.carniceria.ToString();
+            MessageBox.Show(texto, "Informacion de la tienda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

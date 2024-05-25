@@ -39,13 +39,16 @@ namespace Tiendas
 
         protected override string DatosDeLatienda()
         {
-            return $"La carniceria ubicada en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende carne {this.tipoDeCarne}";
+            return $"Carniceria ubicada en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende carne {this.tipoDeCarne}";
         }
 
         public override string ToString()
         {
             string dato = this.DatosDeLatienda();
-            dato += $"\nEl descuento actualmente es de {this.descuento} en compras mayores a $20.000";
+            if(this.descuento != "0")
+            {
+                dato += $"\nEl descuento actualmente es de {this.descuento} en compras mayores a $20.000";
+            }
             return dato;
         }
 

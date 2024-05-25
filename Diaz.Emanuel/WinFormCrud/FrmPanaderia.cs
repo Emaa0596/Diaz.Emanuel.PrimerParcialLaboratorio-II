@@ -8,19 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tiendas;
 
 namespace WinFormCrud
 {
     public partial class FrmPanaderia : FrmProducto
     {
-        public FrmPanaderia()
+        public FrmPanaderia(Canasta carrito)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.productos = new List<Productos.Producto>();
+            base.carrito = carrito;
         }
 
-        public override List<Producto> CrearProductos()
+        private void FrmPanaderia_Load(object sender, EventArgs e)
+        {
+            this.lblPrecio.Text = "Precio por Kilo";
+            this.ActualizarVisor();
+        }
+
+        public  List<ProductosPanaderia> CrearProductos()
         {
             ProductosPanaderia pastaFrola = new ProductosPanaderia(0001, "Pastafrola", 5000, 1);
             ProductosPanaderia bizcochos = new ProductosPanaderia(0002, "Bizcochos", 1200, 0.25f);
@@ -31,9 +39,58 @@ namespace WinFormCrud
             ProductosPanaderia miñones = new ProductosPanaderia(0007, "Miñones", 2500, 1);
             ProductosPanaderia alfajores = new ProductosPanaderia(0008, "Alfajores", 3500, 1);
             List<ProductosPanaderia> lista = new List<ProductosPanaderia> { pastaFrola, bizcochos, pan, medialunas, galletitas, cremona, miñones, alfajores };
-            List<Producto> retorno = ConvertirProductos(lista);
-            return retorno;
+            //List<Producto> retorno = ConvertirProductos(lista);
+            return lista;
 
+        }
+
+        protected override void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int indice = base.lstProductos.SelectedIndex;
+            if (indice != -1)
+            {
+                ProductosPanaderia prod = base.listaPanaderia[indice];
+                base.carrito += prod;
+                //base.productos[indice].Cantidad += 1;
+                //base.btnAgregar_Click(sender, e);
+                this.ActualizarVisor();
+                lstProductos.SelectedIndex = indice;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK);
+            }
+
+        }
+
+        protected override void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int indice = base.lstProductos.SelectedIndex;
+            if (indice != -1)
+            {
+                ProductosPanaderia prod = base.listaPanaderia[indice];
+                base.carrito -= prod;
+                this.ActualizarVisor();
+                lstProductos.SelectedIndex = indice;
+                //base.productos[indice].Cantidad += 1;
+                //int prueba = base.productos[indice].Cantidad; 
+                //base.btnEliminar_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el producto que desea eliminar", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        protected override void ActualizarVisor()
+        {
+            lstProductos.Items.Clear();
+            foreach (ProductosPanaderia productos in base.listaPanaderia)
+            {
+                string item = productos.Mostrar();
+                lstProductos.Items.Add(item);
+            }
+            //base.ActualizarVisor();
         }
 
         private List<Producto> ConvertirProductos(List<ProductosPanaderia> lista)
@@ -47,9 +104,6 @@ namespace WinFormCrud
             return productosCasteados;
         }
 
-        private void FrmPanaderia_Load(object sender, EventArgs e)
-        {
-            this.lblPrecio.Text = "Precio por Kilo";
-        }
+        
     }
 }

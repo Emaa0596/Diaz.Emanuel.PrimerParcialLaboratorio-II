@@ -35,13 +35,13 @@ namespace Tiendas
 
         protected override string DatosDeLatienda()
         {
-            return $"La panaderia ubicada en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende productos panificados";
+            return $"Panaderia ubicada en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende productos panificados";
         }
 
         public override string ToString()
         {
             string dato = this.DatosDeLatienda();
-            dato += $"\nLa/s forma de pago actualmente son: {this.formasDePago}";
+            dato += $"\nLa forma de pago actualmente es: {this.formasDePago}";
             return dato;
         }
 

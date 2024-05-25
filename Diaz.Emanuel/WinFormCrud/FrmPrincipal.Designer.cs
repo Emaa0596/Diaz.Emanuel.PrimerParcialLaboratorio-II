@@ -34,6 +34,12 @@
             btnAlmacen = new Button();
             btnPanaderia = new Button();
             btnCanasta = new Button();
+            PBoxInfoAlmacen = new PictureBox();
+            PBoxInfoPanaderia = new PictureBox();
+            PBoxInfoCarniceria = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)PBoxInfoAlmacen).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PBoxInfoPanaderia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PBoxInfoCarniceria).BeginInit();
             SuspendLayout();
             // 
             // LblUsuarioConectado
@@ -108,6 +114,43 @@
             btnCanasta.Text = "Canasta";
             btnCanasta.TextAlign = ContentAlignment.MiddleRight;
             btnCanasta.UseVisualStyleBackColor = false;
+            btnCanasta.Click += btnCanasta_Click;
+            // 
+            // PBoxInfoAlmacen
+            // 
+            PBoxInfoAlmacen.BackColor = Color.Transparent;
+            PBoxInfoAlmacen.Image = (Image)resources.GetObject("PBoxInfoAlmacen.Image");
+            PBoxInfoAlmacen.Location = new Point(561, 37);
+            PBoxInfoAlmacen.Name = "PBoxInfoAlmacen";
+            PBoxInfoAlmacen.Size = new Size(46, 50);
+            PBoxInfoAlmacen.SizeMode = PictureBoxSizeMode.StretchImage;
+            PBoxInfoAlmacen.TabIndex = 6;
+            PBoxInfoAlmacen.TabStop = false;
+            PBoxInfoAlmacen.Click += PBoxInfoAlmacen_Click;
+            // 
+            // PBoxInfoPanaderia
+            // 
+            PBoxInfoPanaderia.BackColor = Color.Transparent;
+            PBoxInfoPanaderia.Image = (Image)resources.GetObject("PBoxInfoPanaderia.Image");
+            PBoxInfoPanaderia.Location = new Point(561, 142);
+            PBoxInfoPanaderia.Name = "PBoxInfoPanaderia";
+            PBoxInfoPanaderia.Size = new Size(46, 50);
+            PBoxInfoPanaderia.SizeMode = PictureBoxSizeMode.StretchImage;
+            PBoxInfoPanaderia.TabIndex = 7;
+            PBoxInfoPanaderia.TabStop = false;
+            PBoxInfoPanaderia.Click += PBoxInfoPanaderia_Click;
+            // 
+            // PBoxInfoCarniceria
+            // 
+            PBoxInfoCarniceria.BackColor = Color.Transparent;
+            PBoxInfoCarniceria.Image = (Image)resources.GetObject("PBoxInfoCarniceria.Image");
+            PBoxInfoCarniceria.Location = new Point(561, 264);
+            PBoxInfoCarniceria.Name = "PBoxInfoCarniceria";
+            PBoxInfoCarniceria.Size = new Size(46, 50);
+            PBoxInfoCarniceria.SizeMode = PictureBoxSizeMode.StretchImage;
+            PBoxInfoCarniceria.TabIndex = 8;
+            PBoxInfoCarniceria.TabStop = false;
+            PBoxInfoCarniceria.Click += PBoxInfoCarniceria_Click;
             // 
             // FrmPrincipal
             // 
@@ -116,6 +159,9 @@
             BackColor = Color.IndianRed;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(678, 421);
+            Controls.Add(PBoxInfoCarniceria);
+            Controls.Add(PBoxInfoPanaderia);
+            Controls.Add(PBoxInfoAlmacen);
             Controls.Add(btnCanasta);
             Controls.Add(btnPanaderia);
             Controls.Add(btnAlmacen);
@@ -125,6 +171,9 @@
             Text = "Tienda";
             FormClosing += FormularioPrincipal_FormClosing;
             Load += FormularioPrincipal_Load;
+            ((System.ComponentModel.ISupportInitialize)PBoxInfoAlmacen).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PBoxInfoPanaderia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PBoxInfoCarniceria).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,5 +185,8 @@
         private Button btnAlmacen;
         private Button btnPanaderia;
         private Button btnCanasta;
+        private PictureBox PBoxInfoAlmacen;
+        private PictureBox PBoxInfoPanaderia;
+        private PictureBox PBoxInfoCarniceria;
     }
 }

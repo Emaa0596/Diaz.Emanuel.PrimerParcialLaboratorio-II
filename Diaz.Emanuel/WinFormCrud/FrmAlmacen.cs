@@ -8,23 +8,74 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tiendas;
 
 namespace WinFormCrud
 {
     public partial class FrmAlmacen : FrmProducto
     {
-        public FrmAlmacen()
+        public FrmAlmacen(Canasta carrito)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.productos = new List<Productos.Producto>();
+            base.productos = new List<Productos.Producto>();
+            base.carrito = carrito;
         }
         private void FrmAlmacen_Load(object sender, EventArgs e)
         {
+            this.ActualizarVisor();
+        }
+
+        protected override void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int indice = base.lstProductos.SelectedIndex;
+            if (indice != -1)
+            {
+                ProductosAlmacen prod = base.listaAlmacen[indice];
+                this.carrito += prod;
+                //base.productos[indice].Cantidad += 1;
+                //base.btnAgregar_Click(sender, e);
+                this.ActualizarVisor();
+                lstProductos.SelectedIndex = indice;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK);
+            }
 
         }
 
-        public override List<Producto> CrearProductos()
+        protected override void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int indice = base.lstProductos.SelectedIndex;
+            if (indice != -1)
+            {
+                ProductosAlmacen prod = base.listaAlmacen[indice];
+                base.carrito -= prod;
+                this.ActualizarVisor();
+                lstProductos.SelectedIndex = indice;
+                //base.productos[indice].Cantidad += 1;
+                //int prueba = base.productos[indice].Cantidad; 
+                //base.btnEliminar_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el producto que desea eliminar", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        protected override void ActualizarVisor()
+        {
+            lstProductos.Items.Clear();
+            foreach (ProductosAlmacen productos in base.listaAlmacen)
+            {
+                string item = productos.Mostrar();
+                lstProductos.Items.Add(item);
+            }
+            //base.ActualizarVisor();
+        }
+
+        public  List<ProductosAlmacen> CrearProductos()
         {
             ProductosAlmacen leche = new ProductosAlmacen(0001, "Leche", 1100);
             ProductosAlmacen jugoEnSobre = new ProductosAlmacen(0002, "Jugo clight", 350);
@@ -35,8 +86,8 @@ namespace WinFormCrud
             ProductosAlmacen cafe = new ProductosAlmacen(0007, "Cafe molido", 3900);
             ProductosAlmacen arvejas = new ProductosAlmacen(0008, "Arvejas", 800);
             List<ProductosAlmacen> lista = new List<ProductosAlmacen> { leche, jugoEnSobre, arroz, aceite, azucar, harina, cafe, arvejas };
-            List<Producto> retorno = ConvertirProductos(lista);
-            return retorno;
+            //List<Producto> retorno = ConvertirProductos(lista);
+            return lista;
 
         }
 

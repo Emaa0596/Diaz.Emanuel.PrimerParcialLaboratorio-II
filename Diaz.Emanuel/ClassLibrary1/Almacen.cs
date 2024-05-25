@@ -35,13 +35,16 @@ namespace Tiendas
 
         protected override string DatosDeLatienda()
         {
-            return $"El almacen ubicada en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende articulos varios";
+            return $"Almacen ubicado en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende articulos varios";
         }
 
         public override string ToString()
         {
             string dato = this.DatosDeLatienda();
-            dato += $"\nLa promocion del dia es {this.promociones}";
+            if(this.promociones != "")
+            {
+                dato += $"\nLa promocion del dia es {this.promociones}";
+            }
             return dato;
         }
 

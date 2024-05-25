@@ -117,7 +117,7 @@
 
         private Label lblProducto;
         private Label lblCantidad;
-        private ListBox lstProductos;
+        protected ListBox lstProductos;
         private Button btnAgregar;
         private Button btnEliminar;
         protected Label lblPrecio;

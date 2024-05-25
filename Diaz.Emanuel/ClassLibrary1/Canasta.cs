@@ -10,9 +10,9 @@ namespace Tiendas
 {
     public class Canasta
     {
-        private List<ProductosAlmacen> listaAlmacen;
-        private List<ProductosCarniceria> listaCarniceria;
-        private List<ProductosPanaderia> listaPanaderia;
+        public List<ProductosAlmacen> listaAlmacen;
+        public List<ProductosCarniceria> listaCarniceria;
+        public List<ProductosPanaderia> listaPanaderia;
         private double totalAPagar;
 
         public Canasta()
@@ -38,30 +38,189 @@ namespace Tiendas
             this.listaPanaderia = panaderia.productos;
         }
 
-        public void CalcularTotal()
+        public string CalcularTotal()
         {
+            this.totalAPagar = 0.0;
             if (this.listaAlmacen.Count > 0)
             {
                 foreach (ProductosAlmacen prod in this.listaAlmacen)
                 {
-                    this.totalAPagar += prod.Precio;
+                    this.totalAPagar += (prod.Precio * prod.Cantidad);
                 }
             }
             if (this.listaCarniceria.Count > 0)
             {
                 foreach (ProductosCarniceria prod in this.listaCarniceria)
                 {
-                    this.totalAPagar += prod.Precio;
+                    this.totalAPagar += (prod.Precio * prod.Cantidad);
                 }
             }
             if (this.listaPanaderia.Count > 0)
             {
                 foreach (ProductosPanaderia prod in this.listaPanaderia)
                 {
-                    this.totalAPagar += prod.Precio;
+                    this.totalAPagar += (prod.Precio * prod.Cantidad);
                 }
             }
+            string total ="$"+this.totalAPagar.ToString();
+            return total;
         }
-        
+
+        public static Canasta operator + (Canasta carrito, ProductosCarniceria nuevoProducto)
+        {
+            if (carrito.listaCarniceria.Count > 0)
+            {   
+                bool coincidencia = false;
+                foreach(ProductosCarniceria producto in carrito.listaCarniceria)
+                {
+                    if(producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    {
+                        producto.Cantidad += 1;
+                        coincidencia = true;
+                        break;
+                    }
+                }
+                if (!coincidencia) 
+                {
+                    nuevoProducto.Cantidad += 1;
+                    carrito.listaCarniceria.Add(nuevoProducto);
+                }
+            }
+            else
+            {
+                nuevoProducto.Cantidad += 1;
+                carrito.listaCarniceria.Add(nuevoProducto);
+            }
+            return carrito;
+        }
+
+        public static Canasta operator + (Canasta carrito, ProductosAlmacen nuevoProducto)
+        {
+            if (carrito.listaAlmacen.Count > 0)
+            {
+                bool coincidencia = false;
+                foreach (ProductosAlmacen producto in carrito.listaAlmacen)
+                {
+                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    {
+                        producto.Cantidad += 1;
+                        coincidencia = true;
+                        break;
+                    }
+                }
+                if (!coincidencia)
+                {
+                    nuevoProducto.Cantidad += 1;
+                    carrito.listaAlmacen.Add(nuevoProducto);
+                }
+            }
+            else
+            {
+                nuevoProducto.Cantidad += 1;
+                carrito.listaAlmacen.Add(nuevoProducto);
+            }
+            return carrito;
+        }
+
+        public static Canasta operator +(Canasta carrito, ProductosPanaderia nuevoProducto)
+        {
+            if (carrito.listaPanaderia.Count > 0)
+            {
+                bool coincidencia = false;
+                foreach (ProductosPanaderia producto in carrito.listaPanaderia)
+                {
+                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    {
+                        producto.Cantidad += 1;
+                        coincidencia = true;
+                        break;
+                    }
+                }
+                if (!coincidencia)
+                {
+                    nuevoProducto.Cantidad += 1;
+                    carrito.listaPanaderia.Add(nuevoProducto);
+                }
+            }
+            else
+            {
+                nuevoProducto.Cantidad += 1;
+                carrito.listaPanaderia.Add(nuevoProducto);
+            }
+            return carrito;
+        }
+
+        public static Canasta operator -(Canasta carrito, ProductosCarniceria nuevoProducto)
+        {
+            if (carrito.listaCarniceria.Count > 0)
+            {
+                foreach (ProductosCarniceria producto in carrito.listaCarniceria)
+                {
+                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    {
+                        if(producto.Cantidad > 1)
+                        {
+                            producto.Cantidad -= 1;
+                        }
+                        else
+                        {
+                            carrito.listaCarniceria.Remove(producto);
+                            producto.Cantidad = 0;
+                        }  
+                        break;
+                    }
+                }
+            }
+            return carrito;
+        }
+
+        public static Canasta operator -(Canasta carrito, ProductosAlmacen nuevoProducto)
+        {
+            if (carrito.listaAlmacen.Count > 0)
+            {
+                foreach (ProductosAlmacen producto in carrito.listaAlmacen)
+                {
+                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    {
+                        if (producto.Cantidad > 1)
+                        {
+                            producto.Cantidad -= 1;
+                        }
+                        else
+                        {
+                            carrito.listaAlmacen.Remove(producto);
+                            producto.Cantidad = 0;
+                        }
+                        break;
+                    }
+                }
+            }
+            return carrito;
+        }
+
+        public static Canasta operator -(Canasta carrito, ProductosPanaderia nuevoProducto)
+        {
+            if (carrito.listaPanaderia.Count > 0)
+            {
+                foreach (ProductosPanaderia producto in carrito.listaPanaderia)
+                {
+                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    {
+                        if (producto.Cantidad > 1)
+                        {
+                            producto.Cantidad -= 1;
+                        }
+                        else
+                        {
+                            carrito.listaPanaderia.Remove(producto);
+                            producto.Cantidad = 0;
+                        }
+                        break;
+                    }
+                }
+            }
+            return carrito;
+        }
+
     }
 }
