@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Productos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Productos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Productos.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Productos/1.0.0": {
+      "type": "project",
+      "path": "../Productos/Productos.csproj",
+      "msbuildProject": "../Productos/Productos.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Productos >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\NoxiePC\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Productos\\Productos.csproj": {
+              "projectPath": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Productos\\Productos.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

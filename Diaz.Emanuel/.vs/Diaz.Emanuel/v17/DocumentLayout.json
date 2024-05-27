@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\usuarios\\usuarios.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|solutionrelative:usuarios\\usuarios.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|solutionrelative:usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\usuarios\\eordenamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|solutionrelative:usuarios\\eordenamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmcarniceria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmcarniceria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmpanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\winformcrud\\frmpanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmpanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -23,32 +35,12 @@
       "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmcrearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\winformcrud\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmcanasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmcanasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmalmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmalmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\winformcrud\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\usuarios\\datos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|solutionrelative:usuarios\\datos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|solutionrelative:usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B2728B2-4B0F-4AFC-9B3A-74AA4AC1EF21}|ClassLibrary1\\Tiendas.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\classlibrary1\\panaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{0944E2A1-84B7-4D13-B188-C7CCEC1F19FA}|Productos\\Productos.csproj|solutionrelative:productos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmcanasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmcanasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmpanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmpanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -102,35 +90,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmCarniceria.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCarniceria.cs",
-              "RelativeDocumentMoniker": "WinFormCrud\\FrmCarniceria.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCarniceria.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormCrud\\FrmCarniceria.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:45:22.276Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "Title": "Usuarios",
+              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Usuarios.csproj",
+              "RelativeDocumentMoniker": "Usuarios\\Usuarios.csproj",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Usuarios.csproj",
+              "RelativeToolTip": "Usuarios\\Usuarios.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-26T22:01:06.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "EOrdenamiento.cs",
+              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\EOrdenamiento.cs",
+              "RelativeDocumentMoniker": "Usuarios\\EOrdenamiento.cs",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\EOrdenamiento.cs",
+              "RelativeToolTip": "Usuarios\\EOrdenamiento.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T22:01:04.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmCarniceria.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCarniceria.cs",
+              "RelativeDocumentMoniker": "WinFormCrud\\FrmCarniceria.cs",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCarniceria.cs [Design]",
+              "RelativeToolTip": "WinFormCrud\\FrmCarniceria.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T22:45:22.276Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "FrmPanaderia.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmPanaderia.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmPanaderia.cs",
               "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmPanaderia.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormCrud\\FrmPanaderia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:45:02.838Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-05-25T22:45:02.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "FrmCrearUsuario.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCrearUsuario.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmCrearUsuario.cs",
@@ -143,31 +156,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmCrearUsuario.cs [Dise\u00F1o]",
+              "DocumentIndex": 7,
+              "Title": "FrmCrearUsuario.cs [Design]",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCrearUsuario.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmCrearUsuario.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCrearUsuario.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormCrud\\FrmCrearUsuario.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCrearUsuario.cs [Design]",
+              "RelativeToolTip": "WinFormCrud\\FrmCrearUsuario.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T22:20:18.176Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "FrmProducto.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmProducto.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmProducto.cs",
               "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmProducto.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormCrud\\FrmProducto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:19:55.956Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-05-25T22:19:55.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "FrmAlmacen.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmAlmacen.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmAlmacen.cs",
@@ -180,43 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FrmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmLogin.cs",
-              "RelativeDocumentMoniker": "WinFormCrud\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmLogin.cs",
-              "RelativeToolTip": "WinFormCrud\\FrmLogin.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:18:15.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FrmLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmLogin.cs",
-              "RelativeDocumentMoniker": "WinFormCrud\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmLogin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormCrud\\FrmLogin.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:18:13.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Datos.cs",
-              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Datos.cs",
-              "RelativeDocumentMoniker": "Usuarios\\Datos.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Datos.cs",
-              "RelativeToolTip": "Usuarios\\Datos.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAwwCsAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:15:37.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Usuario.cs",
               "RelativeDocumentMoniker": "Usuarios\\Usuario.cs",
@@ -224,11 +200,12 @@
               "RelativeToolTip": "Usuarios\\Usuario.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T22:15:23.954Z"
+              "WhenOpened": "2024-05-25T22:15:23.954Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "Panaderia.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\ClassLibrary1\\Panaderia.cs",
               "RelativeDocumentMoniker": "ClassLibrary1\\Panaderia.cs",
@@ -240,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
               "Title": "ProductosPanaderia.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Productos\\ProductosPanaderia.cs",
               "RelativeDocumentMoniker": "Productos\\ProductosPanaderia.cs",
@@ -252,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "ProductosCarniceria.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Productos\\ProductosCarniceria.cs",
               "RelativeDocumentMoniker": "Productos\\ProductosCarniceria.cs",
@@ -264,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "ProductosAlmacen.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Productos\\ProductosAlmacen.cs",
               "RelativeDocumentMoniker": "Productos\\ProductosAlmacen.cs",
@@ -276,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Productos\\Producto.cs",
               "RelativeDocumentMoniker": "Productos\\Producto.cs",
@@ -288,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 16,
               "Title": "FrmPanaderia.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmPanaderia.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmPanaderia.cs",
@@ -296,24 +273,23 @@
               "RelativeToolTip": "WinFormCrud\\FrmPanaderia.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T20:06:54.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T20:06:54.45Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmAlmacen.cs [Dise\u00F1o]",
+              "DocumentIndex": 5,
+              "Title": "FrmAlmacen.cs [Design]",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmAlmacen.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmAlmacen.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmAlmacen.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormCrud\\FrmAlmacen.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmAlmacen.cs [Design]",
+              "RelativeToolTip": "WinFormCrud\\FrmAlmacen.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T19:53:14.63Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "Tienda.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\ClassLibrary1\\Tienda.cs",
               "RelativeDocumentMoniker": "ClassLibrary1\\Tienda.cs",
@@ -325,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 19,
               "Title": "FrmProducto.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmProducto.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmProducto.cs",
@@ -337,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "FrmCarniceria.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCarniceria.cs",
               "RelativeDocumentMoniker": "WinFormCrud\\FrmCarniceria.cs",
@@ -350,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "Canasta.cs",
               "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\ClassLibrary1\\Canasta.cs",
               "RelativeDocumentMoniker": "ClassLibrary1\\Canasta.cs",
@@ -359,51 +335,6 @@
               "ViewState": "AQIAACsAAAAAAAAAAAAcwCoAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T15:04:13.112Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "ba2fd6fa-5966-49b5-84f6-9b504db46929",
-        "Display": 0,
-        "X": 778,
-        "Y": 46,
-        "Width": 1528,
-        "Height": 792,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FrmCanasta.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCanasta.cs",
-              "RelativeDocumentMoniker": "WinFormCrud\\FrmCanasta.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCanasta.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormCrud\\FrmCanasta.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T20:10:02.795Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "FrmCanasta.cs",
-              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCanasta.cs",
-              "RelativeDocumentMoniker": "WinFormCrud\\FrmCanasta.cs",
-              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmCanasta.cs",
-              "RelativeToolTip": "WinFormCrud\\FrmCanasta.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAvwMQAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T16:19:38.629Z"
             }
           ]
         }

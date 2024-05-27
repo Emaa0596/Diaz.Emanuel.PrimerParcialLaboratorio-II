@@ -10,3 +10,7 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\Usuarios.pdb
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\ref\Usuarios.dll
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\Usuarios.sourcelink.json
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\bin\Debug\net6.0\Productos.dll
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\bin\Debug\net6.0\Productos.pdb
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\Usuarios.csproj.AssemblyReference.cache
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\Usuarios\obj\Debug\net6.0\Usuarios.csproj.Up2Date

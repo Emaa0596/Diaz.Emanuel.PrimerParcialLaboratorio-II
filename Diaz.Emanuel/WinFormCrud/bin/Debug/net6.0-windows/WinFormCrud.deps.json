@@ -30,6 +30,9 @@
         }
       },
       "Usuarios/1.0.0": {
+        "dependencies": {
+          "Productos": "1.0.0"
+        },
         "runtime": {
           "Usuarios.dll": {}
         }

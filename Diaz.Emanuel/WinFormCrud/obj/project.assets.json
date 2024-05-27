@@ -28,6 +28,9 @@
       "Usuarios/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Productos": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Usuarios.dll": {}
         },

@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "Usuarios/1.0.0": {
+        "dependencies": {
+          "Productos": "1.0.0"
+        },
         "runtime": {
           "Usuarios.dll": {}
+        }
+      },
+      "Productos/1.0.0": {
+        "runtime": {
+          "Productos.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Usuarios/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Productos/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

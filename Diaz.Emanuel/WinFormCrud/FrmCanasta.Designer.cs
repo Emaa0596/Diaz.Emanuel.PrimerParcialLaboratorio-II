@@ -108,7 +108,7 @@
             mayorCantidadAMenorToolStripMenuItem.Name = "mayorCantidadAMenorToolStripMenuItem";
             mayorCantidadAMenorToolStripMenuItem.Size = new Size(207, 22);
             mayorCantidadAMenorToolStripMenuItem.Text = "Menor cantidad a mayor";
-            mayorCantidadAMenorToolStripMenuItem.Click += mayorCantidadAMenorToolStripMenuItem_Click;
+            mayorCantidadAMenorToolStripMenuItem.Click += MenorCantidadAMayorToolStripMenuItem_Click;
             // 
             // mayorCantidadAMenorToolStripMenuItem1
             // 

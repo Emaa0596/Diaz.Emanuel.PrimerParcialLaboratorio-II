@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tiendas;
+using Usuarios;
 
 namespace WinFormCrud
 {
@@ -93,18 +94,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                for (int i = 0; i < largoDeLista - 1; i++)
-                {
-                    for (int j = i + 1; j < largoDeLista; j++)
-                    {
-                        if (lista[i].Precio > lista[j].Precio)
-                        {
-                            Producto aux = lista[i];
-                            lista[i] = lista[j];
-                            lista[j] = aux;
-                        }
-                    }
-                }
+                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorPrecio);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
@@ -124,18 +114,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                for (int i = 0; i < largoDeLista - 1; i++)
-                {
-                    for (int j = i + 1; j < largoDeLista; j++)
-                    {
-                        if (lista[i].Precio < lista[j].Precio)
-                        {
-                            Producto aux = lista[i];
-                            lista[i] = lista[j];
-                            lista[j] = aux;
-                        }
-                    }
-                }
+                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorPrecio);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
@@ -148,25 +127,14 @@ namespace WinFormCrud
 
         }
 
-        private void mayorCantidadAMenorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenorCantidadAMayorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             List<Producto> lista = this.VerificarCanasta();
             if (lista.Count > 0)
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                for (int i = 0; i < largoDeLista - 1; i++)
-                {
-                    for (int j = i + 1; j < largoDeLista; j++)
-                    {
-                        if (lista[i].Cantidad > lista[j].Cantidad)
-                        {
-                            Producto aux = lista[i];
-                            lista[i] = lista[j];
-                            lista[j] = aux;
-                        }
-                    }
-                }
+                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorCantidad);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
@@ -185,18 +153,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                for (int i = 0; i < largoDeLista - 1; i++)
-                {
-                    for (int j = i + 1; j < largoDeLista; j++)
-                    {
-                        if (lista[i].Cantidad < lista[j].Cantidad)
-                        {
-                            Producto aux = lista[i];
-                            lista[i] = lista[j];
-                            lista[j] = aux;
-                        }
-                    }
-                }
+                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorCantidad);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
