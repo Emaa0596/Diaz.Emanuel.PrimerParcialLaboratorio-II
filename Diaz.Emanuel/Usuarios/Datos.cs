@@ -35,16 +35,110 @@ namespace Usuarios
             }
         }
 
+        public static List<ProductosCarniceria> ConvertirProductosCarniceria(List<Producto> listaProductos)
+        {
+            List<ProductosCarniceria> lista = new List<ProductosCarniceria>();
+            foreach(Producto prod in listaProductos)
+            {
+                ProductosCarniceria producto = new ProductosCarniceria(prod.Codigo,prod.Nombre,prod.Precio,1);
+                lista.Add(producto);
+            }
+            return lista;
+        }
+
+        public static List<ProductosAlmacen> ConvertirProductosAlmacen(List<Producto> listaProductos)
+        {
+            List<ProductosAlmacen> lista = new List<ProductosAlmacen>();
+            foreach (Producto prod in listaProductos)
+            {
+                //ProductosAlmacen producto = (ProductosAlmacen)prod;
+                ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio);
+                lista.Add(producto);
+            }
+            return lista;
+        }
+
+        public static List<ProductosPanaderia> ConvertirProductosPanaderia(List<Producto> listaProductos)
+        {
+            List<ProductosPanaderia> lista = new List<ProductosPanaderia>();
+            foreach (Producto prod in listaProductos)
+            {
+                //ProductosPanaderia producto = (ProductosPanaderia)prod;
+                ProductosPanaderia producto = new ProductosPanaderia(prod.Codigo, prod.Nombre, prod.Precio, 1);
+                lista.Add(producto);
+            }
+            return lista;
+        }
+
+        //OpenFileDialog productos
+        public static void SerializarDatos(List<ProductosAlmacen> listaProductos, string ruta)
+        {
+            JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
+            formatoDeSerializado.WriteIndented = true;
+
+            using (StreamWriter json = new StreamWriter(@$"{ruta}"))
+            {
+                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
+                json.WriteLine(archivoJson);
+            }
+        }
+
+        public static void SerializarDatos(List<ProductosCarniceria> listaProductos, string ruta)
+        {
+            JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
+            formatoDeSerializado.WriteIndented = true;
+
+            using (StreamWriter json = new StreamWriter(@$"{ruta}"))
+            {
+                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
+                json.WriteLine(archivoJson);
+            }
+        }
+
+        public static void SerializarDatos(List<ProductosPanaderia> listaProductos, string ruta)
+        {
+            JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
+            formatoDeSerializado.WriteIndented = true;
+
+            using (StreamWriter json = new StreamWriter(@$"{ruta}"))
+            {
+                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
+                json.WriteLine(archivoJson);
+            }
+        }
+
+
         public static List<Usuario> DeserializarDatos()
         {   
             List<Usuario> lista = new List<Usuario>();
             using (StreamReader json = new StreamReader(@".\Usuarios.json"))
             {
                 string strjson = json.ReadToEnd();
-                List<Usuario> listajson = System.Text.Json.JsonSerializer.Deserialize<List<Usuario>>(strjson);
-                foreach (Usuario user in listajson)
+                List<Usuario>? listajson = System.Text.Json.JsonSerializer.Deserialize<List<Usuario>>(strjson);
+                if(listajson != null)
                 {
-                    lista.Add(user);
+                    foreach (Usuario user in listajson)
+                    {
+                        lista.Add(user);
+                    }
+                }
+            }
+            return lista;
+        }
+
+        public static List<Producto> DeserializarProductos(string ruta)
+        {
+            List<Producto> lista = new List<Producto>();
+            using (StreamReader json = new StreamReader(@$"{ruta}"))
+            {
+                string strjson = json.ReadToEnd();
+                List<Producto>? listajson = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(strjson);
+                if(listajson != null)
+                {
+                    foreach (Producto prod in listajson)
+                    {
+                        lista.Add(prod);
+                    }
                 }
             }
             return lista;

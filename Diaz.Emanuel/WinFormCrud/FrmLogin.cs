@@ -59,9 +59,5 @@ namespace WinFormCrud
             nuevoUsuario.ShowDialog();
         }
 
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
-        {
-            this.textBoxUsuario.Text = "";
-        }
     }
 }

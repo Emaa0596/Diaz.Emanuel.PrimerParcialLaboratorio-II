@@ -1,0 +1,74 @@
+[
+  {
+    "Codigo": 1,
+    "Nombre": "Nalga",
+    "Precio": 7000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 7000
+  },
+  {
+    "Codigo": 5,
+    "Nombre": "Chorizo",
+    "Precio": 5000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 5000
+  },
+  {
+    "Codigo": 6,
+    "Nombre": "Morcilla",
+    "Precio": 4000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 4000
+  },
+  {
+    "Codigo": 7,
+    "Nombre": "Chinchulin",
+    "Precio": 4000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 4000
+  },
+  {
+    "Codigo": 8,
+    "Nombre": "Bola de lomo",
+    "Precio": 7000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 7000
+  },
+  {
+    "Codigo": 9,
+    "Nombre": "Carne picada",
+    "Precio": 5000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 5000
+  },
+  {
+    "Codigo": 4,
+    "Nombre": "Paleta",
+    "Precio": 6000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 6000
+  },
+  {
+    "Codigo": 3,
+    "Nombre": "Asado",
+    "Precio": 7500,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 7500
+  },
+  {
+    "Codigo": 2,
+    "Nombre": "Cuadrada",
+    "Precio": 6500,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 6500
+  }
+]

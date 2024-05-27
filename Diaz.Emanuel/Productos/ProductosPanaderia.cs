@@ -12,5 +12,41 @@ namespace Productos
         {
             this.precioFinalPesado = base.precioFinalPesado;
         }
+
+        public new int Codigo
+        {
+            get { return base.Codigo; }
+            set { base.Codigo = value; }
+        }
+
+        public new string Nombre
+        {
+            get { return base.Nombre; }
+            set { base.Nombre = value; }
+        }
+
+        public new double Precio
+        {
+            get { return base.Precio; }
+            set { base.Precio = value; }
+        }
+
+        public new int Cantidad
+        {
+            get { return base.Cantidad; }
+            set { base.Cantidad = value; }
+        }
+
+        public new float Peso
+        {
+            get { return base.Peso; }
+            set { base.Peso = value; }
+        }
+
+        public new double PrecioFinalPesado
+        {
+            get { return precioFinalPesado; }
+            set { PrecioFinalPesado = value; }
+        }
     }
 }

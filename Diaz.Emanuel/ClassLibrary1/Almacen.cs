@@ -33,6 +33,7 @@ namespace Tiendas
             this.promociones = promociones;
         }
 
+
         protected override string DatosDeLatienda()
         {
             return $"Almacen ubicado en {base.direccion}, tiene {base.cantidadDeEmpleados} empleados y vende articulos varios";

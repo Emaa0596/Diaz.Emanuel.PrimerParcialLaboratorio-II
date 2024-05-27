@@ -32,9 +32,9 @@ namespace WinFormCrud
             this.frmCarniceria = new FrmCarniceria(this.carrito);
             this.frmAlmacen = new FrmAlmacen(this.carrito);
             this.frmPanaderia = new FrmPanaderia(this.carrito);
-            this.almacen = new Almacen("25 de mayo 989", 4, "Panificados", this.frmAlmacen.CrearProductos());
-            this.carniceria = new Carniceria("Dorrego 1245", 7, "Carne", this.frmCarniceria.CrearProductos(), "Vacuna");
-            this.panaderia = new Panaderia("Bustamante 45",3, "Panificados", this.frmPanaderia.CrearProductos(), "Efectivo");
+            this.almacen = new Almacen("25 de mayo 989", 4, "Panificados", new List<ProductosAlmacen>());
+            this.carniceria = new Carniceria("Dorrego 1245", 7, "Carne", new List<ProductosCarniceria>(), "Vacuna");
+            this.panaderia = new Panaderia("Bustamante 45", 3, "Panificados", new List<ProductosPanaderia>(), "Efectivo");
         }
 
         public List<Usuario> ListaUsuarios
@@ -48,6 +48,13 @@ namespace WinFormCrud
             this.usuarios = Datos.DeserializarDatos();
             this.usuarioLogueado = ObtenerUsuario();
             this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
+            List<Producto> productosCarniceria = Datos.DeserializarProductos(@"./productosCarniceria.json");
+            List<Producto> productosAlmacen = Datos.DeserializarProductos(@"./productosAlmacen.json");
+            List<Producto> productosPanaderia = Datos.DeserializarProductos(@"./productosPanaderia.json");
+
+            this.frmCarniceria.listaCarniceria = Datos.ConvertirProductosCarniceria(productosCarniceria);
+            this.frmAlmacen.listaAlmacen = Datos.ConvertirProductosAlmacen(productosAlmacen);
+            this.frmPanaderia.listaPanaderia = Datos.ConvertirProductosPanaderia(productosPanaderia);
         }
 
         public bool BuscarUsuarios(Usuario usuario)
@@ -104,7 +111,7 @@ namespace WinFormCrud
         {
             if (!this.banderaCarniceria)
             {
-                this.frmCarniceria.listaCarniceria = this.frmCarniceria.CrearProductos();
+                //this.frmCarniceria.listaCarniceria = this.frmCarniceria.CrearProductos();
                 this.banderaCarniceria = true;
                 this.frmCarniceria.ShowDialog();
             }
@@ -120,7 +127,7 @@ namespace WinFormCrud
         {
             if (!this.banderaAlmacen)
             {
-                this.frmAlmacen.listaAlmacen = this.frmAlmacen.CrearProductos();
+                //this.frmAlmacen.listaAlmacen = this.frmAlmacen.CrearProductos();
                 this.banderaAlmacen = true;
                 this.frmAlmacen.ShowDialog();
             }
@@ -134,7 +141,7 @@ namespace WinFormCrud
         {
             if (!this.banderaPanaderia)
             {
-                this.frmPanaderia.listaPanaderia = this.frmPanaderia.CrearProductos();
+                //this.frmPanaderia.listaPanaderia = this.frmPanaderia.CrearProductos();
                 this.banderaPanaderia = true;
                 this.frmPanaderia.ShowDialog();
             }
@@ -167,6 +174,79 @@ namespace WinFormCrud
         {
             string texto = this.carniceria.ToString();
             MessageBox.Show(texto, "Informacion de la tienda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void SerializarProductosAlmacen_Click(object sender, EventArgs e)
+        {
+            string ruta;
+            if (this.saveFileDialogDeserializar.ShowDialog() == DialogResult.OK)
+            {
+                ruta = saveFileDialogDeserializar.FileName;
+                Datos.SerializarDatos(this.frmAlmacen.listaAlmacen, ruta);
+            }
+        }
+
+        private void SerializarProductosCarniceria_Click(object sender, EventArgs e)
+        {
+            string ruta;
+            if (this.saveFileDialogDeserializar.ShowDialog() == DialogResult.OK)
+            {
+                ruta = saveFileDialogDeserializar.FileName;
+                Datos.SerializarDatos(this.frmCarniceria.listaCarniceria, ruta);
+            }
+        }
+
+        private void SerializarProductosPanaderia_Click(object sender, EventArgs e)
+        {
+            string ruta;
+            if (this.saveFileDialogDeserializar.ShowDialog() == DialogResult.OK)
+            {
+                ruta = saveFileDialogDeserializar.FileName;
+                Datos.SerializarDatos(this.frmPanaderia.listaPanaderia, ruta);
+            }
+        }
+
+        private void DeserializarProductosAlmacen_Click(object sender, EventArgs e)
+        {
+            string ruta;
+            if (this.openFileDialogSerializar.ShowDialog() == DialogResult.OK)
+            {
+                ruta = openFileDialogSerializar.FileName;
+                List<Producto> lista = Datos.DeserializarProductos(ruta);
+                foreach (Producto prod in lista)
+                {
+                    //Arreglar, hacer converciones 
+                    this.frmAlmacen.listaAlmacen.Add((ProductosAlmacen)prod);
+                }
+            }
+        }
+
+        private void DeserializarProductosCarniceria_Click(object sender, EventArgs e)
+        {
+            string ruta;
+            if (this.openFileDialogSerializar.ShowDialog() == DialogResult.OK)
+            {
+                ruta = openFileDialogSerializar.FileName;
+                List<Producto> lista = Datos.DeserializarProductos(ruta);
+                foreach (Producto prod in lista)
+                {
+                    this.frmCarniceria.listaCarniceria.Add((ProductosCarniceria)prod);
+                }
+            }
+        }
+
+        private void DeserializarProductosPanaderia_Click(object sender, EventArgs e)
+        {
+            string ruta;
+            if (this.openFileDialogSerializar.ShowDialog() == DialogResult.OK)
+            {
+                ruta = openFileDialogSerializar.FileName;
+                List<Producto> lista = Datos.DeserializarProductos(ruta);
+                foreach (Producto prod in lista)
+                {
+                    this.frmPanaderia.listaPanaderia.Add((ProductosPanaderia)prod);
+                }
+            }
         }
     }
 }

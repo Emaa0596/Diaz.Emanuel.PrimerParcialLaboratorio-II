@@ -37,15 +37,27 @@
             PBoxInfoAlmacen = new PictureBox();
             PBoxInfoPanaderia = new PictureBox();
             PBoxInfoCarniceria = new PictureBox();
+            menuStrip1 = new MenuStrip();
+            serializarProductosToolStripMenuItem = new ToolStripMenuItem();
+            almacenToolStripMenuItem = new ToolStripMenuItem();
+            carniceriaToolStripMenuItem = new ToolStripMenuItem();
+            panaderiaToolStripMenuItem = new ToolStripMenuItem();
+            deserializarProductosToolStripMenuItem = new ToolStripMenuItem();
+            almacenToolStripMenuItem1 = new ToolStripMenuItem();
+            carniceriaToolStripMenuItem1 = new ToolStripMenuItem();
+            panaderiaToolStripMenuItem1 = new ToolStripMenuItem();
+            openFileDialogSerializar = new OpenFileDialog();
+            saveFileDialogDeserializar = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoAlmacen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoPanaderia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoCarniceria).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // LblUsuarioConectado
             // 
             LblUsuarioConectado.AutoSize = true;
-            LblUsuarioConectado.Location = new Point(539, 9);
+            LblUsuarioConectado.Location = new Point(548, 397);
             LblUsuarioConectado.Name = "LblUsuarioConectado";
             LblUsuarioConectado.Size = new Size(38, 15);
             LblUsuarioConectado.TabIndex = 0;
@@ -152,6 +164,82 @@
             PBoxInfoCarniceria.TabStop = false;
             PBoxInfoCarniceria.Click += PBoxInfoCarniceria_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { serializarProductosToolStripMenuItem, deserializarProductosToolStripMenuItem });
+            menuStrip1.Location = new Point(9, 9);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(265, 24);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // serializarProductosToolStripMenuItem
+            // 
+            serializarProductosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { almacenToolStripMenuItem, carniceriaToolStripMenuItem, panaderiaToolStripMenuItem });
+            serializarProductosToolStripMenuItem.Name = "serializarProductosToolStripMenuItem";
+            serializarProductosToolStripMenuItem.Size = new Size(122, 20);
+            serializarProductosToolStripMenuItem.Text = "Serializar Productos";
+            // 
+            // almacenToolStripMenuItem
+            // 
+            almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
+            almacenToolStripMenuItem.Size = new Size(127, 22);
+            almacenToolStripMenuItem.Text = "Almacen";
+            almacenToolStripMenuItem.Click += SerializarProductosAlmacen_Click;
+            // 
+            // carniceriaToolStripMenuItem
+            // 
+            carniceriaToolStripMenuItem.Name = "carniceriaToolStripMenuItem";
+            carniceriaToolStripMenuItem.Size = new Size(127, 22);
+            carniceriaToolStripMenuItem.Text = "Carniceria";
+            carniceriaToolStripMenuItem.Click += SerializarProductosCarniceria_Click;
+            // 
+            // panaderiaToolStripMenuItem
+            // 
+            panaderiaToolStripMenuItem.Name = "panaderiaToolStripMenuItem";
+            panaderiaToolStripMenuItem.Size = new Size(127, 22);
+            panaderiaToolStripMenuItem.Text = "Panaderia";
+            panaderiaToolStripMenuItem.Click += SerializarProductosPanaderia_Click;
+            // 
+            // deserializarProductosToolStripMenuItem
+            // 
+            deserializarProductosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { almacenToolStripMenuItem1, carniceriaToolStripMenuItem1, panaderiaToolStripMenuItem1 });
+            deserializarProductosToolStripMenuItem.Name = "deserializarProductosToolStripMenuItem";
+            deserializarProductosToolStripMenuItem.Size = new Size(135, 20);
+            deserializarProductosToolStripMenuItem.Text = "Deserializar Productos";
+            // 
+            // almacenToolStripMenuItem1
+            // 
+            almacenToolStripMenuItem1.Name = "almacenToolStripMenuItem1";
+            almacenToolStripMenuItem1.Size = new Size(180, 22);
+            almacenToolStripMenuItem1.Text = "Almacen";
+            almacenToolStripMenuItem1.Click += DeserializarProductosAlmacen_Click;
+            // 
+            // carniceriaToolStripMenuItem1
+            // 
+            carniceriaToolStripMenuItem1.Name = "carniceriaToolStripMenuItem1";
+            carniceriaToolStripMenuItem1.Size = new Size(180, 22);
+            carniceriaToolStripMenuItem1.Text = "Carniceria";
+            carniceriaToolStripMenuItem1.Click += DeserializarProductosCarniceria_Click;
+            // 
+            // panaderiaToolStripMenuItem1
+            // 
+            panaderiaToolStripMenuItem1.Name = "panaderiaToolStripMenuItem1";
+            panaderiaToolStripMenuItem1.Size = new Size(180, 22);
+            panaderiaToolStripMenuItem1.Text = "Panaderia";
+            panaderiaToolStripMenuItem1.Click += DeserializarProductosPanaderia_Click;
+            // 
+            // openFileDialogSerializar
+            // 
+            openFileDialogSerializar.DefaultExt = "json";
+            openFileDialogSerializar.Filter = "Archivos JSON (*.json)|*.json";
+            // 
+            // saveFileDialogDeserializar
+            // 
+            saveFileDialogDeserializar.DefaultExt = "json";
+            saveFileDialogDeserializar.Filter = "Archivos JSON (*.json)|*.json";
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -167,7 +255,9 @@
             Controls.Add(btnAlmacen);
             Controls.Add(btnCarniceria);
             Controls.Add(LblUsuarioConectado);
+            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
             Text = "Tienda";
             FormClosing += FormularioPrincipal_FormClosing;
@@ -175,6 +265,8 @@
             ((System.ComponentModel.ISupportInitialize)PBoxInfoAlmacen).EndInit();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoPanaderia).EndInit();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoCarniceria).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -189,5 +281,16 @@
         private PictureBox PBoxInfoAlmacen;
         private PictureBox PBoxInfoPanaderia;
         private PictureBox PBoxInfoCarniceria;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem serializarProductosToolStripMenuItem;
+        private ToolStripMenuItem deserializarProductosToolStripMenuItem;
+        private ToolStripMenuItem almacenToolStripMenuItem;
+        private ToolStripMenuItem carniceriaToolStripMenuItem;
+        private ToolStripMenuItem panaderiaToolStripMenuItem;
+        private OpenFileDialog openFileDialogSerializar;
+        private ToolStripMenuItem almacenToolStripMenuItem1;
+        private ToolStripMenuItem carniceriaToolStripMenuItem1;
+        private ToolStripMenuItem panaderiaToolStripMenuItem1;
+        private SaveFileDialog saveFileDialogDeserializar;
     }
 }

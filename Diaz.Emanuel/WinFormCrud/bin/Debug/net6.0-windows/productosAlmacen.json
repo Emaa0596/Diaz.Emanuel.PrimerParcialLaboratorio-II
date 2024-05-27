@@ -1,0 +1,50 @@
+[
+  {
+    "Codigo": 1,
+    "Nombre": "Leche",
+    "Precio": 1100,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 2,
+    "Nombre": "Jugo clight",
+    "Precio": 350,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 3,
+    "Nombre": "Arroz largo",
+    "Precio": 1200,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 4,
+    "Nombre": "Aceite",
+    "Precio": 1700,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 5,
+    "Nombre": "Azucar",
+    "Precio": 1000,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 6,
+    "Nombre": "Harina",
+    "Precio": 900,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 7,
+    "Nombre": "Cafe molido",
+    "Precio": 3900,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 8,
+    "Nombre": "Arvejas",
+    "Precio": 800,
+    "Cantidad": 0
+  }
+]
