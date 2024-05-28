@@ -57,7 +57,7 @@
             // LblUsuarioConectado
             // 
             LblUsuarioConectado.AutoSize = true;
-            LblUsuarioConectado.Location = new Point(548, 397);
+            LblUsuarioConectado.Location = new Point(480, 397);
             LblUsuarioConectado.Name = "LblUsuarioConectado";
             LblUsuarioConectado.Size = new Size(38, 15);
             LblUsuarioConectado.TabIndex = 0;
@@ -66,6 +66,7 @@
             // btnCarniceria
             // 
             btnCarniceria.BackColor = Color.Tomato;
+            btnCarniceria.FlatAppearance.BorderSize = 0;
             btnCarniceria.Font = new Font("Showcard Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnCarniceria.ForeColor = Color.DarkRed;
             btnCarniceria.Image = (Image)resources.GetObject("btnCarniceria.Image");
@@ -82,6 +83,8 @@
             // btnAlmacen
             // 
             btnAlmacen.BackColor = Color.LightSeaGreen;
+            btnAlmacen.FlatAppearance.BorderColor = Color.LightSeaGreen;
+            btnAlmacen.FlatAppearance.BorderSize = 0;
             btnAlmacen.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAlmacen.ForeColor = SystemColors.HotTrack;
             btnAlmacen.Image = (Image)resources.GetObject("btnAlmacen.Image");
@@ -98,6 +101,7 @@
             // btnPanaderia
             // 
             btnPanaderia.BackColor = Color.Khaki;
+            btnPanaderia.FlatAppearance.BorderSize = 0;
             btnPanaderia.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnPanaderia.ForeColor = Color.Peru;
             btnPanaderia.Image = (Image)resources.GetObject("btnPanaderia.Image");
@@ -212,21 +216,21 @@
             // almacenToolStripMenuItem1
             // 
             almacenToolStripMenuItem1.Name = "almacenToolStripMenuItem1";
-            almacenToolStripMenuItem1.Size = new Size(180, 22);
+            almacenToolStripMenuItem1.Size = new Size(127, 22);
             almacenToolStripMenuItem1.Text = "Almacen";
             almacenToolStripMenuItem1.Click += DeserializarProductosAlmacen_Click;
             // 
             // carniceriaToolStripMenuItem1
             // 
             carniceriaToolStripMenuItem1.Name = "carniceriaToolStripMenuItem1";
-            carniceriaToolStripMenuItem1.Size = new Size(180, 22);
+            carniceriaToolStripMenuItem1.Size = new Size(127, 22);
             carniceriaToolStripMenuItem1.Text = "Carniceria";
             carniceriaToolStripMenuItem1.Click += DeserializarProductosCarniceria_Click;
             // 
             // panaderiaToolStripMenuItem1
             // 
             panaderiaToolStripMenuItem1.Name = "panaderiaToolStripMenuItem1";
-            panaderiaToolStripMenuItem1.Size = new Size(180, 22);
+            panaderiaToolStripMenuItem1.Size = new Size(127, 22);
             panaderiaToolStripMenuItem1.Text = "Panaderia";
             panaderiaToolStripMenuItem1.Click += DeserializarProductosPanaderia_Click;
             // 
@@ -256,6 +260,7 @@
             Controls.Add(btnCarniceria);
             Controls.Add(LblUsuarioConectado);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";

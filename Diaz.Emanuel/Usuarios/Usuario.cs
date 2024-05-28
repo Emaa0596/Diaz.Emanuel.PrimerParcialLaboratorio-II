@@ -64,5 +64,20 @@ namespace Usuarios
             this.clave = contraseña;
         }
 
+        public static bool operator == (Usuario primerUsuario, Usuario segundoUsuario)
+        {
+            bool retorno = false;
+            if(primerUsuario.CorreoElectronico == segundoUsuario.CorreoElectronico && primerUsuario.Clave == segundoUsuario.Clave)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
+        public static bool operator !=(Usuario primerUsuario, Usuario segundoUsuario)
+        {
+            return !(primerUsuario == segundoUsuario);
+        }
+        
     }
 }

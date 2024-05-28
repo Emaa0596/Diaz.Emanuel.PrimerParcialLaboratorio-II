@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tiendas;
+using Usuarios;
 
 namespace WinFormCrud
 {
@@ -105,6 +106,58 @@ namespace WinFormCrud
 
         }
 
-        
+        protected void ConvertirProductosDerivados()
+        {
+            this.productos = new List<Producto>();
+            Type tipoProducto = this.GetType();
+            switch (tipoProducto.Name)
+            {
+                case nameof(FrmCarniceria):
+                    foreach (ProductosCarniceria productosCarniceria in this.listaCarniceria)
+                    {
+                        this.productos.Add((Producto)productosCarniceria);
+                    }
+                    break;
+
+                case nameof(FrmAlmacen):
+                    foreach (ProductosAlmacen productosAlmacen in this.listaAlmacen)
+                    {
+                        this.productos.Add((Producto)productosAlmacen);
+                    }
+                    break;
+
+                case nameof(FrmPanaderia):
+                    foreach (ProductosPanaderia productosPanaderia in this.listaPanaderia)
+                    {
+                        this.productos.Add((Producto)productosPanaderia);
+                    }
+                    break;
+            }
+
+        }
+
+        protected virtual void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
+        {
+            ConvertirProductosDerivados();
+            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MenorAMayorPrecio);
+        }
+
+        protected virtual void MayorPrecioAMenorStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConvertirProductosDerivados();
+            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorPrecio);
+        }
+
+        protected virtual void MenorCantidadAMayorMenuItem_Click(object sender, EventArgs e)
+        {
+            ConvertirProductosDerivados();
+            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MenorAMayorCantidad);
+        }
+
+        protected virtual void MayorCantidadAMenorMenuItem_Click(object sender, EventArgs e)
+        {
+            ConvertirProductosDerivados();
+            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorCantidad);
+        }
     }
 }

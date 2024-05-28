@@ -148,6 +148,7 @@
             Controls.Add(lblTxtAPagar);
             Controls.Add(lstCanasta);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCanasta";
             Text = "FrmCanasta";

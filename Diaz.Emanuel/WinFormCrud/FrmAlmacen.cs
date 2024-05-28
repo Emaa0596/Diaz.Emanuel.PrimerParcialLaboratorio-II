@@ -102,5 +102,43 @@ namespace WinFormCrud
             return productosCasteados;
         }
 
+        private void ObtenerListaOrdenada(List<Producto> lista)
+        {
+            List<ProductosAlmacen> listaOrdenada = new List<ProductosAlmacen>();
+            foreach (Producto productos in lista)
+            {
+                ProductosAlmacen prod = (ProductosAlmacen)productos;
+                listaOrdenada.Add(prod);
+            }
+            base.listaAlmacen = listaOrdenada;
+        }
+
+        protected override void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
+        {
+            base.MenorPrecioAMayorStripMenu_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
+
+        protected override void MayorPrecioAMenorStripMenuItem_Click(object sender, EventArgs e)
+        {
+            base.MayorPrecioAMenorStripMenuItem_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
+
+        protected override void MenorCantidadAMayorMenuItem_Click(object sender, EventArgs e)
+        {
+            base.MenorCantidadAMayorMenuItem_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
+
+        protected override void MayorCantidadAMenorMenuItem_Click(object sender, EventArgs e)
+        {
+            base.MayorCantidadAMenorMenuItem_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
     }
 }

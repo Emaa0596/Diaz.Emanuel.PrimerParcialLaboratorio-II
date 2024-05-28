@@ -133,7 +133,7 @@
             PerfilDeUsuario.TabIndex = 10;
             PerfilDeUsuario.Text = "Perfil de usuario";
             // 
-            // FormCrearUsuario
+            // FrmCrearUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -149,7 +149,8 @@
             Controls.Add(textBoxCorreoElectronico);
             Controls.Add(textBoxApellido);
             Controls.Add(textBoxNombre);
-            Name = "FormCrearUsuario";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "FrmCrearUsuario";
             Text = "FormCrearUsuario";
             Load += FormCrearUsuario_Load;
             ResumeLayout(false);

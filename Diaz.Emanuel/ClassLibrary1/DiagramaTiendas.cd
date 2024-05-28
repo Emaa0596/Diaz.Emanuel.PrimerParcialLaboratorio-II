@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Tiendas.Almacen">
+    <Position X="1.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAACEgAAAAAAAAAAAAAAAAAAAAAABAiA=</HashCode>
+      <FileName>Almacen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tiendas.Carniceria">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAACEgAAAAAAAAAAAAAIAAAAAAACAAiA=</HashCode>
+      <FileName>Carniceria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tiendas.Panaderia">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAACEgAAAAQBAAAAAAAAAAAAAAAAAAiA=</HashCode>
+      <FileName>Panaderia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tiendas.Tienda" Collapsed="true">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIACAgAAAQAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tienda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

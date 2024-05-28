@@ -92,17 +92,43 @@ namespace WinFormCrud
             //base.ActualizarVisor();
         }
 
-        private List<Producto> ConvertirProductos(List<ProductosCarniceria> lista)
+        private void ObtenerListaOrdenada(List<Producto> lista)
         {
-            List<Productos.Producto> productosCasteados = new List<Productos.Producto>();
-            foreach (ProductosCarniceria productos in lista)
+            List<ProductosCarniceria> listaOrdenada = new List<ProductosCarniceria>();
+            foreach (Producto productos in lista)
             {
-                Producto prod = (Producto)productos;
-                productosCasteados.Add(prod);
+                ProductosCarniceria prod = (ProductosCarniceria)productos;
+                listaOrdenada.Add(prod);
             }
-            return productosCasteados;
+            base.listaCarniceria = listaOrdenada;
         }
 
-        
+        protected override void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
+        {
+            base.MenorPrecioAMayorStripMenu_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
+
+        protected override void MayorPrecioAMenorStripMenuItem_Click(object sender, EventArgs e)
+        {
+            base.MayorPrecioAMenorStripMenuItem_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
+
+        protected override void MenorCantidadAMayorMenuItem_Click(object sender, EventArgs e)
+        {
+            base.MenorCantidadAMayorMenuItem_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
+
+        protected override void MayorCantidadAMenorMenuItem_Click(object sender, EventArgs e)
+        {
+            base.MayorCantidadAMenorMenuItem_Click(sender, e);
+            ObtenerListaOrdenada(base.productos);
+            this.ActualizarVisor();
+        }
     }
 }

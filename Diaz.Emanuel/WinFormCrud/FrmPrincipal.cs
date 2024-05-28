@@ -62,7 +62,7 @@ namespace WinFormCrud
             bool coincidencia = false;
             foreach (Usuario usuarioGuardado in this.usuarios)
             {
-                if (usuarioGuardado.correoElectronico == usuario.correoElectronico && usuarioGuardado.clave == usuario.clave)
+                if (usuarioGuardado == usuario)
                 {
                     coincidencia = true;
                 }
@@ -75,7 +75,7 @@ namespace WinFormCrud
             Usuario usuarioConectado = new Usuario();
             foreach (Usuario usuario in this.usuarios)
             {
-                if (usuario.correoElectronico == this.usuarioLogueado.correoElectronico)
+                if (usuario == this.usuarioLogueado)
                 {
                     usuarioConectado = usuario;
                     break;
@@ -88,9 +88,11 @@ namespace WinFormCrud
         private string ObtenerDiaYUsuario()
         {
             DateTime hoy = DateTime.Today;
+            DateTime horaActual = DateTime.Now;
+            string formatoHora = $"{horaActual.Hour}:{horaActual.Minute}:{horaActual.Second}";
             string usuarioConectado = this.usuarioLogueado.Nombre;
             string diaActual = hoy.ToString("dd-MM-yyyy");
-            string diaYUsuario = $"{usuarioConectado} || {diaActual}";
+            string diaYUsuario = $"{usuarioConectado} || {diaActual} hora: {formatoHora}";
             return diaYUsuario;
 
         }

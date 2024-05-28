@@ -44,7 +44,6 @@
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(201, 23);
             textBoxUsuario.TabIndex = 0;
-            //textBoxUsuario.TextChanged += textBoxUsuario_TextChanged;
             // 
             // textBoxContraseña
             // 
@@ -114,6 +113,7 @@
             Controls.Add(label1);
             Controls.Add(textBoxContraseña);
             Controls.Add(textBoxUsuario);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmLogin";
             Text = "Login";
             Load += FormLogin_Load;

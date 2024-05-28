@@ -73,7 +73,7 @@ namespace Tiendas
                 bool coincidencia = false;
                 foreach(ProductosCarniceria producto in carrito.listaCarniceria)
                 {
-                    if(producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    if(producto == nuevoProducto)
                     {
                         producto.Cantidad += 1;
                         coincidencia = true;
@@ -101,7 +101,7 @@ namespace Tiendas
                 bool coincidencia = false;
                 foreach (ProductosAlmacen producto in carrito.listaAlmacen)
                 {
-                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    if (producto == nuevoProducto)
                     {
                         producto.Cantidad += 1;
                         coincidencia = true;
@@ -129,7 +129,7 @@ namespace Tiendas
                 bool coincidencia = false;
                 foreach (ProductosPanaderia producto in carrito.listaPanaderia)
                 {
-                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    if (producto == nuevoProducto)
                     {
                         producto.Cantidad += 1;
                         coincidencia = true;
@@ -156,7 +156,7 @@ namespace Tiendas
             {
                 foreach (ProductosCarniceria producto in carrito.listaCarniceria)
                 {
-                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    if (producto == nuevoProducto)
                     {
                         if(producto.Cantidad > 1)
                         {
@@ -180,7 +180,7 @@ namespace Tiendas
             {
                 foreach (ProductosAlmacen producto in carrito.listaAlmacen)
                 {
-                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    if (producto == nuevoProducto)
                     {
                         if (producto.Cantidad > 1)
                         {
@@ -204,7 +204,7 @@ namespace Tiendas
             {
                 foreach (ProductosPanaderia producto in carrito.listaPanaderia)
                 {
-                    if (producto.Nombre == nuevoProducto.Nombre && producto.Codigo == nuevoProducto.Codigo)
+                    if (producto == nuevoProducto)
                     {
                         if (producto.Cantidad > 1)
                         {

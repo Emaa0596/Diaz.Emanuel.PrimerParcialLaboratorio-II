@@ -34,6 +34,13 @@
             lstProductos = new ListBox();
             btnAgregar = new Button();
             btnEliminar = new Button();
+            menuStrip1 = new MenuStrip();
+            OrdenarMenuStrip = new ToolStripMenuItem();
+            menorPrecioAMayorToolStripMenuItem = new ToolStripMenuItem();
+            mayorPrecioAMenorToolStripMenuItem = new ToolStripMenuItem();
+            menorCantidadAMayorToolStripMenuItem = new ToolStripMenuItem();
+            mayorCantidadAMenorToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // lblProducto
@@ -95,6 +102,51 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { OrdenarMenuStrip });
+            menuStrip1.Location = new Point(54, 9);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(214, 24);
+            menuStrip1.TabIndex = 7;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // OrdenarMenuStrip
+            // 
+            OrdenarMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { menorPrecioAMayorToolStripMenuItem, mayorPrecioAMenorToolStripMenuItem, menorCantidadAMayorToolStripMenuItem, mayorCantidadAMenorToolStripMenuItem });
+            OrdenarMenuStrip.Name = "OrdenarMenuStrip";
+            OrdenarMenuStrip.Size = new Size(86, 20);
+            OrdenarMenuStrip.Text = "Ordenar por:";
+            // 
+            // menorPrecioAMayorToolStripMenuItem
+            // 
+            menorPrecioAMayorToolStripMenuItem.Name = "menorPrecioAMayorToolStripMenuItem";
+            menorPrecioAMayorToolStripMenuItem.Size = new Size(206, 22);
+            menorPrecioAMayorToolStripMenuItem.Text = "Menor precio a Mayor";
+            menorPrecioAMayorToolStripMenuItem.Click += MenorPrecioAMayorStripMenu_Click;
+            // 
+            // mayorPrecioAMenorToolStripMenuItem
+            // 
+            mayorPrecioAMenorToolStripMenuItem.Name = "mayorPrecioAMenorToolStripMenuItem";
+            mayorPrecioAMenorToolStripMenuItem.Size = new Size(206, 22);
+            mayorPrecioAMenorToolStripMenuItem.Text = "Mayor precio a Menor";
+            mayorPrecioAMenorToolStripMenuItem.Click += MayorPrecioAMenorStripMenuItem_Click;
+            // 
+            // menorCantidadAMayorToolStripMenuItem
+            // 
+            menorCantidadAMayorToolStripMenuItem.Name = "menorCantidadAMayorToolStripMenuItem";
+            menorCantidadAMayorToolStripMenuItem.Size = new Size(206, 22);
+            menorCantidadAMayorToolStripMenuItem.Text = "Menor Cantidad a Mayor";
+            menorCantidadAMayorToolStripMenuItem.Click += MenorCantidadAMayorMenuItem_Click;
+            // 
+            // mayorCantidadAMenorToolStripMenuItem
+            // 
+            mayorCantidadAMenorToolStripMenuItem.Name = "mayorCantidadAMenorToolStripMenuItem";
+            mayorCantidadAMenorToolStripMenuItem.Size = new Size(206, 22);
+            mayorCantidadAMenorToolStripMenuItem.Text = "Mayor cantidad a Menor";
+            mayorCantidadAMenorToolStripMenuItem.Click += MayorCantidadAMenorMenuItem_Click;
+            // 
             // FrmProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -106,9 +158,14 @@
             Controls.Add(lblCantidad);
             Controls.Add(lblPrecio);
             Controls.Add(lblProducto);
+            Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = menuStrip1;
             Name = "FrmProducto";
             Text = "FrmProducto";
             Load += FrmProducto_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +178,11 @@
         private Button btnAgregar;
         private Button btnEliminar;
         protected Label lblPrecio;
+        private MenuStrip menuStrip1;
+        protected ToolStripMenuItem OrdenarMenuStrip;
+        protected ToolStripMenuItem menorPrecioAMayorToolStripMenuItem;
+        protected ToolStripMenuItem mayorPrecioAMenorToolStripMenuItem;
+        protected ToolStripMenuItem menorCantidadAMayorToolStripMenuItem;
+        protected ToolStripMenuItem mayorCantidadAMenorToolStripMenuItem;
     }
 }

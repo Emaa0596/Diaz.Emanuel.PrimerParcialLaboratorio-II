@@ -32,6 +32,7 @@ namespace Usuarios
             {
                 string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaDeUsuarios,formatoDeSerializado);
                 json.WriteLine(archivoJson);
+                
             }
         }
 
@@ -144,15 +145,40 @@ namespace Usuarios
             return lista;
         }
 
+        private static string ObtenerDatosIngreso(Usuario usuario)
+        {
+            DateTime hoy = DateTime.Today;
+            string formatoDia = hoy.ToString("yyyy-MM-dd");
+            DateTime horaActual = DateTime.Now;
+            string formatoHora = $"{horaActual.Hour}:{horaActual.Minute}:{horaActual.Second}";
+            StringBuilder texto = new StringBuilder();
+            string datosUsuario = $"Nombre: {usuario.Nombre} Apellido: {usuario.Apellido} Correo Electronico: {usuario.CorreoElectronico} Perfil: {usuario.Perfil} ";
+            texto.Append(datosUsuario);
+            texto.Append("Fecha de ingreso: " + formatoDia + " Hora: " + formatoHora);
+            return texto.ToString();
+        }
+
+        private static void GuardarDatos(Usuario usuario)
+        {
+            string datosLogueo = ObtenerDatosIngreso(usuario);
+            using (StreamWriter sw = new StreamWriter(@".\usuariosLogueo.log",true))
+            {
+                sw.WriteLine(datosLogueo);
+            }
+        }
+
         public static bool BuscarUsuarios(Usuario usuario)
         {
             List<Usuario> listaDeUsuarios = DeserializarDatos();
             bool coincidencia = false;
             foreach (Usuario usuarioGuardado in listaDeUsuarios)
             {
-                if(usuarioGuardado.correoElectronico == usuario.correoElectronico && usuarioGuardado.clave == usuario.clave)
+                if(usuarioGuardado == usuario)
                 {
+                    //guardar aca usuarios .log
+                    Datos.GuardarDatos(usuarioGuardado);
                     coincidencia = true;
+                    break;
                 }
             }
             return coincidencia;

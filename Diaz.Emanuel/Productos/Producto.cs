@@ -49,9 +49,27 @@ namespace Productos
             set { cantidad = value; }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string Mostrar()
         {
             return $"{this.nombre}        \t\t\t${this.precio}\t\t\t\t  {this.cantidad}";
+        }
+
+        public static bool operator == (Producto primerProducto, Producto segundoProducto)
+        {
+            bool retorno = false;
+            if(primerProducto.Codigo == segundoProducto.Codigo && primerProducto.Nombre == segundoProducto.Nombre)
+            {
+                return true;
+            }
+            return retorno;
+        }
+        public static bool operator !=(Producto primerProducto, Producto segundoProducto)
+        {
+            return !(primerProducto == segundoProducto);
         }
 
 
