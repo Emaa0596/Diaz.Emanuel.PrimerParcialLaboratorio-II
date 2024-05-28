@@ -1,2 +1,9 @@
 
-[README.md](https://github.com/Emaa0596/Diaz.Emanuel.PrimerParcialLaboratorio-II/files/15476860/README.md)
+# CRUD - Tiendas.
+
+## Sobre mi: Me llamo Emanuel Diaz, actualmente trabajo en una aseguradora y estoy estudiando Programacion en la UTN.
+
+## Resumen: La aplicacion visualiza diferentes tiendas y se pueden ver y agregar productos de las mismas a un carrito de compras.
+
+![Diagrama de clases](DiagramaTiendas.png)
+
