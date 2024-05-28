@@ -5,5 +5,5 @@
 
 ## Resumen: La aplicacion visualiza diferentes tiendas y se pueden ver y agregar productos de las mismas a un carrito de compras.
 
-![Diagrama de clases](DiagramaTiendas.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaTiendas.png)
 
