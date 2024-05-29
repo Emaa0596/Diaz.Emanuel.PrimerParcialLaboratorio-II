@@ -22,6 +22,10 @@ namespace Usuarios
             get { return listaUsuarios; }
         }
 
+        /// <summary>
+        /// Agrega el nuevo usuario al archivo de usuarios y lo vuelve a serializar
+        /// </summary>
+        /// <param name="user"></param>
         public static void SerializarDatos(Usuario user)
         {
             List<Usuario> listaDeUsuarios = DeserializarDatos();
@@ -36,6 +40,11 @@ namespace Usuarios
             }
         }
 
+        /// <summary>
+        /// Castea los productos al tipo correspondiente
+        /// </summary>
+        /// <param name="listaProductos"></param>
+        /// <returns>La lista de productos casteada</returns>
         public static List<ProductosCarniceria> ConvertirProductosCarniceria(List<Producto> listaProductos)
         {
             List<ProductosCarniceria> lista = new List<ProductosCarniceria>();
@@ -52,7 +61,6 @@ namespace Usuarios
             List<ProductosAlmacen> lista = new List<ProductosAlmacen>();
             foreach (Producto prod in listaProductos)
             {
-                //ProductosAlmacen producto = (ProductosAlmacen)prod;
                 ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio);
                 lista.Add(producto);
             }
@@ -71,7 +79,11 @@ namespace Usuarios
             return lista;
         }
 
-        //OpenFileDialog productos
+        /// <summary>
+        /// Serializa los productos correspondientes y los guarda en la ruta especificada. 
+        /// </summary>
+        /// <param name="listaProductos"></param>
+        /// <param name="ruta"></param>
         public static void SerializarDatos(List<ProductosAlmacen> listaProductos, string ruta)
         {
             JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
@@ -145,6 +157,11 @@ namespace Usuarios
             return lista;
         }
 
+        /// <summary>
+        /// Crea un string con los datos y tiempo en el que un usuario ingreso.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         private static string ObtenerDatosIngreso(Usuario usuario)
         {
             DateTime hoy = DateTime.Today;
@@ -158,6 +175,10 @@ namespace Usuarios
             return texto.ToString();
         }
 
+        /// <summary>
+        /// Guarda en un archivo.log los datos del usuario
+        /// </summary>
+        /// <param name="usuario"></param>
         private static void GuardarDatos(Usuario usuario)
         {
             string datosLogueo = ObtenerDatosIngreso(usuario);
@@ -175,7 +196,6 @@ namespace Usuarios
             {
                 if(usuarioGuardado == usuario)
                 {
-                    //guardar aca usuarios .log
                     Datos.GuardarDatos(usuarioGuardado);
                     coincidencia = true;
                     break;
@@ -189,6 +209,12 @@ namespace Usuarios
             Datos.SerializarDatos(usuario);
         }
 
+        /// <summary>
+        /// Ordena segun el critero pasado por parametro
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <param name="criterio"></param>
+        /// <returns> retorna la lista ordenada </returns>
         public static List<Productos.Producto> OrdenarPorCriterio(List<Productos.Producto> lista, EOrdenamiento criterio)
         {
             if (criterio == EOrdenamiento.MayorAMenorCantidad)

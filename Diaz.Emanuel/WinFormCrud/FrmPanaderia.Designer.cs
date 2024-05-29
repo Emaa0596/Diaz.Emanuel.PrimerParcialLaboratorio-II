@@ -31,12 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPanaderia));
             SuspendLayout();
             // 
+            // lstProductos
+            // 
+            lstProductos.BackColor = Color.Khaki;
+            lstProductos.Location = new Point(49, 79);
+            // 
             // FrmPanaderia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Peru;
             ClientSize = new Size(568, 356);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPanaderia";
             Text = "Panaderia";

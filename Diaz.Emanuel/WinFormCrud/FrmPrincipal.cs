@@ -16,9 +16,6 @@ namespace WinFormCrud
         private Almacen almacen;
         private Carniceria carniceria;
         private Panaderia panaderia;
-        private bool banderaAlmacen;
-        private bool banderaCarniceria;
-        private bool banderaPanaderia;
         public FrmPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
@@ -26,9 +23,6 @@ namespace WinFormCrud
             this.usuarios = new List<Usuario>();
             this.usuarioLogueado = usuarioIngresado;
             this.carrito = new Canasta();
-            this.banderaAlmacen = false;
-            this.banderaCarniceria = false;
-            this.banderaPanaderia = false;
             this.frmCarniceria = new FrmCarniceria(this.carrito);
             this.frmAlmacen = new FrmAlmacen(this.carrito);
             this.frmPanaderia = new FrmPanaderia(this.carrito);
@@ -51,25 +45,15 @@ namespace WinFormCrud
             List<Producto> productosCarniceria = Datos.DeserializarProductos(@"./productosCarniceria.json");
             List<Producto> productosAlmacen = Datos.DeserializarProductos(@"./productosAlmacen.json");
             List<Producto> productosPanaderia = Datos.DeserializarProductos(@"./productosPanaderia.json");
-
             this.frmCarniceria.listaCarniceria = Datos.ConvertirProductosCarniceria(productosCarniceria);
             this.frmAlmacen.listaAlmacen = Datos.ConvertirProductosAlmacen(productosAlmacen);
             this.frmPanaderia.listaPanaderia = Datos.ConvertirProductosPanaderia(productosPanaderia);
         }
 
-        public bool BuscarUsuarios(Usuario usuario)
-        {
-            bool coincidencia = false;
-            foreach (Usuario usuarioGuardado in this.usuarios)
-            {
-                if (usuarioGuardado == usuario)
-                {
-                    coincidencia = true;
-                }
-            }
-            return coincidencia;
-        }
-
+        /// <summary>
+        /// Busca el usuario que se encuentra conectado en la lista de usuarios regustrados.
+        /// </summary>
+        /// <returns> El usuario con los datos completos </returns>
         private Usuario ObtenerUsuario()
         {
             Usuario usuarioConectado = new Usuario();
@@ -82,7 +66,6 @@ namespace WinFormCrud
                 }
             }
             return usuarioConectado;
-
         }
 
         private string ObtenerDiaYUsuario()
@@ -92,9 +75,8 @@ namespace WinFormCrud
             string formatoHora = $"{horaActual.Hour}:{horaActual.Minute}:{horaActual.Second}";
             string usuarioConectado = this.usuarioLogueado.Nombre;
             string diaActual = hoy.ToString("dd-MM-yyyy");
-            string diaYUsuario = $"{usuarioConectado} || {diaActual} hora: {formatoHora}";
+            string diaYUsuario = $"{usuarioConectado} || {diaActual} Hora: {formatoHora}";
             return diaYUsuario;
-
         }
 
         private void FormularioPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,46 +93,17 @@ namespace WinFormCrud
 
         private void btnCarniceria_Click(object sender, EventArgs e)
         {
-            if (!this.banderaCarniceria)
-            {
-                //this.frmCarniceria.listaCarniceria = this.frmCarniceria.CrearProductos();
-                this.banderaCarniceria = true;
-                this.frmCarniceria.ShowDialog();
-            }
-            else
-            {
-                this.frmCarniceria.ShowDialog();
-            }
-
-
+            this.frmCarniceria.ShowDialog();
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            if (!this.banderaAlmacen)
-            {
-                //this.frmAlmacen.listaAlmacen = this.frmAlmacen.CrearProductos();
-                this.banderaAlmacen = true;
-                this.frmAlmacen.ShowDialog();
-            }
-            else
-            {
-                this.frmAlmacen.ShowDialog();
-            }
+            this.frmAlmacen.ShowDialog();
         }
 
         private void btnPanaderia_Click(object sender, EventArgs e)
         {
-            if (!this.banderaPanaderia)
-            {
-                //this.frmPanaderia.listaPanaderia = this.frmPanaderia.CrearProductos();
-                this.banderaPanaderia = true;
-                this.frmPanaderia.ShowDialog();
-            }
-            else
-            {
-                this.frmPanaderia.ShowDialog();
-            }
+            this.frmPanaderia.ShowDialog();
         }
 
         private void btnCanasta_Click(object sender, EventArgs e)
@@ -178,6 +131,11 @@ namespace WinFormCrud
             MessageBox.Show(texto, "Informacion de la tienda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Serializa los productos segun tienda Clickeada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SerializarProductosAlmacen_Click(object sender, EventArgs e)
         {
             string ruta;
@@ -208,6 +166,11 @@ namespace WinFormCrud
             }
         }
 
+        /// <summary>
+        /// Deserializa los productos segun tienda Clickeada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeserializarProductosAlmacen_Click(object sender, EventArgs e)
         {
             string ruta;

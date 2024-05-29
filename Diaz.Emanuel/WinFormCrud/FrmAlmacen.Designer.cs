@@ -31,12 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlmacen));
             SuspendLayout();
             // 
+            // lstProductos
+            // 
+            lstProductos.BackColor = Color.PaleGreen;
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.Location = new Point(303, 48);
+            // 
             // FrmAlmacen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SeaGreen;
             ClientSize = new Size(580, 383);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmAlmacen";
             Text = "Almacen";

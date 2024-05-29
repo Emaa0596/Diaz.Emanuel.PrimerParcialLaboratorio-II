@@ -19,14 +19,12 @@ namespace WinFormCrud
         public List<ProductosCarniceria> listaCarniceria;
         public List<ProductosPanaderia> listaPanaderia;
         protected Canasta carrito;
-
         public List<Productos.Producto> productos;
         public FrmProducto()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.productos = new List<Productos.Producto>();
-
             this.listaAlmacen = new List<ProductosAlmacen>();
             this.listaCarniceria = new List<ProductosCarniceria>();
             this.listaPanaderia = new List<ProductosPanaderia>();
@@ -38,7 +36,6 @@ namespace WinFormCrud
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.productos = productos;
-
             this.listaAlmacen = new List<ProductosAlmacen>();
             this.listaCarniceria = new List<ProductosCarniceria>();
             this.listaPanaderia = new List<ProductosPanaderia>();
@@ -51,14 +48,11 @@ namespace WinFormCrud
             set { this.productos = value; }
         }
 
-        private void FrmProducto_Load(object sender, EventArgs e)
-        {
-            //ActualizarVisor();
-        }
+        private void FrmProducto_Load(object sender, EventArgs e) { }
 
-
-
-
+        /// <summary>
+        /// Actualiza la lista de productos de cada tienda
+        /// </summary>
         protected virtual void ActualizarVisor()
         {
             lstProductos.Items.Clear();
@@ -79,23 +73,31 @@ namespace WinFormCrud
             }
         }
 
+        /// <summary>
+        /// Se Aplica polimorfismo en clases derivadas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected virtual void btnAgregar_Click(object sender, EventArgs e)
         {
             int indice = lstProductos.SelectedIndex;
             if (indice != -1)
             {
-                //this.productos[indice].Cantidad += 1;
                 ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
             }
         }
 
+        /// <summary>
+        /// Se Aplica polimorfismo en clases derivadas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected virtual void btnEliminar_Click(object sender, EventArgs e)
         {
             int indice = lstProductos.SelectedIndex;
             if (this.productos[indice].Cantidad > 1)
             {
-                //this.productos[indice].Cantidad -= 1;
                 ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
             }
@@ -103,9 +105,12 @@ namespace WinFormCrud
             {
                 MessageBox.Show("No hay ningun producto de este tipo agregado a la canasta", "Error", MessageBoxButtons.OK);
             }
-
         }
 
+        /// <summary>
+        /// Castea los productos dependiendo que formulario invoca al metodo
+        /// y los agrega a la lista de productos.
+        /// </summary>
         protected void ConvertirProductosDerivados()
         {
             this.productos = new List<Producto>();
@@ -133,9 +138,13 @@ namespace WinFormCrud
                     }
                     break;
             }
-
         }
 
+        /// <summary>
+        /// Invoca a metodo estatico de ordenamiento y los guarda en la lista de productos ordenados,segun criterio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected virtual void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
         {
             ConvertirProductosDerivados();

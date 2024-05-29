@@ -18,7 +18,6 @@ namespace WinFormCrud
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            base.productos = new List<Productos.Producto>();
             base.carrito = carrito;
         }
 
@@ -28,6 +27,11 @@ namespace WinFormCrud
             this.ActualizarVisor();
         }
 
+        /// <summary>
+        /// Agrega al carrito el producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void btnAgregar_Click(object sender, EventArgs e)
         {
             int indice = base.lstProductos.SelectedIndex;
@@ -35,18 +39,20 @@ namespace WinFormCrud
             {
                 ProductosCarniceria prod = base.listaCarniceria[indice];
                 base.carrito += prod;
-                //base.productos[indice].Cantidad += 1;
-                //int prueba = base.productos[indice].Cantidad; 
                 this.ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
-                //base.btnAgregar_Click(sender, e);
             }
             else
             {
-                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
+        /// <summary>
+        /// Baja la cantidad del producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void btnEliminar_Click(object sender, EventArgs e)
         {
             int indice = base.lstProductos.SelectedIndex;
@@ -56,9 +62,6 @@ namespace WinFormCrud
                 base.carrito -= prod;
                 this.ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
-                //base.productos[indice].Cantidad += 1;
-                //int prueba = base.productos[indice].Cantidad; 
-                //base.btnEliminar_Click(sender, e);
             }
             else
             {
@@ -81,6 +84,9 @@ namespace WinFormCrud
             return lista;
         }
 
+        /// <summary>
+        /// Actualiza los productos en el listbox de panaderia
+        /// </summary>
         protected override void ActualizarVisor()
         {
             lstProductos.Items.Clear();
@@ -89,9 +95,12 @@ namespace WinFormCrud
                 string item = productos.Mostrar();
                 lstProductos.Items.Add(item);
             }
-            //base.ActualizarVisor();
         }
 
+        /// <summary>
+        /// Guarda los productos ordenados que se encuentran en la lista de la clase padre
+        /// </summary>
+        /// <param name="lista"></param>
         private void ObtenerListaOrdenada(List<Producto> lista)
         {
             List<ProductosCarniceria> listaOrdenada = new List<ProductosCarniceria>();
@@ -103,27 +112,29 @@ namespace WinFormCrud
             base.listaCarniceria = listaOrdenada;
         }
 
+        /// <summary>
+        /// Invoca al metodo de la clase padre, obtiene la lista ordenada (Segun criterio Clickeado) y actualiza el visor de productos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
         {
             base.MenorPrecioAMayorStripMenu_Click(sender, e);
             ObtenerListaOrdenada(base.productos);
             this.ActualizarVisor();
         }
-
         protected override void MayorPrecioAMenorStripMenuItem_Click(object sender, EventArgs e)
         {
             base.MayorPrecioAMenorStripMenuItem_Click(sender, e);
             ObtenerListaOrdenada(base.productos);
             this.ActualizarVisor();
         }
-
         protected override void MenorCantidadAMayorMenuItem_Click(object sender, EventArgs e)
         {
             base.MenorCantidadAMayorMenuItem_Click(sender, e);
             ObtenerListaOrdenada(base.productos);
             this.ActualizarVisor();
         }
-
         protected override void MayorCantidadAMenorMenuItem_Click(object sender, EventArgs e)
         {
             base.MayorCantidadAMenorMenuItem_Click(sender, e);

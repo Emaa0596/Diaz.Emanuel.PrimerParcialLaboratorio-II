@@ -31,10 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarniceria));
             SuspendLayout();
             // 
+            // lstProductos
+            // 
+            lstProductos.BackColor = Color.Tomato;
+            // 
             // FrmCarniceria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Brown;
             ClientSize = new Size(579, 386);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCarniceria";

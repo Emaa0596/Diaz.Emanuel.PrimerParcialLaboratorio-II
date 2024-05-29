@@ -30,7 +30,6 @@ namespace WinFormCrud
 
         private void botonIngresar_Click(object sender, EventArgs e)
         {
-
             string correoElectronico = this.textBoxUsuario.Text;
             string contraseña = this.textBoxContraseña.Text;
             Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(correoElectronico, contraseña);

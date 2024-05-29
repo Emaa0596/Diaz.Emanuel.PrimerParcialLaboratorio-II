@@ -24,6 +24,9 @@ namespace WinFormCrud
             this.ActualizarCarrito();
         }
 
+        /// <summary>
+        /// Actualiza cada producto en el visor de la canasta/carrito
+        /// </summary>
         public void ActualizarCarrito()
         {
             lstCanasta.Items.Clear();
@@ -56,6 +59,10 @@ namespace WinFormCrud
             this.lblTotalAPagarDouble.Text = totalApagar;
         }
 
+        /// <summary>
+        /// Verifica que productos hay actualmente y los agrega a una lista nueva
+        /// </summary>
+        /// <returns> Retorna la lista </returns>
         private List<Producto> VerificarCanasta()
         {
             List<Producto> listaProductos = new List<Producto>();
@@ -84,7 +91,6 @@ namespace WinFormCrud
                 }
             }
             return listaProductos;
-
         }
 
         private void menorPrecioAMayorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,9 +110,13 @@ namespace WinFormCrud
             {
                 MessageBox.Show("No hay ningun producto en la canasta", "Canasta vacia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
 
+        /// <summary>
+        /// Obtiene los productos que hay en la canasta y los ordena segun criterio.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mayorPrecioAMenorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             List<Producto> lista = this.VerificarCanasta();
@@ -124,7 +134,6 @@ namespace WinFormCrud
             {
                 MessageBox.Show("No hay ningun producto en la canasta", "Canasta vacia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
 
         private void MenorCantidadAMayorToolStripMenuItem_Click(object sender, EventArgs e)

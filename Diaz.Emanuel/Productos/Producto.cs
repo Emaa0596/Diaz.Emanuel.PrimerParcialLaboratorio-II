@@ -55,7 +55,7 @@ namespace Productos
         /// <returns></returns>
         public string Mostrar()
         {
-            return $"{this.nombre}        \t\t\t${this.precio}\t\t\t\t  {this.cantidad}";
+            return $"{this.nombre}        \t\t\t${this.precio}\t\t\t {this.cantidad}";
         }
 
         public static bool operator == (Producto primerProducto, Producto segundoProducto)

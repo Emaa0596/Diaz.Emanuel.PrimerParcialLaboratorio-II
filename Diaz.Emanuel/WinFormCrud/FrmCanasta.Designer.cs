@@ -45,9 +45,11 @@
             // 
             // lstCanasta
             // 
+            lstCanasta.BackColor = SystemColors.InactiveCaption;
+            lstCanasta.Font = new Font("Swis721 Hv BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lstCanasta.FormattingEnabled = true;
-            lstCanasta.ItemHeight = 15;
-            lstCanasta.Location = new Point(50, 44);
+            lstCanasta.ItemHeight = 16;
+            lstCanasta.Location = new Point(40, 44);
             lstCanasta.Name = "lstCanasta";
             lstCanasta.Size = new Size(507, 244);
             lstCanasta.TabIndex = 0;
@@ -56,7 +58,7 @@
             // 
             lblTxtAPagar.AutoSize = true;
             lblTxtAPagar.Font = new Font("Swis721 Blk BT", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTxtAPagar.Location = new Point(50, 301);
+            lblTxtAPagar.Location = new Point(40, 301);
             lblTxtAPagar.Name = "lblTxtAPagar";
             lblTxtAPagar.Size = new Size(156, 22);
             lblTxtAPagar.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             lblTotalAPagarDouble.AutoSize = true;
             lblTotalAPagarDouble.Font = new Font("Swis721 Cn BT", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTotalAPagarDouble.Location = new Point(439, 301);
+            lblTotalAPagarDouble.Location = new Point(453, 301);
             lblTotalAPagarDouble.Name = "lblTotalAPagarDouble";
             lblTotalAPagarDouble.Size = new Size(47, 22);
             lblTotalAPagarDouble.TabIndex = 2;
@@ -88,6 +90,7 @@
             ordenarPorToolStripMenuItem.Name = "ordenarPorToolStripMenuItem";
             ordenarPorToolStripMenuItem.Size = new Size(86, 20);
             ordenarPorToolStripMenuItem.Text = "Ordenar por:";
+            ordenarPorToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // menorPrecioAMayorToolStripMenuItem
             // 
@@ -121,7 +124,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Clarendon BT", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(267, 17);
+            lblPrecio.Location = new Point(289, 17);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(60, 19);
             lblPrecio.TabIndex = 4;
@@ -131,7 +134,7 @@
             // 
             lblCantidad.AutoSize = true;
             lblCantidad.Font = new Font("Clarendon BT", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCantidad.Location = new Point(477, 17);
+            lblCantidad.Location = new Point(467, 17);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(80, 19);
             lblCantidad.TabIndex = 5;
@@ -141,6 +144,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.CadetBlue;
             ClientSize = new Size(587, 388);
             Controls.Add(lblCantidad);
             Controls.Add(lblPrecio);
@@ -151,7 +155,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCanasta";
-            Text = "FrmCanasta";
+            Text = "Canasta";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

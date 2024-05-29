@@ -75,31 +75,34 @@
             // 
             // lstProductos
             // 
+            lstProductos.Font = new Font("Swis721 Hv BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lstProductos.FormattingEnabled = true;
-            lstProductos.ItemHeight = 15;
+            lstProductos.ItemHeight = 16;
             lstProductos.Location = new Point(54, 79);
             lstProductos.Name = "lstProductos";
-            lstProductos.Size = new Size(470, 169);
+            lstProductos.Size = new Size(470, 164);
             lstProductos.TabIndex = 4;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(90, 280);
+            btnAgregar.BackColor = Color.Transparent;
+            btnAgregar.Location = new Point(112, 280);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 41);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(324, 280);
+            btnEliminar.BackColor = Color.Transparent;
+            btnEliminar.Location = new Point(354, 280);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 41);
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // menuStrip1
@@ -108,7 +111,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { OrdenarMenuStrip });
             menuStrip1.Location = new Point(54, 9);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(214, 24);
+            menuStrip1.Size = new Size(94, 24);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             // 

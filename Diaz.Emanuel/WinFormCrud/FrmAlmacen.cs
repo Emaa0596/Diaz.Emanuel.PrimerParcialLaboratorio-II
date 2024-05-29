@@ -18,7 +18,6 @@ namespace WinFormCrud
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            base.productos = new List<Productos.Producto>();
             base.carrito = carrito;
         }
         private void FrmAlmacen_Load(object sender, EventArgs e)
@@ -26,6 +25,11 @@ namespace WinFormCrud
             this.ActualizarVisor();
         }
 
+        /// <summary>
+        /// Agrega al carrito el producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void btnAgregar_Click(object sender, EventArgs e)
         {
             int indice = base.lstProductos.SelectedIndex;
@@ -33,18 +37,20 @@ namespace WinFormCrud
             {
                 ProductosAlmacen prod = base.listaAlmacen[indice];
                 this.carrito += prod;
-                //base.productos[indice].Cantidad += 1;
-                //base.btnAgregar_Click(sender, e);
                 this.ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
             }
             else
             {
-                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Seleccione el producto que desea agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
 
+        /// <summary>
+        /// Baja la cantidad del producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void btnEliminar_Click(object sender, EventArgs e)
         {
             int indice = base.lstProductos.SelectedIndex;
@@ -54,9 +60,6 @@ namespace WinFormCrud
                 base.carrito -= prod;
                 this.ActualizarVisor();
                 lstProductos.SelectedIndex = indice;
-                //base.productos[indice].Cantidad += 1;
-                //int prueba = base.productos[indice].Cantidad; 
-                //base.btnEliminar_Click(sender, e);
             }
             else
             {
@@ -64,6 +67,9 @@ namespace WinFormCrud
             }
         }
 
+        /// <summary>
+        /// Actualiza los productos en el listbox de panaderia
+        /// </summary>
         protected override void ActualizarVisor()
         {
             lstProductos.Items.Clear();
@@ -72,7 +78,6 @@ namespace WinFormCrud
                 string item = productos.Mostrar();
                 lstProductos.Items.Add(item);
             }
-            //base.ActualizarVisor();
         }
 
         public  List<ProductosAlmacen> CrearProductos()
@@ -88,20 +93,23 @@ namespace WinFormCrud
             List<ProductosAlmacen> lista = new List<ProductosAlmacen> { leche, jugoEnSobre, arroz, aceite, azucar, harina, cafe, arvejas };
             //List<Producto> retorno = ConvertirProductos(lista);
             return lista;
-
         }
 
-        private List<Producto> ConvertirProductos(List<ProductosAlmacen> lista)
-        {
-            List<Productos.Producto> productosCasteados = new List<Productos.Producto>();
-            foreach (ProductosAlmacen productos in lista)
-            {
-                Producto prod = (Producto)productos;
-                productosCasteados.Add(prod);
-            }
-            return productosCasteados;
-        }
+        //private List<Producto> ConvertirProductos(List<ProductosAlmacen> lista)
+        //{
+        //    List<Productos.Producto> productosCasteados = new List<Productos.Producto>();
+        //    foreach (ProductosAlmacen productos in lista)
+        //    {
+        //        Producto prod = (Producto)productos;
+        //        productosCasteados.Add(prod);
+        //    }
+        //    return productosCasteados;
+        //}
 
+        /// <summary>
+        /// Guarda los productos ordenados que se encuentran en la lista de la clase padre
+        /// </summary>
+        /// <param name="lista"></param>
         private void ObtenerListaOrdenada(List<Producto> lista)
         {
             List<ProductosAlmacen> listaOrdenada = new List<ProductosAlmacen>();
@@ -113,6 +121,11 @@ namespace WinFormCrud
             base.listaAlmacen = listaOrdenada;
         }
 
+        /// <summary>
+        /// Invoca al metodo de la clase padre, obtiene la lista ordenada (Segun criterio Clickeado) y actualiza el visor de productos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
         {
             base.MenorPrecioAMayorStripMenu_Click(sender, e);

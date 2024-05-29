@@ -114,6 +114,7 @@
             Controls.Add(textBoxContraseña);
             Controls.Add(textBoxUsuario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             Text = "Login";
             Load += FormLogin_Load;
