@@ -69,21 +69,6 @@ namespace WinFormCrud
             }
         }
 
-        public List<ProductosCarniceria> CrearProductos()
-        {
-            ProductosCarniceria nalga = new ProductosCarniceria(0001, "Nalga", 7000, 1);
-            ProductosCarniceria cuadrada = new ProductosCarniceria(0002, "Cuadrada", 6500, 1);
-            ProductosCarniceria asado = new ProductosCarniceria(0003, "Asado", 7500, 1);
-            ProductosCarniceria paleta = new ProductosCarniceria(0004, "Paleta", 6000, 1);
-            ProductosCarniceria chorizo = new ProductosCarniceria(0005, "Chorizo", 5000, 1);
-            ProductosCarniceria morcilla = new ProductosCarniceria(0006, "Morcilla", 4000, 1);
-            ProductosCarniceria chinchulin = new ProductosCarniceria(0007, "Chinchulin", 4000, 1);
-            ProductosCarniceria bolaDeLomo = new ProductosCarniceria(0008, "Bola de lomo", 7000, 1);
-            ProductosCarniceria carnePicada = new ProductosCarniceria(0009, "Carne picada", 5000, 1);
-            List<ProductosCarniceria> lista = new List<ProductosCarniceria> { nalga, chorizo, morcilla, chinchulin, bolaDeLomo, carnePicada, paleta, asado, cuadrada };
-            return lista;
-        }
-
         /// <summary>
         /// Actualiza los productos en el listbox de panaderia
         /// </summary>
