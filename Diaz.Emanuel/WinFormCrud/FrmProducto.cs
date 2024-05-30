@@ -148,25 +148,25 @@ namespace WinFormCrud
         protected virtual void MenorPrecioAMayorStripMenu_Click(object sender, EventArgs e)
         {
             ConvertirProductosDerivados();
-            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MenorAMayorPrecio);
+            this.productos = Ordenamiento.OrdenarPorCriterio(this.productos, EOrdenamiento.MenorAMayorPrecio);
         }
 
         protected virtual void MayorPrecioAMenorStripMenuItem_Click(object sender, EventArgs e)
         {
             ConvertirProductosDerivados();
-            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorPrecio);
+            this.productos = Ordenamiento.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorPrecio);
         }
 
         protected virtual void MenorCantidadAMayorMenuItem_Click(object sender, EventArgs e)
         {
             ConvertirProductosDerivados();
-            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MenorAMayorCantidad);
+            this.productos = Ordenamiento.OrdenarPorCriterio(this.productos, EOrdenamiento.MenorAMayorCantidad);
         }
 
         protected virtual void MayorCantidadAMenorMenuItem_Click(object sender, EventArgs e)
         {
             ConvertirProductosDerivados();
-            this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorCantidad);
+            this.productos = Ordenamiento.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorCantidad);
         }
 
         

@@ -100,7 +100,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorPrecio);
+                lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorPrecio);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
@@ -124,7 +124,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorPrecio);
+                lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorPrecio);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
@@ -143,7 +143,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorCantidad);
+                lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorCantidad);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
@@ -162,7 +162,7 @@ namespace WinFormCrud
             {
                 lstCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
-                lista = Datos.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorCantidad);
+                lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorCantidad);
                 foreach (Producto prod in lista)
                 {
                     lstCanasta.Items.Add(prod.Mostrar());
