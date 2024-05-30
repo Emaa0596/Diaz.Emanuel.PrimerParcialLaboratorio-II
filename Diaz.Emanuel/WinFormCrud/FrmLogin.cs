@@ -33,11 +33,10 @@ namespace WinFormCrud
             string correoElectronico = this.textBoxUsuario.Text;
             string contraseña = this.textBoxContraseña.Text;
             Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(correoElectronico, contraseña);
-            //List<Usuario> listaDeUsuarios = DeserializarJson();
             bool buscadorUsuarios = Datos.BuscarUsuarios(nuevoUsuario);
             if (buscadorUsuarios)
             {
-                this.DialogResult = DialogResult.OK;
+                //this.DialogResult = DialogResult.OK;
                 FrmPrincipal FrmPrincipal = new FrmPrincipal(nuevoUsuario);
                 this.Hide();
                 DialogResult cierreApp = FrmPrincipal.ShowDialog();

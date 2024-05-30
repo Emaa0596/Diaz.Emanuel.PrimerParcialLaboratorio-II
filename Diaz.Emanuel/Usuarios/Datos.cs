@@ -142,18 +142,27 @@ namespace Usuarios
         public static List<Producto> DeserializarProductos(string ruta)
         {
             List<Producto> lista = new List<Producto>();
-            using (StreamReader json = new StreamReader(@$"{ruta}"))
+            try
             {
-                string strjson = json.ReadToEnd();
-                List<Producto>? listajson = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(strjson);
-                if(listajson != null)
+                using (StreamReader json = new StreamReader(@$"{ruta}"))
                 {
-                    foreach (Producto prod in listajson)
+                    string strjson = json.ReadToEnd();
+                    List<Producto>? listajson = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(strjson);
+                    if (listajson != null)
                     {
-                        lista.Add(prod);
+                        foreach (Producto prod in listajson)
+                        {
+                            lista.Add(prod);
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                List<Producto> listaVacia = new List<Producto>();
+                return listaVacia;
+            }
+
             return lista;
         }
 

@@ -178,10 +178,14 @@ namespace WinFormCrud
             {
                 ruta = openFileDialogSerializar.FileName;
                 List<Producto> lista = Datos.DeserializarProductos(ruta);
-                foreach (Producto prod in lista)
+                if (lista.Count > 0)
                 {
-                    //Arreglar, hacer converciones 
-                    this.frmAlmacen.listaAlmacen.Add((ProductosAlmacen)prod);
+                    this.frmAlmacen.listaAlmacen.Clear();
+                    foreach (Producto prod in lista)
+                    {
+                        ProductosAlmacen nuevoProducto = prod.ConvertirProductoAlmacen();
+                        this.frmAlmacen.listaAlmacen.Add(nuevoProducto);
+                    }
                 }
             }
         }
@@ -193,9 +197,15 @@ namespace WinFormCrud
             {
                 ruta = openFileDialogSerializar.FileName;
                 List<Producto> lista = Datos.DeserializarProductos(ruta);
-                foreach (Producto prod in lista)
+                
+                if (lista.Count > 0)
                 {
-                    this.frmCarniceria.listaCarniceria.Add((ProductosCarniceria)prod);
+                    this.frmCarniceria.listaCarniceria.Clear();
+                    foreach (Producto prod in lista)
+                    {
+                        ProductosCarniceria nuevoProducto = prod.ConvertirProductoCarniceria();
+                        this.frmCarniceria.listaCarniceria.Add(nuevoProducto);
+                    }
                 }
             }
         }
@@ -207,9 +217,14 @@ namespace WinFormCrud
             {
                 ruta = openFileDialogSerializar.FileName;
                 List<Producto> lista = Datos.DeserializarProductos(ruta);
-                foreach (Producto prod in lista)
+                if (lista.Count > 0)
                 {
-                    this.frmPanaderia.listaPanaderia.Add((ProductosPanaderia)prod);
+                    this.frmPanaderia.listaPanaderia.Clear();
+                    foreach (Producto prod in lista)
+                    {
+                        ProductosPanaderia nuevoProducto = prod.ConvertirProductoAPanaderia();
+                        this.frmPanaderia.listaPanaderia.Add(nuevoProducto);
+                    }
                 }
             }
         }

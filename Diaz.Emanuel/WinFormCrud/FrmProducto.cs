@@ -168,5 +168,7 @@ namespace WinFormCrud
             ConvertirProductosDerivados();
             this.productos = Datos.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorCantidad);
         }
+
+        
     }
 }

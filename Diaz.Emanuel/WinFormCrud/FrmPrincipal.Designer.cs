@@ -263,6 +263,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "FrmPrincipal";
             Text = "Tienda";
             FormClosing += FormularioPrincipal_FormClosing;

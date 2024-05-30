@@ -72,6 +72,24 @@ namespace Productos
             return !(primerProducto == segundoProducto);
         }
 
+        public ProductosAlmacen ConvertirProductoAlmacen()
+        {
+            ProductosAlmacen nuevoProducto = new ProductosAlmacen(this.Codigo, this.Nombre, this.Precio);
+            return nuevoProducto;
+        }
+
+        public ProductosCarniceria ConvertirProductoCarniceria()
+        {
+            ProductosCarniceria nuevoProducto = new ProductosCarniceria(this.Codigo, this.Nombre, this.Precio,1);
+            return nuevoProducto;
+        }
+
+        public ProductosPanaderia ConvertirProductoAPanaderia()
+        {
+            ProductosPanaderia nuevoProducto = new ProductosPanaderia(this.Codigo, this.Nombre, this.Precio,1);
+            return nuevoProducto;
+        }
+
 
     }
 }

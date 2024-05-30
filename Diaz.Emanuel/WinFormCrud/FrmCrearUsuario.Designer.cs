@@ -150,6 +150,7 @@
             Controls.Add(textBoxApellido);
             Controls.Add(textBoxNombre);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmCrearUsuario";
             Text = "FormCrearUsuario";
             Load += FormCrearUsuario_Load;

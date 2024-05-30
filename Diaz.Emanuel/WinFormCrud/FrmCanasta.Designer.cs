@@ -154,6 +154,7 @@
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmCanasta";
             Text = "Canasta";
             menuStrip1.ResumeLayout(false);

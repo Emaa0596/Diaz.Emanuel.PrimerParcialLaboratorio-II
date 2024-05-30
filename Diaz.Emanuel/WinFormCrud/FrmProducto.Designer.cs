@@ -164,6 +164,7 @@
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "FrmProducto";
             Text = "FrmProducto";
             Load += FrmProducto_Load;

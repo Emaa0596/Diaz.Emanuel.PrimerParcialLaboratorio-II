@@ -115,6 +115,7 @@
             Controls.Add(textBoxUsuario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmLogin";
             Text = "Login";
             Load += FormLogin_Load;
