@@ -22,6 +22,7 @@ namespace WinFormCrud
         }
         private void FrmAlmacen_Load(object sender, EventArgs e)
         {
+            base.ConfigurarPermisos();
             this.ActualizarVisor();
         }
 

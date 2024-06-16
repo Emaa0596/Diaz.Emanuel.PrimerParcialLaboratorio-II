@@ -48,6 +48,9 @@ namespace WinFormCrud
             this.frmCarniceria.listaCarniceria = Datos.ConvertirProductosCarniceria(productosCarniceria);
             this.frmAlmacen.listaAlmacen = Datos.ConvertirProductosAlmacen(productosAlmacen);
             this.frmPanaderia.listaPanaderia = Datos.ConvertirProductosPanaderia(productosPanaderia);
+            this.frmAlmacen.tipoUsuario = this.usuarioLogueado.Perfil;
+            this.frmCarniceria.tipoUsuario = this.usuarioLogueado.Perfil;
+            this.frmPanaderia.tipoUsuario = this.usuarioLogueado.Perfil;
         }
 
         /// <summary>

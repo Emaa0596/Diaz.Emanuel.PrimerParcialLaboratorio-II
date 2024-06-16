@@ -20,6 +20,7 @@ namespace WinFormCrud
         public List<ProductosPanaderia> listaPanaderia;
         protected Canasta carrito;
         public List<Productos.Producto> productos;
+        internal protected string tipoUsuario;
         public FrmProducto()
         {
             InitializeComponent();
@@ -29,6 +30,19 @@ namespace WinFormCrud
             this.listaCarniceria = new List<ProductosCarniceria>();
             this.listaPanaderia = new List<ProductosPanaderia>();
             this.carrito = new Canasta();
+            this.tipoUsuario = "Vendedor";
+        }
+
+        public FrmProducto(string tipoDeUsuario)
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.productos = new List<Productos.Producto>();
+            this.listaAlmacen = new List<ProductosAlmacen>();
+            this.listaCarniceria = new List<ProductosCarniceria>();
+            this.listaPanaderia = new List<ProductosPanaderia>();
+            this.carrito = new Canasta();
+            this.tipoUsuario = tipoDeUsuario;
         }
 
         public FrmProducto(List<Productos.Producto> productos)
@@ -48,7 +62,19 @@ namespace WinFormCrud
             set { this.productos = value; }
         }
 
-        private void FrmProducto_Load(object sender, EventArgs e) { }
+        protected void ConfigurarPermisos()
+        {
+            switch (this.tipoUsuario)
+            {
+                case "Vendedor":
+                    this.AdministradorMenuStrip.Enabled = false;
+                    this.SupervisorMenuStrip.Enabled = false;
+                    break;
+                case "Supervisor":
+                    this.AdministradorMenuStrip.Enabled = false;
+                    break;
+            }
+        }
 
         /// <summary>
         /// Actualiza la lista de productos de cada tienda
@@ -169,6 +195,9 @@ namespace WinFormCrud
             this.productos = Ordenamiento.OrdenarPorCriterio(this.productos, EOrdenamiento.MayorAMenorCantidad);
         }
 
-        
+        private void crearProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Entraste a crear");
+        }
     }
 }

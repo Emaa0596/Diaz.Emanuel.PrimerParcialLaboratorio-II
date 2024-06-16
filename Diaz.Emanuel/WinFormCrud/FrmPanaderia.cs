@@ -24,6 +24,7 @@ namespace WinFormCrud
         private void FrmPanaderia_Load(object sender, EventArgs e)
         {
             this.lblPrecio.Text = "Precio por Kilo";
+            base.ConfigurarPermisos();
             this.ActualizarVisor();
         }
 

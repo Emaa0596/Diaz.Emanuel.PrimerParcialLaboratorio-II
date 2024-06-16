@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBoxNombre = new TextBox();
             textBoxApellido = new TextBox();
             textBoxCorreoElectronico = new TextBox();
@@ -39,6 +40,8 @@
             CrearUsuario = new Button();
             comboBoxPerfil = new ComboBox();
             PerfilDeUsuario = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textBoxNombre
@@ -47,6 +50,7 @@
             textBoxNombre.Name = "textBoxNombre";
             textBoxNombre.Size = new Size(172, 23);
             textBoxNombre.TabIndex = 0;
+            textBoxNombre.Validating += TextBox_Validating;
             // 
             // textBoxApellido
             // 
@@ -54,13 +58,16 @@
             textBoxApellido.Name = "textBoxApellido";
             textBoxApellido.Size = new Size(172, 23);
             textBoxApellido.TabIndex = 1;
+            textBoxApellido.Validating += TextBox_Validating;
             // 
             // textBoxCorreoElectronico
             // 
             textBoxCorreoElectronico.Location = new Point(75, 202);
+            textBoxCorreoElectronico.MaxLength = 20;
             textBoxCorreoElectronico.Name = "textBoxCorreoElectronico";
             textBoxCorreoElectronico.Size = new Size(172, 23);
             textBoxCorreoElectronico.TabIndex = 2;
+            textBoxCorreoElectronico.Validating += TextBox_Validating;
             // 
             // textBoxContraseña
             // 
@@ -68,6 +75,7 @@
             textBoxContraseña.Name = "textBoxContraseña";
             textBoxContraseña.Size = new Size(172, 23);
             textBoxContraseña.TabIndex = 3;
+            textBoxContraseña.Validating += TextBox_Validating;
             // 
             // label1
             // 
@@ -117,8 +125,9 @@
             // 
             // comboBoxPerfil
             // 
+            comboBoxPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPerfil.FormattingEnabled = true;
-            comboBoxPerfil.Items.AddRange(new object[] { "Cliente", "Vendedor", "Administrador" });
+            comboBoxPerfil.Items.AddRange(new object[] { "Vendedor", "Supervisor", "Administrador" });
             comboBoxPerfil.Location = new Point(75, 149);
             comboBoxPerfil.Name = "comboBoxPerfil";
             comboBoxPerfil.Size = new Size(121, 23);
@@ -132,6 +141,10 @@
             PerfilDeUsuario.Size = new Size(92, 15);
             PerfilDeUsuario.TabIndex = 10;
             PerfilDeUsuario.Text = "Perfil de usuario";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // FrmCrearUsuario
             // 
@@ -154,6 +167,7 @@
             Name = "FrmCrearUsuario";
             Text = "FormCrearUsuario";
             Load += FormCrearUsuario_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -171,5 +185,6 @@
         private Button CrearUsuario;
         private ComboBox comboBoxPerfil;
         private Label PerfilDeUsuario;
+        private ErrorProvider errorProvider1;
     }
 }

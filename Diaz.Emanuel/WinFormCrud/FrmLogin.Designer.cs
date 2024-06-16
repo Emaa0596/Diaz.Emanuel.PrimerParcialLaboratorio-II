@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             textBoxUsuario = new TextBox();
             textBoxContraseña = new TextBox();
@@ -35,6 +36,8 @@
             label2 = new Label();
             botonIngresar = new Button();
             linkCrearUsuario = new LinkLabel();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textBoxUsuario
@@ -100,6 +103,10 @@
             linkCrearUsuario.Text = "Crear usuario";
             linkCrearUsuario.LinkClicked += linkCrearUsuario_LinkClicked;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -119,6 +126,7 @@
             Name = "FrmLogin";
             Text = "Login";
             Load += FormLogin_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -131,5 +139,6 @@
         private Label label2;
         private Button botonIngresar;
         private LinkLabel linkCrearUsuario;
+        private ErrorProvider errorProvider1;
     }
 }

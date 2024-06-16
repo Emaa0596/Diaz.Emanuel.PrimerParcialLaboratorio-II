@@ -25,6 +25,7 @@ namespace WinFormCrud
         private void FormCrearUsuario_Load(object sender, EventArgs e)
         {
             this.usuarios = Datos.DeserializarDatos();
+            this.comboBoxPerfil.SelectedIndex = 0;
         }
 
         private void buttonCrearUsuario_Click(object sender, EventArgs e)
@@ -35,20 +36,61 @@ namespace WinFormCrud
             string email = this.textBoxCorreoElectronico.Text;
             string contraseña = this.textBoxContraseña.Text;
             string perfil = this.comboBoxPerfil.Text;
-            Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(nombre, apellido, email, contraseña, perfil);
-            buscador = Datos.BuscarUsuarios(nuevoUsuario);
-            if (buscador)
+            bool validador = false;
+            if (perfil != "Vendedor")
             {
-                MessageBox.Show("Ya existe un usuario con el mismo correo electronico", "Error", MessageBoxButtons.OK);
+                FrmValidacionPerfil validacion = new FrmValidacionPerfil(perfil);
+                validacion.ShowDialog();
+                if (validacion.DialogResult == DialogResult.OK) { validador = true; }
             }
             else
             {
-                Datos.AgregarUsuario(nuevoUsuario);
-                this.DialogResult = DialogResult.OK;
-                this.Dispose();
+                validador = true;
+            }
+
+            if (validador && this.ValidateChildren())
+            {
+                Usuarios.Usuario nuevoUsuario = new Usuarios.Usuario(nombre, apellido, email, contraseña, perfil);
+                buscador = Datos.BuscarUsuarios(nuevoUsuario);
+                if (buscador)
+                {
+                    MessageBox.Show("Ya existe un usuario con el mismo correo electronico", "Error", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    Datos.AgregarUsuario(nuevoUsuario);
+                    this.DialogResult = DialogResult.OK;
+                    this.Dispose();
+                }
             }
         }
 
-
+        private void TextBox_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox != null) // Verificar si la conversión fue exitosa
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    e.Cancel = true;
+                    textBox.Focus();
+                    errorProvider1.SetError(textBox, "Este campo es obligatorio y no puede contener solo espacios en blanco.");
+                }
+                else
+                {
+                    if(textBox.Name == "textBoxCorreoElectronico" && !textBox.Text.Contains("@"))
+                    {
+                        e.Cancel = true;
+                        textBox.Focus();
+                        errorProvider1.SetError(textBox, "Este campo debe tener un correo electronico valido.");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider1.SetError(textBox, "");
+                    } 
+                }
+            }
+        }
     }
 }

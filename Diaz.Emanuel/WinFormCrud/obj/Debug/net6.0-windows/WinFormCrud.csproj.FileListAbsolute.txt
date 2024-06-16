@@ -31,3 +31,4 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmAlmacen.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmPanaderia.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmCanasta.resources
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmValidacionPerfil.resources

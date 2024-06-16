@@ -26,5 +26,33 @@
     "CorreoElectronico": "admin",
     "Clave": "admin",
     "Perfil": "Administrador"
+  },
+  {
+    "Nombre": "asdaasda",
+    "Apellido": "dfg",
+    "CorreoElectronico": "@",
+    "Clave": "4",
+    "Perfil": "Vendedor"
+  },
+  {
+    "Nombre": "asdasdasda",
+    "Apellido": "asdasda",
+    "CorreoElectronico": "ada@wew",
+    "Clave": "45",
+    "Perfil": "Vendedor"
+  },
+  {
+    "Nombre": "Emanuel",
+    "Apellido": "Diaz",
+    "CorreoElectronico": "@vendedor",
+    "Clave": "admin",
+    "Perfil": "Vendedor"
+  },
+  {
+    "Nombre": "Emanuel",
+    "Apellido": "Diaz",
+    "CorreoElectronico": "@supervisor",
+    "Clave": "admin",
+    "Perfil": "Supervisor"
   }
 ]
