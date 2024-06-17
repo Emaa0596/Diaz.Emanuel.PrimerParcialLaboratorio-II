@@ -28,11 +28,14 @@ namespace WinFormCrud
         public FrmProducto(Producto producto)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Producto = producto;
             this.Codigo.Text = this.Producto.Codigo.ToString();
             this.Nombre.Text = this.Producto.Nombre;
             this.Precio.Text = this.Producto.Precio.ToString();
+            this.Cantidad.Text = this.Producto.Cantidad.ToString();
             this.Codigo.Enabled = false;
+            this.Cantidad.Enabled = false;
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

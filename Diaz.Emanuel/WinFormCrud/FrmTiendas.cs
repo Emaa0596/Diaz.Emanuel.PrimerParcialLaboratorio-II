@@ -204,17 +204,17 @@ namespace WinFormCrud
         protected virtual void CrearProductoStripMenu_Click(object sender, EventArgs e)
         {
             FrmProducto nuevoProducto = new FrmProducto();
-            nuevoProducto.ShowDialog();
-            if (nuevoProducto.Productos != null)
+            DialogResult dialogo = nuevoProducto.ShowDialog();
+            if (nuevoProducto.Productos != null && dialogo == DialogResult.OK)
             {
                 Producto productoAgregado = nuevoProducto.Productos;
                 Type tipoProducto = this.GetType();
                 switch (tipoProducto.Name)
                 {
                     case nameof(FrmCarniceria):
-                        ProductosCarniceria productoCarniceria = new ProductosCarniceria(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad,1);
+                        ProductosCarniceria productoCarniceria = new ProductosCarniceria(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad, 1);
                         this.listaCarniceria.Add(productoCarniceria);
-                        if(productoCarniceria.Cantidad > 0)
+                        if (productoCarniceria.Cantidad > 0)
                         {
                             this.carrito.listaCarniceria.Add(productoCarniceria);
                         }
@@ -228,7 +228,7 @@ namespace WinFormCrud
                         }
                         break;
                     case nameof(FrmPanaderia):
-                        ProductosPanaderia productoPanaderia = new ProductosPanaderia(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad,1);
+                        ProductosPanaderia productoPanaderia = new ProductosPanaderia(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad, 1);
                         this.listaPanaderia.Add(productoPanaderia);
                         if (productoPanaderia.Cantidad > 0)
                         {
@@ -240,6 +240,108 @@ namespace WinFormCrud
 
             this.ActualizarVisor();
             //actualizar canasta
+        }
+
+        private void CrearProductoSupervisorMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CrearProductoStripMenu_Click(sender, e);
+        }
+
+        private void ActualizarProductoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.lstViewProductos.SelectedIndices.Count > 0)
+            {
+                int indice = lstViewProductos.SelectedIndices[0];
+                Type tipoProducto = this.GetType();
+                switch (tipoProducto.Name)
+                {
+                    case nameof(FrmAlmacen):
+                        ProductosAlmacen productoAModificar = this.listaAlmacen[indice];
+                        FrmProducto prod = new FrmProducto(productoAModificar);
+                        DialogResult resultado = prod.ShowDialog();
+                        if (resultado == DialogResult.OK)
+                        {
+                            this.listaAlmacen[indice] = new ProductosAlmacen(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad);
+                            this.ActualizarVisor();
+                        }
+                        break;
+                    case nameof(FrmCarniceria):
+                        ProductosCarniceria productoAModificarCarniceria = this.listaCarniceria[indice];
+                        FrmProducto prodCarniceria = new FrmProducto(productoAModificarCarniceria);
+                        DialogResult resultadoCarniceria = prodCarniceria.ShowDialog();
+                        if (resultadoCarniceria == DialogResult.OK)
+                        {
+                            this.listaCarniceria[indice] = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad,1);
+                            this.ActualizarVisor();
+                        }
+                        break;
+                    case nameof(FrmPanaderia):
+                        ProductosCarniceria productoAModificarPanaderia = this.listaCarniceria[indice];
+                        FrmProducto prodPanaderia = new FrmProducto(productoAModificarPanaderia);
+                        DialogResult resultadoPanaderia = prodPanaderia.ShowDialog();
+                        if (resultadoPanaderia == DialogResult.OK)
+                        {
+                            this.listaPanaderia[indice] = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
+                            this.ActualizarVisor();
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el producto a modificar", "ningun producto seleccioado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void actualizarProductoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.ActualizarProductoMenuItem_Click(sender, e);
+        }
+
+        private void EliminarProductoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.lstViewProductos.SelectedIndices.Count > 0)
+            {
+                int indice = lstViewProductos.SelectedIndices[0];
+                Type tipoProducto = this.GetType();
+                switch (tipoProducto.Name)
+                {
+                    case nameof(FrmAlmacen):
+                        ProductosAlmacen productoAModificar = this.listaAlmacen[indice];
+                        FrmProducto prod = new FrmProducto(productoAModificar);
+                        DialogResult resultado = prod.ShowDialog();
+                        if (resultado == DialogResult.OK)
+                        {
+                            this.listaAlmacen.Remove(productoAModificar);
+                            this.ActualizarVisor();
+                        }
+                        break;
+                    case nameof(FrmCarniceria):
+                        ProductosCarniceria productoAModificarCarniceria = this.listaCarniceria[indice];
+                        FrmProducto prodCarniceria = new FrmProducto(productoAModificarCarniceria);
+                        DialogResult resultadoCarniceria = prodCarniceria.ShowDialog();
+                        if (resultadoCarniceria == DialogResult.OK)
+                        {
+                            this.listaCarniceria[indice] = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad, 1);
+                            this.ActualizarVisor();
+                        }
+                        break;
+                    case nameof(FrmPanaderia):
+                        ProductosPanaderia productoAModificarPanaderia = this.listaPanaderia[indice];
+                        FrmProducto prodPanaderia = new FrmProducto(productoAModificarPanaderia);
+                        DialogResult resultadoPanaderia = prodPanaderia.ShowDialog();
+                        if (resultadoPanaderia == DialogResult.OK)
+                        {
+                            this.listaPanaderia[indice] = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
+                            this.ActualizarVisor();
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el producto a eliminar", "ningun producto seleccioado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

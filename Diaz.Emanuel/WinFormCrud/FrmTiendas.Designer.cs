@@ -158,7 +158,7 @@
             menuStrip2.Items.AddRange(new ToolStripItem[] { AdministradorMenuStrip, SupervisorMenuStrip });
             menuStrip2.Location = new Point(294, 9);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(177, 24);
+            menuStrip2.Size = new Size(297, 24);
             menuStrip2.TabIndex = 8;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -172,21 +172,23 @@
             // crearProductoToolStripMenuItem
             // 
             crearProductoToolStripMenuItem.Name = "crearProductoToolStripMenuItem";
-            crearProductoToolStripMenuItem.Size = new Size(178, 22);
+            crearProductoToolStripMenuItem.Size = new Size(180, 22);
             crearProductoToolStripMenuItem.Text = "Crear Producto";
             crearProductoToolStripMenuItem.Click += CrearProductoStripMenu_Click;
             // 
             // actualizarProductoToolStripMenuItem
             // 
             actualizarProductoToolStripMenuItem.Name = "actualizarProductoToolStripMenuItem";
-            actualizarProductoToolStripMenuItem.Size = new Size(178, 22);
+            actualizarProductoToolStripMenuItem.Size = new Size(180, 22);
             actualizarProductoToolStripMenuItem.Text = "Actualizar Producto";
+            actualizarProductoToolStripMenuItem.Click += ActualizarProductoMenuItem_Click;
             // 
             // eliminarProductoToolStripMenuItem
             // 
             eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            eliminarProductoToolStripMenuItem.Size = new Size(178, 22);
+            eliminarProductoToolStripMenuItem.Size = new Size(180, 22);
             eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
+            eliminarProductoToolStripMenuItem.Click += EliminarProductoMenuItem_Click;
             // 
             // SupervisorMenuStrip
             // 
@@ -200,17 +202,20 @@
             crearProductoToolStripMenuItem1.Name = "crearProductoToolStripMenuItem1";
             crearProductoToolStripMenuItem1.Size = new Size(178, 22);
             crearProductoToolStripMenuItem1.Text = "Crear Producto";
+            crearProductoToolStripMenuItem1.Click += CrearProductoSupervisorMenuItem_Click;
             // 
             // actualizarProductoToolStripMenuItem1
             // 
             actualizarProductoToolStripMenuItem1.Name = "actualizarProductoToolStripMenuItem1";
             actualizarProductoToolStripMenuItem1.Size = new Size(178, 22);
             actualizarProductoToolStripMenuItem1.Text = "Actualizar Producto";
+            actualizarProductoToolStripMenuItem1.Click += actualizarProductoToolStripMenuItem1_Click;
             // 
             // lstViewProductos
             // 
             lstViewProductos.Columns.AddRange(new ColumnHeader[] { clmProductos, clmPrecio, clmCantidad });
             lstViewProductos.Location = new Point(54, 84);
+            lstViewProductos.MultiSelect = false;
             lstViewProductos.Name = "lstViewProductos";
             lstViewProductos.Size = new Size(473, 174);
             lstViewProductos.TabIndex = 9;

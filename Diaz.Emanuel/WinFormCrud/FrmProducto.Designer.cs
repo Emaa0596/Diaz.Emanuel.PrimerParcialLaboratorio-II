@@ -115,7 +115,7 @@
             Cantidad.MaxLength = 5;
             Cantidad.Name = "Cantidad";
             Cantidad.Size = new Size(196, 23);
-            Cantidad.TabIndex = 8;
+            Cantidad.TabIndex = 3;
             // 
             // lblCantidad
             // 
