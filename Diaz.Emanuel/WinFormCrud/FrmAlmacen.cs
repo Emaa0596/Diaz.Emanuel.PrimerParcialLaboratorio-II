@@ -12,7 +12,7 @@ using Tiendas;
 
 namespace WinFormCrud
 {
-    public partial class FrmAlmacen : FrmProducto
+    public partial class FrmAlmacen : FrmTiendas
     {
         public FrmAlmacen(Canasta carrito)
         {
@@ -33,13 +33,13 @@ namespace WinFormCrud
         /// <param name="e"></param>
         protected override void btnAgregar_Click(object sender, EventArgs e)
         {
-            int indice = base.lstProductos.SelectedIndex;
-            if (indice != -1)
+            if (base.lstViewProductos.SelectedIndices.Count > 0)
             {
+                int indice = lstViewProductos.SelectedIndices[0];
                 ProductosAlmacen prod = base.listaAlmacen[indice];
-                this.carrito += prod;
+                base.carrito += prod;
                 this.ActualizarVisor();
-                lstProductos.SelectedIndex = indice;
+                lstViewProductos.Items[indice].Selected = true;
             }
             else
             {
@@ -54,13 +54,13 @@ namespace WinFormCrud
         /// <param name="e"></param>
         protected override void btnEliminar_Click(object sender, EventArgs e)
         {
-            int indice = base.lstProductos.SelectedIndex;
-            if (indice != -1)
+            if (base.lstViewProductos.SelectedIndices.Count > 0)
             {
+                int indice = lstViewProductos.SelectedIndices[0];
                 ProductosAlmacen prod = base.listaAlmacen[indice];
                 base.carrito -= prod;
                 this.ActualizarVisor();
-                lstProductos.SelectedIndex = indice;
+                lstViewProductos.Items[indice].Selected = true;
             }
             else
             {
@@ -73,11 +73,14 @@ namespace WinFormCrud
         /// </summary>
         protected override void ActualizarVisor()
         {
-            lstProductos.Items.Clear();
+            lstViewProductos.Items.Clear();
             foreach (ProductosAlmacen productos in base.listaAlmacen)
             {
-                string item = productos.Mostrar();
-                lstProductos.Items.Add(item);
+                ListViewItem item = new ListViewItem(productos.Nombre);
+                item.SubItems.Add(productos.Precio.ToString());
+                item.SubItems.Add(productos.Cantidad.ToString());
+                //string item = productos.Mostrar();
+                lstViewProductos.Items.Add(item);
             }
         }
 

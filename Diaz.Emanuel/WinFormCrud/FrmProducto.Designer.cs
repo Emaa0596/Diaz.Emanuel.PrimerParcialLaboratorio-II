@@ -28,239 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblProducto = new Label();
-            lblPrecio = new Label();
+            Codigo = new TextBox();
+            Nombre = new TextBox();
+            Precio = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            Aceptar = new Button();
+            Cancelar = new Button();
+            Cantidad = new TextBox();
             lblCantidad = new Label();
-            lstProductos = new ListBox();
-            btnAgregar = new Button();
-            btnEliminar = new Button();
-            menuStrip1 = new MenuStrip();
-            OrdenarMenuStrip = new ToolStripMenuItem();
-            menorPrecioAMayorToolStripMenuItem = new ToolStripMenuItem();
-            mayorPrecioAMenorToolStripMenuItem = new ToolStripMenuItem();
-            menorCantidadAMayorToolStripMenuItem = new ToolStripMenuItem();
-            mayorCantidadAMenorToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip2 = new MenuStrip();
-            AdministradorMenuStrip = new ToolStripMenuItem();
-            crearProductoToolStripMenuItem = new ToolStripMenuItem();
-            actualizarProductoToolStripMenuItem = new ToolStripMenuItem();
-            eliminarProductoToolStripMenuItem = new ToolStripMenuItem();
-            SupervisorMenuStrip = new ToolStripMenuItem();
-            crearProductoToolStripMenuItem1 = new ToolStripMenuItem();
-            actualizarProductoToolStripMenuItem1 = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
-            menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
-            // lblProducto
+            // Codigo
             // 
-            lblProducto.AutoSize = true;
-            lblProducto.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProducto.Location = new Point(54, 48);
-            lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(80, 20);
-            lblProducto.TabIndex = 1;
-            lblProducto.Text = "Productos";
+            Codigo.Location = new Point(37, 46);
+            Codigo.Name = "Codigo";
+            Codigo.Size = new Size(196, 23);
+            Codigo.TabIndex = 0;
             // 
-            // lblPrecio
+            // Nombre
             // 
-            lblPrecio.AutoSize = true;
-            lblPrecio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(265, 48);
-            lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(52, 20);
-            lblPrecio.TabIndex = 2;
-            lblPrecio.Text = "Precio";
+            Nombre.Location = new Point(37, 115);
+            Nombre.Name = "Nombre";
+            Nombre.Size = new Size(196, 23);
+            Nombre.TabIndex = 1;
+            // 
+            // Precio
+            // 
+            Precio.Location = new Point(37, 185);
+            Precio.MaxLength = 10;
+            Precio.Name = "Precio";
+            Precio.Size = new Size(196, 23);
+            Precio.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(46, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Código";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 97);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Nombre";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 167);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Precio";
+            // 
+            // Aceptar
+            // 
+            Aceptar.Location = new Point(37, 309);
+            Aceptar.Name = "Aceptar";
+            Aceptar.Size = new Size(82, 45);
+            Aceptar.TabIndex = 6;
+            Aceptar.Text = "Aceptar";
+            Aceptar.UseVisualStyleBackColor = true;
+            Aceptar.Click += Aceptar_Click;
+            // 
+            // Cancelar
+            // 
+            Cancelar.Location = new Point(151, 309);
+            Cancelar.Name = "Cancelar";
+            Cancelar.Size = new Size(82, 45);
+            Cancelar.TabIndex = 7;
+            Cancelar.Text = "Cancelar";
+            Cancelar.UseVisualStyleBackColor = true;
+            Cancelar.Click += Cancelar_Click;
+            // 
+            // Cantidad
+            // 
+            Cantidad.Location = new Point(37, 249);
+            Cantidad.MaxLength = 5;
+            Cantidad.Name = "Cantidad";
+            Cantidad.Size = new Size(196, 23);
+            Cantidad.TabIndex = 8;
             // 
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCantidad.Location = new Point(456, 48);
+            lblCantidad.Location = new Point(12, 231);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(71, 20);
-            lblCantidad.TabIndex = 3;
+            lblCantidad.Size = new Size(55, 15);
+            lblCantidad.TabIndex = 9;
             lblCantidad.Text = "Cantidad";
-            // 
-            // lstProductos
-            // 
-            lstProductos.Font = new Font("Swis721 Hv BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lstProductos.FormattingEnabled = true;
-            lstProductos.ItemHeight = 16;
-            lstProductos.Location = new Point(54, 79);
-            lstProductos.Name = "lstProductos";
-            lstProductos.Size = new Size(470, 164);
-            lstProductos.TabIndex = 4;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.BackColor = Color.Transparent;
-            btnAgregar.Location = new Point(112, 280);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(100, 41);
-            btnAgregar.TabIndex = 5;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.Transparent;
-            btnEliminar.Location = new Point(354, 280);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(100, 41);
-            btnEliminar.TabIndex = 6;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.Dock = DockStyle.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { OrdenarMenuStrip });
-            menuStrip1.Location = new Point(54, 9);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(94, 24);
-            menuStrip1.TabIndex = 7;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // OrdenarMenuStrip
-            // 
-            OrdenarMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { menorPrecioAMayorToolStripMenuItem, mayorPrecioAMenorToolStripMenuItem, menorCantidadAMayorToolStripMenuItem, mayorCantidadAMenorToolStripMenuItem });
-            OrdenarMenuStrip.Name = "OrdenarMenuStrip";
-            OrdenarMenuStrip.Size = new Size(86, 20);
-            OrdenarMenuStrip.Text = "Ordenar por:";
-            // 
-            // menorPrecioAMayorToolStripMenuItem
-            // 
-            menorPrecioAMayorToolStripMenuItem.Name = "menorPrecioAMayorToolStripMenuItem";
-            menorPrecioAMayorToolStripMenuItem.Size = new Size(206, 22);
-            menorPrecioAMayorToolStripMenuItem.Text = "Menor precio a Mayor";
-            menorPrecioAMayorToolStripMenuItem.Click += MenorPrecioAMayorStripMenu_Click;
-            // 
-            // mayorPrecioAMenorToolStripMenuItem
-            // 
-            mayorPrecioAMenorToolStripMenuItem.Name = "mayorPrecioAMenorToolStripMenuItem";
-            mayorPrecioAMenorToolStripMenuItem.Size = new Size(206, 22);
-            mayorPrecioAMenorToolStripMenuItem.Text = "Mayor precio a Menor";
-            mayorPrecioAMenorToolStripMenuItem.Click += MayorPrecioAMenorStripMenuItem_Click;
-            // 
-            // menorCantidadAMayorToolStripMenuItem
-            // 
-            menorCantidadAMayorToolStripMenuItem.Name = "menorCantidadAMayorToolStripMenuItem";
-            menorCantidadAMayorToolStripMenuItem.Size = new Size(206, 22);
-            menorCantidadAMayorToolStripMenuItem.Text = "Menor Cantidad a Mayor";
-            menorCantidadAMayorToolStripMenuItem.Click += MenorCantidadAMayorMenuItem_Click;
-            // 
-            // mayorCantidadAMenorToolStripMenuItem
-            // 
-            mayorCantidadAMenorToolStripMenuItem.Name = "mayorCantidadAMenorToolStripMenuItem";
-            mayorCantidadAMenorToolStripMenuItem.Size = new Size(206, 22);
-            mayorCantidadAMenorToolStripMenuItem.Text = "Mayor cantidad a Menor";
-            mayorCantidadAMenorToolStripMenuItem.Click += MayorCantidadAMenorMenuItem_Click;
-            // 
-            // menuStrip2
-            // 
-            menuStrip2.Dock = DockStyle.None;
-            menuStrip2.Items.AddRange(new ToolStripItem[] { AdministradorMenuStrip, SupervisorMenuStrip });
-            menuStrip2.Location = new Point(294, 9);
-            menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(297, 24);
-            menuStrip2.TabIndex = 8;
-            menuStrip2.Text = "menuStrip2";
-            // 
-            // AdministradorMenuStrip
-            // 
-            AdministradorMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { crearProductoToolStripMenuItem, actualizarProductoToolStripMenuItem, eliminarProductoToolStripMenuItem });
-            AdministradorMenuStrip.Name = "AdministradorMenuStrip";
-            AdministradorMenuStrip.Size = new Size(95, 20);
-            AdministradorMenuStrip.Text = "Administrador";
-            // 
-            // crearProductoToolStripMenuItem
-            // 
-            crearProductoToolStripMenuItem.Name = "crearProductoToolStripMenuItem";
-            crearProductoToolStripMenuItem.Size = new Size(180, 22);
-            crearProductoToolStripMenuItem.Text = "Crear Producto";
-            crearProductoToolStripMenuItem.Click += crearProductoToolStripMenuItem_Click;
-            // 
-            // actualizarProductoToolStripMenuItem
-            // 
-            actualizarProductoToolStripMenuItem.Name = "actualizarProductoToolStripMenuItem";
-            actualizarProductoToolStripMenuItem.Size = new Size(180, 22);
-            actualizarProductoToolStripMenuItem.Text = "Actualizar Producto";
-            // 
-            // eliminarProductoToolStripMenuItem
-            // 
-            eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            eliminarProductoToolStripMenuItem.Size = new Size(180, 22);
-            eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
-            // 
-            // SupervisorMenuStrip
-            // 
-            SupervisorMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { crearProductoToolStripMenuItem1, actualizarProductoToolStripMenuItem1 });
-            SupervisorMenuStrip.Name = "SupervisorMenuStrip";
-            SupervisorMenuStrip.Size = new Size(74, 20);
-            SupervisorMenuStrip.Text = "Supervisor";
-            // 
-            // crearProductoToolStripMenuItem1
-            // 
-            crearProductoToolStripMenuItem1.Name = "crearProductoToolStripMenuItem1";
-            crearProductoToolStripMenuItem1.Size = new Size(178, 22);
-            crearProductoToolStripMenuItem1.Text = "Crear Producto";
-            // 
-            // actualizarProductoToolStripMenuItem1
-            // 
-            actualizarProductoToolStripMenuItem1.Name = "actualizarProductoToolStripMenuItem1";
-            actualizarProductoToolStripMenuItem1.Size = new Size(178, 22);
-            actualizarProductoToolStripMenuItem1.Text = "Actualizar Producto";
             // 
             // FrmProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(573, 349);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnAgregar);
-            Controls.Add(lstProductos);
+            ClientSize = new Size(271, 392);
             Controls.Add(lblCantidad);
-            Controls.Add(lblPrecio);
-            Controls.Add(lblProducto);
-            Controls.Add(menuStrip1);
-            Controls.Add(menuStrip2);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MainMenuStrip = menuStrip1;
-            MaximizeBox = false;
+            Controls.Add(Cantidad);
+            Controls.Add(Cancelar);
+            Controls.Add(Aceptar);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(Precio);
+            Controls.Add(Nombre);
+            Controls.Add(Codigo);
             Name = "FrmProducto";
             Text = "FrmProducto";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            menuStrip2.ResumeLayout(false);
-            menuStrip2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lblProducto;
+        private TextBox Codigo;
+        private TextBox Nombre;
+        private TextBox Precio;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button Aceptar;
+        private Button Cancelar;
+        private TextBox Cantidad;
         private Label lblCantidad;
-        protected ListBox lstProductos;
-        private Button btnAgregar;
-        private Button btnEliminar;
-        protected Label lblPrecio;
-        private MenuStrip menuStrip1;
-        protected ToolStripMenuItem OrdenarMenuStrip;
-        protected ToolStripMenuItem menorPrecioAMayorToolStripMenuItem;
-        protected ToolStripMenuItem mayorPrecioAMenorToolStripMenuItem;
-        protected ToolStripMenuItem menorCantidadAMayorToolStripMenuItem;
-        protected ToolStripMenuItem mayorCantidadAMenorToolStripMenuItem;
-        private MenuStrip menuStrip2;
-        private ToolStripMenuItem crearProductoToolStripMenuItem;
-        private ToolStripMenuItem actualizarProductoToolStripMenuItem;
-        private ToolStripMenuItem eliminarProductoToolStripMenuItem;
-        private ToolStripMenuItem crearProductoToolStripMenuItem1;
-        private ToolStripMenuItem actualizarProductoToolStripMenuItem1;
-        protected ToolStripMenuItem AdministradorMenuStrip;
-        protected ToolStripMenuItem SupervisorMenuStrip;
     }
 }

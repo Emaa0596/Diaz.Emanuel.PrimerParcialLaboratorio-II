@@ -29,29 +29,35 @@ namespace WinFormCrud
         /// </summary>
         public void ActualizarCarrito()
         {
-            lstCanasta.Items.Clear();
+            lstViewCanasta.Items.Clear();
             if (this.carrito.listaCarniceria.Count > 0)
             {
                 foreach (ProductosCarniceria productos in this.carrito.listaCarniceria)
                 {
-                    string item = productos.Mostrar();
-                    lstCanasta.Items.Add(item);
+                    ListViewItem item = new ListViewItem(productos.Nombre);
+                    item.SubItems.Add(productos.Precio.ToString());
+                    item.SubItems.Add(productos.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
             if (this.carrito.listaAlmacen.Count > 0)
             {
                 foreach (ProductosAlmacen productos in this.carrito.listaAlmacen)
                 {
-                    string item = productos.Mostrar();
-                    lstCanasta.Items.Add(item);
+                    ListViewItem item = new ListViewItem(productos.Nombre);
+                    item.SubItems.Add(productos.Precio.ToString());
+                    item.SubItems.Add(productos.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
             if (this.carrito.listaPanaderia.Count > 0)
             {
                 foreach (ProductosPanaderia productos in this.carrito.listaPanaderia)
                 {
-                    string item = productos.Mostrar();
-                    lstCanasta.Items.Add(item);
+                    ListViewItem item = new ListViewItem(productos.Nombre);
+                    item.SubItems.Add(productos.Precio.ToString());
+                    item.SubItems.Add(productos.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
 
@@ -98,12 +104,15 @@ namespace WinFormCrud
             List<Producto> lista = this.VerificarCanasta();
             if (lista.Count > 0)
             {
-                lstCanasta.Items.Clear();
+                lstViewCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
                 lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorPrecio);
                 foreach (Producto prod in lista)
                 {
-                    lstCanasta.Items.Add(prod.Mostrar());
+                    ListViewItem item = new ListViewItem(prod.Nombre);
+                    item.SubItems.Add(prod.Precio.ToString());
+                    item.SubItems.Add(prod.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
             else
@@ -122,12 +131,15 @@ namespace WinFormCrud
             List<Producto> lista = this.VerificarCanasta();
             if (lista.Count > 0)
             {
-                lstCanasta.Items.Clear();
+                lstViewCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
                 lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorPrecio);
                 foreach (Producto prod in lista)
                 {
-                    lstCanasta.Items.Add(prod.Mostrar());
+                    ListViewItem item = new ListViewItem(prod.Nombre);
+                    item.SubItems.Add(prod.Precio.ToString());
+                    item.SubItems.Add(prod.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
             else
@@ -141,12 +153,15 @@ namespace WinFormCrud
             List<Producto> lista = this.VerificarCanasta();
             if (lista.Count > 0)
             {
-                lstCanasta.Items.Clear();
+                lstViewCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
                 lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MenorAMayorCantidad);
                 foreach (Producto prod in lista)
                 {
-                    lstCanasta.Items.Add(prod.Mostrar());
+                    ListViewItem item = new ListViewItem(prod.Nombre);
+                    item.SubItems.Add(prod.Precio.ToString());
+                    item.SubItems.Add(prod.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
             else
@@ -160,12 +175,15 @@ namespace WinFormCrud
             List<Producto> lista = this.VerificarCanasta();
             if (lista.Count > 0)
             {
-                lstCanasta.Items.Clear();
+                lstViewCanasta.Items.Clear();
                 int largoDeLista = lista.Count;
                 lista = Ordenamiento.OrdenarPorCriterio(lista, EOrdenamiento.MayorAMenorCantidad);
                 foreach (Producto prod in lista)
                 {
-                    lstCanasta.Items.Add(prod.Mostrar());
+                    ListViewItem item = new ListViewItem(prod.Nombre);
+                    item.SubItems.Add(prod.Precio.ToString());
+                    item.SubItems.Add(prod.Cantidad.ToString());
+                    lstViewCanasta.Items.Add(item);
                 }
             }
             else

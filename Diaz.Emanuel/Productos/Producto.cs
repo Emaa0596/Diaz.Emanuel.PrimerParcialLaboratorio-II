@@ -17,12 +17,12 @@ namespace Productos
         {
 
         }
-        public Producto(int codigo, string nombre, double precio)
+        public Producto(int codigo, string nombre, double precio, int cantidad)
         {
             this.codigo = codigo;
             this.nombre = nombre;
             this.precio = precio;
-            this.cantidad = 0;
+            this.cantidad = cantidad;
         }
 
         public int Codigo
@@ -61,9 +61,13 @@ namespace Productos
         public static bool operator == (Producto primerProducto, Producto segundoProducto)
         {
             bool retorno = false;
-            if(primerProducto.Codigo == segundoProducto.Codigo && primerProducto.Nombre == segundoProducto.Nombre)
+            if (ReferenceEquals(primerProducto, null) || ReferenceEquals(segundoProducto, null))
             {
-                return true;
+                return false;
+            }
+            if (primerProducto.Codigo == segundoProducto.Codigo && primerProducto.Nombre == segundoProducto.Nombre)
+            {
+                retorno = true;
             }
             return retorno;
         }
@@ -74,19 +78,19 @@ namespace Productos
 
         public ProductosAlmacen ConvertirProductoAlmacen()
         {
-            ProductosAlmacen nuevoProducto = new ProductosAlmacen(this.Codigo, this.Nombre, this.Precio);
+            ProductosAlmacen nuevoProducto = new ProductosAlmacen(this.Codigo, this.Nombre, this.Precio, this.Cantidad);
             return nuevoProducto;
         }
 
         public ProductosCarniceria ConvertirProductoCarniceria()
         {
-            ProductosCarniceria nuevoProducto = new ProductosCarniceria(this.Codigo, this.Nombre, this.Precio,1);
+            ProductosCarniceria nuevoProducto = new ProductosCarniceria(this.Codigo, this.Nombre, this.Precio, this.Cantidad,1);
             return nuevoProducto;
         }
 
         public ProductosPanaderia ConvertirProductoAPanaderia()
         {
-            ProductosPanaderia nuevoProducto = new ProductosPanaderia(this.Codigo, this.Nombre, this.Precio,1);
+            ProductosPanaderia nuevoProducto = new ProductosPanaderia(this.Codigo, this.Nombre, this.Precio, this.Cantidad,1);
             return nuevoProducto;
         }
 

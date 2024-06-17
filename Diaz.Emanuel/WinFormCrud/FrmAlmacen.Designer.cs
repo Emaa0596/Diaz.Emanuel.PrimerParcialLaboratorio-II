@@ -33,7 +33,7 @@
             // 
             // lstProductos
             // 
-            lstProductos.BackColor = Color.PaleGreen;
+            //lstProductos.BackColor = Color.PaleGreen;
             // 
             // lblPrecio
             // 

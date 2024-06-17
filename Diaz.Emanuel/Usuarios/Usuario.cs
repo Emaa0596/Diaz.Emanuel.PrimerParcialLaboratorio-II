@@ -5,11 +5,11 @@ namespace Usuarios
 {
     public class Usuario
     {
-        public string nombre;
-        public string apellido;
-        public string correoElectronico;
-        public string clave;
-        public string perfil;
+        public string? nombre;
+        public string? apellido;
+        public string? correoElectronico;
+        public string? clave;
+        public string? perfil;
 
 
         public string Nombre 

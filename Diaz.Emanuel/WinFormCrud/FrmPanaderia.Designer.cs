@@ -33,8 +33,8 @@
             // 
             // lstProductos
             // 
-            lstProductos.BackColor = Color.Khaki;
-            lstProductos.Location = new Point(49, 79);
+            //lstProductos.BackColor = Color.Khaki;
+            //lstProductos.Location = new Point(49, 79);
             // 
             // FrmPanaderia
             // 

@@ -33,7 +33,7 @@
             // 
             // lstProductos
             // 
-            lstProductos.BackColor = Color.Tomato;
+            //lstProductos.BackColor = Color.Tomato;
             // 
             // FrmCarniceria
             // 

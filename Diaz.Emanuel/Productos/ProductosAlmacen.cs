@@ -8,7 +8,7 @@ namespace Productos
 {
     public class ProductosAlmacen : Producto
     {
-        public ProductosAlmacen(int codigo, string nombre, double precio) : base(codigo, nombre, precio) 
+        public ProductosAlmacen(int codigo, string nombre, double precio,int cantidad) : base(codigo, nombre, precio, cantidad) 
         {
             
         }
@@ -36,5 +36,7 @@ namespace Productos
             get { return base.Cantidad; }
             set { base.Cantidad = value; }
         }
+
+
     }
 }

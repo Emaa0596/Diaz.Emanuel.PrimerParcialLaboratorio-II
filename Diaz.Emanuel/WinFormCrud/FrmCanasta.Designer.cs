@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCanasta));
-            lstCanasta = new ListBox();
             lblTxtAPagar = new Label();
             lblTotalAPagarDouble = new Label();
             menuStrip1 = new MenuStrip();
@@ -40,19 +39,12 @@
             mayorCantidadAMenorToolStripMenuItem1 = new ToolStripMenuItem();
             lblPrecio = new Label();
             lblCantidad = new Label();
+            lstViewCanasta = new ListView();
+            clmProductos = new ColumnHeader();
+            clmPrecio = new ColumnHeader();
+            clmCantidad = new ColumnHeader();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // lstCanasta
-            // 
-            lstCanasta.BackColor = SystemColors.InactiveCaption;
-            lstCanasta.Font = new Font("Swis721 Hv BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lstCanasta.FormattingEnabled = true;
-            lstCanasta.ItemHeight = 16;
-            lstCanasta.Location = new Point(40, 44);
-            lstCanasta.Name = "lstCanasta";
-            lstCanasta.Size = new Size(507, 244);
-            lstCanasta.TabIndex = 0;
             // 
             // lblTxtAPagar
             // 
@@ -140,17 +132,44 @@
             lblCantidad.TabIndex = 5;
             lblCantidad.Text = "Cantidad";
             // 
+            // lstViewCanasta
+            // 
+            lstViewCanasta.Columns.AddRange(new ColumnHeader[] { clmProductos, clmPrecio, clmCantidad });
+            lstViewCanasta.Location = new Point(37, 68);
+            lstViewCanasta.Name = "lstViewCanasta";
+            lstViewCanasta.Size = new Size(510, 213);
+            lstViewCanasta.TabIndex = 10;
+            lstViewCanasta.UseCompatibleStateImageBehavior = false;
+            lstViewCanasta.View = View.Details;
+            // 
+            // clmProductos
+            // 
+            clmProductos.Text = "Productos";
+            clmProductos.Width = 200;
+            // 
+            // clmPrecio
+            // 
+            clmPrecio.Text = "Precio";
+            clmPrecio.TextAlign = HorizontalAlignment.Center;
+            clmPrecio.Width = 100;
+            // 
+            // clmCantidad
+            // 
+            clmCantidad.Text = "Cantidad";
+            clmCantidad.TextAlign = HorizontalAlignment.Right;
+            clmCantidad.Width = 150;
+            // 
             // FrmCanasta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
             ClientSize = new Size(587, 388);
+            Controls.Add(lstViewCanasta);
             Controls.Add(lblCantidad);
             Controls.Add(lblPrecio);
             Controls.Add(lblTotalAPagarDouble);
             Controls.Add(lblTxtAPagar);
-            Controls.Add(lstCanasta);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -164,8 +183,6 @@
         }
 
         #endregion
-
-        private ListBox lstCanasta;
         private Label lblTxtAPagar;
         private Label lblTotalAPagarDouble;
         private MenuStrip menuStrip1;
@@ -176,5 +193,9 @@
         private ToolStripMenuItem mayorCantidadAMenorToolStripMenuItem1;
         private Label lblPrecio;
         private Label lblCantidad;
+        protected ListView lstViewCanasta;
+        protected ColumnHeader clmProductos;
+        protected ColumnHeader clmPrecio;
+        protected ColumnHeader clmCantidad;
     }
 }

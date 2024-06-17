@@ -50,7 +50,7 @@ namespace Usuarios
             List<ProductosCarniceria> lista = new List<ProductosCarniceria>();
             foreach(Producto prod in listaProductos)
             {
-                ProductosCarniceria producto = new ProductosCarniceria(prod.Codigo,prod.Nombre,prod.Precio,1);
+                ProductosCarniceria producto = new ProductosCarniceria(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad,1);
                 lista.Add(producto);
             }
             return lista;
@@ -61,7 +61,7 @@ namespace Usuarios
             List<ProductosAlmacen> lista = new List<ProductosAlmacen>();
             foreach (Producto prod in listaProductos)
             {
-                ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio);
+                ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad);
                 lista.Add(producto);
             }
             return lista;
@@ -73,7 +73,7 @@ namespace Usuarios
             foreach (Producto prod in listaProductos)
             {
                 //ProductosPanaderia producto = (ProductosPanaderia)prod;
-                ProductosPanaderia producto = new ProductosPanaderia(prod.Codigo, prod.Nombre, prod.Precio, 1);
+                ProductosPanaderia producto = new ProductosPanaderia(prod.Codigo, prod.Nombre, prod.Precio, prod.Cantidad,1);
                 lista.Add(producto);
             }
             return lista;

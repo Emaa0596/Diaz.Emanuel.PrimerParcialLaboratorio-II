@@ -14,13 +14,12 @@ namespace WinFormCrud
     public partial class FrmLogin : Form
     {
         private List<Usuario> usuarios;
-        private bool estaCerrando;
+
         public FrmLogin()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.usuarios = new List<Usuario>();
-            this.estaCerrando = true;
         }
 
         public List<Usuario> Usuarios { get { return this.usuarios; } }

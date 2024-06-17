@@ -27,8 +27,9 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\Tiendas.pdb
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\Productos.pdb
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmCarniceria.resources
-C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmProducto.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmAlmacen.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmPanaderia.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmCanasta.resources
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmValidacionPerfil.resources
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmTiendas.resources
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmProducto.resources
