@@ -18,7 +18,7 @@ namespace WinFormCrud
         public List<ProductosAlmacen> listaAlmacen;
         public List<ProductosCarniceria> listaCarniceria;
         public List<ProductosPanaderia> listaPanaderia;
-        protected Canasta carrito;
+        internal protected Canasta carrito;
         public List<Productos.Producto> productos;
         internal protected string tipoUsuario;
         public FrmTiendas()

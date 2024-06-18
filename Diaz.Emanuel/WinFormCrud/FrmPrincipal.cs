@@ -48,9 +48,46 @@ namespace WinFormCrud
             this.frmCarniceria.listaCarniceria = Datos.ConvertirProductosCarniceria(productosCarniceria);
             this.frmAlmacen.listaAlmacen = Datos.ConvertirProductosAlmacen(productosAlmacen);
             this.frmPanaderia.listaPanaderia = Datos.ConvertirProductosPanaderia(productosPanaderia);
+            this.ActualizarCarritoDeserializado();
             this.frmAlmacen.tipoUsuario = this.usuarioLogueado.Perfil;
             this.frmCarniceria.tipoUsuario = this.usuarioLogueado.Perfil;
             this.frmPanaderia.tipoUsuario = this.usuarioLogueado.Perfil;
+        }
+
+        private void ActualizarCarritoDeserializado()
+        {
+            foreach (ProductosAlmacen prodAlmacen in this.frmAlmacen.listaAlmacen)
+            {
+                if (prodAlmacen.Cantidad > 0)   
+                {
+                    int cantidad = prodAlmacen.Cantidad;
+                    prodAlmacen.Cantidad = 0;
+                    for (int i = 0; i < cantidad; i++) { this.frmAlmacen.carrito += prodAlmacen; }
+                }
+                else if (prodAlmacen.Cantidad < 0) { prodAlmacen.Cantidad = 0; }
+            }
+
+            foreach (ProductosCarniceria prodCarniceria in this.frmCarniceria.listaCarniceria)
+            {
+                if (prodCarniceria.Cantidad > 0)
+                {
+                    int cantidad = prodCarniceria.Cantidad;
+                    prodCarniceria.Cantidad = 0;
+                    for (int i = 0; i < cantidad; i++) { this.frmCarniceria.carrito += prodCarniceria; }
+                }
+                else if (prodCarniceria.Cantidad < 0) { prodCarniceria.Cantidad = 0; }
+            }
+
+            foreach (ProductosPanaderia prodPanaderia in this.frmPanaderia.listaPanaderia)
+            {
+                if (prodPanaderia.Cantidad > 0)
+                {
+                    int cantidad = prodPanaderia.Cantidad;
+                    prodPanaderia.Cantidad = 0;
+                    for (int i = 0; i < cantidad; i++) { this.frmPanaderia.carrito += prodPanaderia; }
+                }
+                else if (prodPanaderia.Cantidad < 0) { prodPanaderia.Cantidad = 0; }
+            }
         }
 
         /// <summary>
@@ -191,6 +228,7 @@ namespace WinFormCrud
                     }
                 }
             }
+            this.ActualizarCarritoDeserializado();
         }
 
         private void DeserializarProductosCarniceria_Click(object sender, EventArgs e)
@@ -211,6 +249,7 @@ namespace WinFormCrud
                     }
                 }
             }
+            this.ActualizarCarritoDeserializado();
         }
 
         private void DeserializarProductosPanaderia_Click(object sender, EventArgs e)
@@ -230,6 +269,7 @@ namespace WinFormCrud
                     }
                 }
             }
+            this.ActualizarCarritoDeserializado();
         }
     }
 }
