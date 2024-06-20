@@ -11,6 +11,10 @@ namespace Productos
         public float peso;
         public double precioFinalPesado;
 
+        public ProductosCarniceria() : base(0, "", 0, 0) 
+        { 
+            this.peso = 0; this.precioFinalPesado = 0;
+        }
         public ProductosCarniceria(int codigo, string nombre, double precioPorKilo, int cantidad , float peso) :base(codigo, nombre, precioPorKilo,cantidad)
         {
             this.peso = peso;
@@ -41,13 +45,13 @@ namespace Productos
             set { base.Cantidad = value; }
         }
 
-        public float Peso
+        public new float Peso
         {
             get { return peso; }
             set { Peso = value; } 
         }
 
-        public double PrecioFinalPesado
+        public new double PrecioFinalPesado
         {
             get { return precioFinalPesado; }
             set { PrecioFinalPesado = value; }

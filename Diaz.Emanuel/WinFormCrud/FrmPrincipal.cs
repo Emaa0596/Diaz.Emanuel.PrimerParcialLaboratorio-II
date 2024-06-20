@@ -42,12 +42,12 @@ namespace WinFormCrud
             this.usuarios = Datos.DeserializarDatos();
             this.usuarioLogueado = ObtenerUsuario();
             this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
-            List<Producto> productosCarniceria = Datos.DeserializarProductos(@"./productosCarniceria.json");
-            List<Producto> productosAlmacen = Datos.DeserializarProductos(@"./productosAlmacen.json");
-            List<Producto> productosPanaderia = Datos.DeserializarProductos(@"./productosPanaderia.json");
-            this.frmCarniceria.listaCarniceria = Datos.ConvertirProductosCarniceria(productosCarniceria);
-            this.frmAlmacen.listaAlmacen = Datos.ConvertirProductosAlmacen(productosAlmacen);
-            this.frmPanaderia.listaPanaderia = Datos.ConvertirProductosPanaderia(productosPanaderia);
+            //List<Producto> productosCarniceria = Datos.DeserializarProductos(@"./productosCarniceria.json");
+            //List<Producto> productosAlmacen = Datos.DeserializarProductos(@"./productosAlmacen.json");
+            //List<Producto> productosPanaderia = Datos.DeserializarProductos(@"./productosPanaderia.json");
+            this.frmCarniceria.listaCarniceria = Datos.basesql.ObtenerListaCarniceria();
+            this.frmAlmacen.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
+            this.frmPanaderia.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
             this.ActualizarCarritoDeserializado();
             this.frmAlmacen.tipoUsuario = this.usuarioLogueado.Perfil;
             this.frmCarniceria.tipoUsuario = this.usuarioLogueado.Perfil;

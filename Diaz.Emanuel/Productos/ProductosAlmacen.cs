@@ -8,6 +8,11 @@ namespace Productos
 {
     public class ProductosAlmacen : Producto
     {
+        public ProductosAlmacen() :base(0,"",0,0)
+        {
+            
+        }
+
         public ProductosAlmacen(int codigo, string nombre, double precio,int cantidad) : base(codigo, nombre, precio, cantidad) 
         {
             

@@ -8,10 +8,10 @@ namespace Productos
 {
     public class Producto
     {
-        private int codigo;
-        private string nombre = "";
-        private double precio;
-        private int cantidad;
+        public int codigo;
+        public string? nombre = "";
+        public double precio;
+        public int cantidad;
 
         public Producto()
         {

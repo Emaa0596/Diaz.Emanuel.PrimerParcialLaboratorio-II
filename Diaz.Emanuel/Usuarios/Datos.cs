@@ -11,10 +11,12 @@ namespace Usuarios
     public static class Datos
     {
         private static List<Usuario> listaUsuarios;
+        public static Database basesql;
 
         static Datos()
         {
             listaUsuarios = new List<Usuario>();
+            basesql = new Database();
         }
 
         public static List<Usuario> ListaUsuarios

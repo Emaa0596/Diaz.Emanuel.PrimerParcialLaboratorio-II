@@ -8,6 +8,10 @@ namespace Productos
 {
     public class ProductosPanaderia :ProductosCarniceria
     {
+        public ProductosPanaderia() :base(0,"",0,0,0)
+        {
+
+        }
         public ProductosPanaderia(int codigo, string nombre, double precioPorKilo, int cantidad, float peso) : base(codigo, nombre, precioPorKilo, cantidad, peso)
         {
             this.precioFinalPesado = base.precioFinalPesado;
