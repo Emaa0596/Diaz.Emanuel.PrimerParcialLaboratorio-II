@@ -195,14 +195,14 @@ namespace Usuarios
             return lista;
         }
 
-        public bool AgregarDatoAlmacen(ProductosAlmacen producto)
+        public bool AgregarProductoAlmacen(ProductosAlmacen producto)
         {
             bool rta = true;
 
             try
             {
                 string sql = "INSERT INTO productosAlmacen (codigo, producto, precio, cantidad) VALUES(";
-                sql = sql + producto.Codigo.ToString() + "," + producto.Nombre + "," + producto.Precio.ToString() + "," + producto.Cantidad.ToString() +")";
+                sql = sql + producto.Codigo.ToString() + ", '" + producto.Nombre + "' ," + producto.Precio.ToString() + "," + producto.Cantidad.ToString() +")";
 
                 this.comando = new SqlCommand();
 
@@ -251,7 +251,7 @@ namespace Usuarios
                 
             try
             {
-                string sql = $"INSERT INTO {tabla} (codigo, producto, precio, cantidad, precio, precioFinalPesado) VALUES(";
+                string sql = $"INSERT INTO {tabla} (codigo, producto, precio, cantidad, peso, precioFinalPesado) VALUES(";
                 sql += productoCarniceriaoPanaderia.Codigo.ToString() + ", '" + productoCarniceriaoPanaderia.Nombre + "' ," + productoCarniceriaoPanaderia.Precio.ToString() + ",";
                 sql += productoCarniceriaoPanaderia.Cantidad.ToString() +","+ productoCarniceriaoPanaderia.Peso.ToString() +","+ productoCarniceriaoPanaderia.PrecioFinalPesado.ToString()+")";
 
@@ -391,7 +391,7 @@ namespace Usuarios
             return rta;
         }
 
-        public bool EliminarDato(int id, string tabla)
+        public bool EliminarProducto(int codigoDeProducto, string tabla)
         {
             bool rta = true;
 
@@ -399,10 +399,10 @@ namespace Usuarios
             {
                 this.comando = new SqlCommand();
 
-                this.comando.Parameters.AddWithValue("@id", id);
+                this.comando.Parameters.AddWithValue("@codigo", codigoDeProducto);
 
                 string sql = $"DELETE FROM {tabla} ";
-                sql += "WHERE id = @id";
+                sql += "WHERE codigo = @codigo";
 
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = sql;

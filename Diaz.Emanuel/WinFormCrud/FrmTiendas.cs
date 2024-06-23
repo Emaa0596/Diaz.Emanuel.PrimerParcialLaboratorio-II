@@ -172,6 +172,29 @@ namespace WinFormCrud
             }
         }
 
+        private void AgregarProducto(Producto producto)
+        {
+            Type tipoProducto = producto.GetType();
+            if (tipoProducto.Name == nameof(ProductosAlmacen))
+            {
+                this.listaAlmacen.Add((ProductosAlmacen)producto);
+                Datos.basesql.AgregarProductoAlmacen((ProductosAlmacen)producto);
+                if (producto.cantidad > 0) { this.carrito.listaAlmacen.Add((ProductosAlmacen)producto); }
+            }
+            else if (tipoProducto.Name == nameof(ProductosCarniceria))
+            {
+                this.listaCarniceria.Add((ProductosCarniceria)producto);
+                Datos.basesql.AgregarDatoCarniceriaoPanaderia((ProductosCarniceria)producto);
+                if (producto.cantidad > 0) { this.carrito.listaCarniceria.Add((ProductosCarniceria)producto); }
+            }
+            else
+            {
+                this.listaPanaderia.Add((ProductosPanaderia)producto);
+                Datos.basesql.AgregarDatoCarniceriaoPanaderia((ProductosPanaderia)producto);
+                if (producto.cantidad > 0) { this.carrito.listaPanaderia.Add((ProductosPanaderia)producto); }
+            }
+        }
+
         /// <summary>
         /// Invoca a metodo estatico de ordenamiento y los guarda en la lista de productos ordenados,segun criterio
         /// </summary>
@@ -212,27 +235,62 @@ namespace WinFormCrud
                 switch (tipoProducto.Name)
                 {
                     case nameof(FrmCarniceria):
+                        bool coincidenciaCarniceria = false;
                         ProductosCarniceria productoCarniceria = new ProductosCarniceria(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad, 1);
-                        this.listaCarniceria.Add(productoCarniceria);
-                        if (productoCarniceria.Cantidad > 0)
+                        foreach (Producto prod in this.listaCarniceria)
                         {
-                            this.carrito.listaCarniceria.Add(productoCarniceria);
+                            if (prod == productoCarniceria)
+                            {
+                                coincidenciaCarniceria = true;
+                            }
+                        }
+                        if (!coincidenciaCarniceria)
+                        {
+                            this.AgregarProducto(productoCarniceria);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe ese producto","Coincidencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
                         break;
+
                     case nameof(FrmAlmacen):
+                        bool coincidenciaAlmacen = false;
                         ProductosAlmacen productoAlmacen = new ProductosAlmacen(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad);
-                        this.listaAlmacen.Add(productoAlmacen);
-                        if (productoAlmacen.Cantidad > 0)
+                        foreach (Producto prod in this.listaAlmacen)
                         {
-                            this.carrito.listaAlmacen.Add(productoAlmacen);
+                            if (prod == productoAlmacen)
+                            {
+                                coincidenciaAlmacen = true;
+                            }
+                        }
+                        if (!coincidenciaAlmacen)
+                        {
+                            this.AgregarProducto(productoAlmacen);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe ese producto", "Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
+
                     case nameof(FrmPanaderia):
+                        bool coincidenciaPanaderia = false;
                         ProductosPanaderia productoPanaderia = new ProductosPanaderia(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad, 1);
-                        this.listaPanaderia.Add(productoPanaderia);
-                        if (productoPanaderia.Cantidad > 0)
+                        foreach (Producto prod in this.listaPanaderia)
                         {
-                            this.carrito.listaPanaderia.Add(productoPanaderia);
+                            if (prod == productoPanaderia)
+                            {
+                                coincidenciaPanaderia = true;
+                            }
+                        }
+                        if (!coincidenciaPanaderia)
+                        {
+                            this.AgregarProducto(productoPanaderia);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe ese producto", "Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
                 }
@@ -261,7 +319,10 @@ namespace WinFormCrud
                         DialogResult resultado = prod.ShowDialog();
                         if (resultado == DialogResult.OK)
                         {
-                            this.listaAlmacen[indice] = new ProductosAlmacen(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad);
+                            //this.listaAlmacen[indice] = new ProductosAlmacen(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad);
+                            ProductosAlmacen productoModificado = new ProductosAlmacen(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad);
+                            Datos.basesql.ModificarProductoAlmacen(productoModificado);
+                            this.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
                             this.ActualizarVisor();
                         }
                         break;
@@ -271,17 +332,23 @@ namespace WinFormCrud
                         DialogResult resultadoCarniceria = prodCarniceria.ShowDialog();
                         if (resultadoCarniceria == DialogResult.OK)
                         {
-                            this.listaCarniceria[indice] = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad,1);
+                            //this.listaCarniceria[indice] = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad,1);
+                            ProductosCarniceria productoModificado = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad, 1);
+                            Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            this.listaCarniceria = Datos.basesql.ObtenerListaCarniceria();
                             this.ActualizarVisor();
                         }
                         break;
                     case nameof(FrmPanaderia):
-                        ProductosCarniceria productoAModificarPanaderia = this.listaCarniceria[indice];
+                        ProductosCarniceria productoAModificarPanaderia = this.listaPanaderia[indice];
                         FrmProducto prodPanaderia = new FrmProducto(productoAModificarPanaderia);
                         DialogResult resultadoPanaderia = prodPanaderia.ShowDialog();
                         if (resultadoPanaderia == DialogResult.OK)
                         {
-                            this.listaPanaderia[indice] = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
+                            //this.listaPanaderia[indice] = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
+                            ProductosPanaderia productoModificado = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
+                            Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            this.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
                             this.ActualizarVisor();
                         }
                         break;
@@ -312,7 +379,8 @@ namespace WinFormCrud
                         DialogResult resultado = prod.ShowDialog();
                         if (resultado == DialogResult.OK)
                         {
-                            this.listaAlmacen.Remove(productoAModificar);
+                            Datos.basesql.EliminarProducto(productoAModificar.Codigo, "productosAlmacen");
+                            this.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
                             this.ActualizarVisor();
                         }
                         break;
@@ -322,7 +390,8 @@ namespace WinFormCrud
                         DialogResult resultadoCarniceria = prodCarniceria.ShowDialog();
                         if (resultadoCarniceria == DialogResult.OK)
                         {
-                            this.listaCarniceria[indice] = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad, 1);
+                            Datos.basesql.EliminarProducto(productoAModificarCarniceria.Codigo, "productosCarniceria");
+                            this.listaCarniceria = Datos.basesql.ObtenerListaCarniceria();
                             this.ActualizarVisor();
                         }
                         break;
@@ -332,7 +401,9 @@ namespace WinFormCrud
                         DialogResult resultadoPanaderia = prodPanaderia.ShowDialog();
                         if (resultadoPanaderia == DialogResult.OK)
                         {
-                            this.listaPanaderia[indice] = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
+                            
+                            Datos.basesql.EliminarProducto(productoAModificarPanaderia.Codigo, "productosPanaderia");
+                            this.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
                             this.ActualizarVisor();
                         }
                         break;

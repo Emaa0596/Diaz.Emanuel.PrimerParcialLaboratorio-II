@@ -65,7 +65,7 @@ namespace Productos
             {
                 return false;
             }
-            if (primerProducto.Codigo == segundoProducto.Codigo && primerProducto.Nombre == segundoProducto.Nombre)
+            if (primerProducto.Codigo == segundoProducto.Codigo || primerProducto.Nombre == segundoProducto.Nombre)
             {
                 retorno = true;
             }
