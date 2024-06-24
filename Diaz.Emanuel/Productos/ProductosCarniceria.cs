@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Productos
 {
-    public class ProductosCarniceria : Producto
+    public class ProductosCarniceria : Producto, IConversionProductos<ProductosCarniceria>
     {
         public float peso;
         public double precioFinalPesado;
@@ -57,6 +57,11 @@ namespace Productos
             set { PrecioFinalPesado = value; }
         }
 
+        public ProductosCarniceria ConvertirProductos(Producto producto)
+        {
+            ProductosCarniceria productoConvertido = new ProductosCarniceria(producto.Codigo, producto.Nombre, producto.Precio, producto.Cantidad, 1);
+            return productoConvertido;
+        }
     }   
 
 }

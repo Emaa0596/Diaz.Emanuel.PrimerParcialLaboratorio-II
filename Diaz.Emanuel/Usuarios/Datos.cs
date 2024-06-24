@@ -86,7 +86,7 @@ namespace Usuarios
         /// </summary>
         /// <param name="listaProductos"></param>
         /// <param name="ruta"></param>
-        public static void SerializarDatos(List<ProductosAlmacen> listaProductos, string ruta)
+        public static void SerializarDatos <T>(List<T> listaProductos, string ruta)
         {
             JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
             formatoDeSerializado.WriteIndented = true;
@@ -98,29 +98,29 @@ namespace Usuarios
             }
         }
 
-        public static void SerializarDatos(List<ProductosCarniceria> listaProductos, string ruta)
-        {
-            JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
-            formatoDeSerializado.WriteIndented = true;
+        //public static void SerializarDatos(List<ProductosCarniceria> listaProductos, string ruta)
+        //{
+        //    JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
+        //    formatoDeSerializado.WriteIndented = true;
 
-            using (StreamWriter json = new StreamWriter(@$"{ruta}"))
-            {
-                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
-                json.WriteLine(archivoJson);
-            }
-        }
+        //    using (StreamWriter json = new StreamWriter(@$"{ruta}"))
+        //    {
+        //        string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
+        //        json.WriteLine(archivoJson);
+        //    }
+        //}
 
-        public static void SerializarDatos(List<ProductosPanaderia> listaProductos, string ruta)
-        {
-            JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
-            formatoDeSerializado.WriteIndented = true;
+        //public static void SerializarDatos(List<ProductosPanaderia> listaProductos, string ruta)
+        //{
+        //    JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
+        //    formatoDeSerializado.WriteIndented = true;
 
-            using (StreamWriter json = new StreamWriter(@$"{ruta}"))
-            {
-                string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
-                json.WriteLine(archivoJson);
-            }
-        }
+        //    using (StreamWriter json = new StreamWriter(@$"{ruta}"))
+        //    {
+        //        string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
+        //        json.WriteLine(archivoJson);
+        //    }
+        //}
 
 
         public static List<Usuario> DeserializarDatos()

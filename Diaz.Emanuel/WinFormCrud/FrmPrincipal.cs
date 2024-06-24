@@ -56,6 +56,7 @@ namespace WinFormCrud
 
         private void ActualizarCarritoDeserializado()
         {
+
             foreach (ProductosAlmacen prodAlmacen in this.frmAlmacen.listaAlmacen)
             {
                 if (prodAlmacen.Cantidad > 0)   
@@ -221,9 +222,11 @@ namespace WinFormCrud
                 if (lista.Count > 0)
                 {
                     this.frmAlmacen.listaAlmacen.Clear();
+                    this.frmAlmacen.carrito.listaAlmacen.Clear();
                     foreach (Producto prod in lista)
                     {
-                        ProductosAlmacen nuevoProducto = prod.ConvertirProductoAlmacen();
+                        ProductosAlmacen nuevoProducto = new ProductosAlmacen();
+                        nuevoProducto = nuevoProducto.ConvertirProductos(prod);
                         this.frmAlmacen.listaAlmacen.Add(nuevoProducto);
                     }
                 }
@@ -242,9 +245,11 @@ namespace WinFormCrud
                 if (lista.Count > 0)
                 {
                     this.frmCarniceria.listaCarniceria.Clear();
+                    this.frmCarniceria.carrito.listaCarniceria.Clear();
                     foreach (Producto prod in lista)
                     {
-                        ProductosCarniceria nuevoProducto = prod.ConvertirProductoCarniceria();
+                        ProductosCarniceria nuevoProducto = new ProductosCarniceria();
+                        nuevoProducto = nuevoProducto.ConvertirProductos(prod);
                         this.frmCarniceria.listaCarniceria.Add(nuevoProducto);
                     }
                 }
@@ -262,10 +267,12 @@ namespace WinFormCrud
                 if (lista.Count > 0)
                 {
                     this.frmPanaderia.listaPanaderia.Clear();
+                    this.frmPanaderia.carrito.listaPanaderia.Clear();
                     foreach (Producto prod in lista)
                     {
-                        ProductosPanaderia nuevoProducto = prod.ConvertirProductoAPanaderia();
-                        this.frmPanaderia.listaPanaderia.Add(nuevoProducto);
+                        IConversionProductos<ProductosPanaderia> nuevoProducto = new ProductosPanaderia();
+                        nuevoProducto = nuevoProducto.ConvertirProductos(prod);
+                        this.frmPanaderia.listaPanaderia.Add((ProductosPanaderia)nuevoProducto);
                     }
                 }
             }

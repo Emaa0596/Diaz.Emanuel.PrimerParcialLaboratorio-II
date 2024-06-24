@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Productos
 {
-    public class ProductosAlmacen : Producto
+    public class ProductosAlmacen : Producto, IConversionProductos<ProductosAlmacen>
     {
         public ProductosAlmacen() :base(0,"",0,0)
         {
@@ -42,6 +42,10 @@ namespace Productos
             set { base.Cantidad = value; }
         }
 
-
+        public ProductosAlmacen ConvertirProductos(Producto producto)
+        {
+            ProductosAlmacen productoConvertido = new ProductosAlmacen(producto.Codigo, producto.Nombre, producto.Precio, producto.Cantidad);
+            return productoConvertido;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Productos
 {
-    public class ProductosPanaderia :ProductosCarniceria
+    public class ProductosPanaderia :ProductosCarniceria, IConversionProductos<ProductosPanaderia>
     {
         public ProductosPanaderia() :base(0,"",0,0,0)
         {
@@ -51,6 +51,12 @@ namespace Productos
         {
             get { return precioFinalPesado; }
             set { PrecioFinalPesado = value; }
+        }
+
+        ProductosPanaderia IConversionProductos<ProductosPanaderia>.ConvertirProductos(Producto producto)
+        {
+            ProductosPanaderia productoConvertido = new ProductosPanaderia(producto.Codigo, producto.Nombre, producto.Precio, producto.Cantidad, 1);
+            return productoConvertido;
         }
     }
 }
