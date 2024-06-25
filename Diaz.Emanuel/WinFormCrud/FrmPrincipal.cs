@@ -59,7 +59,7 @@ namespace WinFormCrud
 
             foreach (ProductosAlmacen prodAlmacen in this.frmAlmacen.listaAlmacen)
             {
-                if (prodAlmacen.Cantidad > 0)   
+                if (prodAlmacen.Cantidad > 0)
                 {
                     int cantidad = prodAlmacen.Cantidad;
                     prodAlmacen.Cantidad = 0;
@@ -241,7 +241,7 @@ namespace WinFormCrud
             {
                 ruta = openFileDialogSerializar.FileName;
                 List<Producto> lista = Datos.DeserializarProductos(ruta);
-                
+
                 if (lista.Count > 0)
                 {
                     this.frmCarniceria.listaCarniceria.Clear();
@@ -277,6 +277,12 @@ namespace WinFormCrud
                 }
             }
             this.ActualizarCarritoDeserializado();
+        }
+
+        private void PBoxVisualizador_Click(object sender, EventArgs e)
+        {
+            FrmVisualizador visualizador = new FrmVisualizador();
+            visualizador.ShowDialog();
         }
     }
 }

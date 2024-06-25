@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuarios", "Usuarios\Usuari
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Productos", "Productos\Productos.csproj", "{0944E2A1-84B7-4D13-B188-C7CCEC1F19FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormTest", "WinFormTest\WinFormTest.csproj", "{2F28E302-32F8-4B9E-AB96-CA41551551A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos.Test", "Datos.Test\Datos.Test.csproj", "{42FDCF72-9088-48D9-A63E-D3B6D0E99CDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0944E2A1-84B7-4D13-B188-C7CCEC1F19FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0944E2A1-84B7-4D13-B188-C7CCEC1F19FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0944E2A1-84B7-4D13-B188-C7CCEC1F19FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F28E302-32F8-4B9E-AB96-CA41551551A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F28E302-32F8-4B9E-AB96-CA41551551A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F28E302-32F8-4B9E-AB96-CA41551551A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F28E302-32F8-4B9E-AB96-CA41551551A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FDCF72-9088-48D9-A63E-D3B6D0E99CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42FDCF72-9088-48D9-A63E-D3B6D0E99CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42FDCF72-9088-48D9-A63E-D3B6D0E99CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42FDCF72-9088-48D9-A63E-D3B6D0E99CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

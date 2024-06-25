@@ -48,16 +48,18 @@
             panaderiaToolStripMenuItem1 = new ToolStripMenuItem();
             openFileDialogSerializar = new OpenFileDialog();
             saveFileDialogDeserializar = new SaveFileDialog();
+            PBoxVisualizador = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoAlmacen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoPanaderia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PBoxInfoCarniceria).BeginInit();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PBoxVisualizador).BeginInit();
             SuspendLayout();
             // 
             // LblUsuarioConectado
             // 
             LblUsuarioConectado.AutoSize = true;
-            LblUsuarioConectado.Location = new Point(480, 397);
+            LblUsuarioConectado.Location = new Point(452, 397);
             LblUsuarioConectado.Name = "LblUsuarioConectado";
             LblUsuarioConectado.Size = new Size(38, 15);
             LblUsuarioConectado.TabIndex = 0;
@@ -244,6 +246,17 @@
             saveFileDialogDeserializar.DefaultExt = "json";
             saveFileDialogDeserializar.Filter = "Archivos JSON (*.json)|*.json";
             // 
+            // PBoxVisualizador
+            // 
+            PBoxVisualizador.BackColor = Color.DeepSkyBlue;
+            PBoxVisualizador.Image = (Image)resources.GetObject("PBoxVisualizador.Image");
+            PBoxVisualizador.Location = new Point(0, 368);
+            PBoxVisualizador.Name = "PBoxVisualizador";
+            PBoxVisualizador.Size = new Size(64, 53);
+            PBoxVisualizador.TabIndex = 10;
+            PBoxVisualizador.TabStop = false;
+            PBoxVisualizador.Click += PBoxVisualizador_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -251,6 +264,7 @@
             BackColor = Color.IndianRed;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(678, 421);
+            Controls.Add(PBoxVisualizador);
             Controls.Add(PBoxInfoCarniceria);
             Controls.Add(PBoxInfoPanaderia);
             Controls.Add(PBoxInfoAlmacen);
@@ -273,6 +287,7 @@
             ((System.ComponentModel.ISupportInitialize)PBoxInfoCarniceria).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PBoxVisualizador).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -298,5 +313,6 @@
         private ToolStripMenuItem carniceriaToolStripMenuItem1;
         private ToolStripMenuItem panaderiaToolStripMenuItem1;
         private SaveFileDialog saveFileDialogDeserializar;
+        private PictureBox PBoxVisualizador;
     }
 }

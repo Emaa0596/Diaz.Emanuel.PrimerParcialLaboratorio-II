@@ -31,5 +31,8 @@
     <Compile Update="FrmTiendas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmVisualizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

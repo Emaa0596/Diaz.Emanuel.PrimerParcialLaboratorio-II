@@ -47,39 +47,39 @@ namespace Usuarios
         /// </summary>
         /// <param name="listaProductos"></param>
         /// <returns>La lista de productos casteada</returns>
-        public static List<ProductosCarniceria> ConvertirProductosCarniceria(List<Producto> listaProductos)
-        {
-            List<ProductosCarniceria> lista = new List<ProductosCarniceria>();
-            foreach(Producto prod in listaProductos)
-            {
-                ProductosCarniceria producto = new ProductosCarniceria(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad,1);
-                lista.Add(producto);
-            }
-            return lista;
-        }
+        //public static List<ProductosCarniceria> ConvertirProductosCarniceria(List<Producto> listaProductos)
+        //{
+        //    List<ProductosCarniceria> lista = new List<ProductosCarniceria>();
+        //    foreach(Producto prod in listaProductos)
+        //    {
+        //        ProductosCarniceria producto = new ProductosCarniceria(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad,1);
+        //        lista.Add(producto);
+        //    }
+        //    return lista;
+        //}
 
-        public static List<ProductosAlmacen> ConvertirProductosAlmacen(List<Producto> listaProductos)
-        {
-            List<ProductosAlmacen> lista = new List<ProductosAlmacen>();
-            foreach (Producto prod in listaProductos)
-            {
-                ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad);
-                lista.Add(producto);
-            }
-            return lista;
-        }
+        //public static List<ProductosAlmacen> ConvertirProductosAlmacen(List<Producto> listaProductos)
+        //{
+        //    List<ProductosAlmacen> lista = new List<ProductosAlmacen>();
+        //    foreach (Producto prod in listaProductos)
+        //    {
+        //        ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad);
+        //        lista.Add(producto);
+        //    }
+        //    return lista;
+        //}
 
-        public static List<ProductosPanaderia> ConvertirProductosPanaderia(List<Producto> listaProductos)
-        {
-            List<ProductosPanaderia> lista = new List<ProductosPanaderia>();
-            foreach (Producto prod in listaProductos)
-            {
-                //ProductosPanaderia producto = (ProductosPanaderia)prod;
-                ProductosPanaderia producto = new ProductosPanaderia(prod.Codigo, prod.Nombre, prod.Precio, prod.Cantidad,1);
-                lista.Add(producto);
-            }
-            return lista;
-        }
+        //public static List<ProductosPanaderia> ConvertirProductosPanaderia(List<Producto> listaProductos)
+        //{
+        //    List<ProductosPanaderia> lista = new List<ProductosPanaderia>();
+        //    foreach (Producto prod in listaProductos)
+        //    {
+        //        //ProductosPanaderia producto = (ProductosPanaderia)prod;
+        //        ProductosPanaderia producto = new ProductosPanaderia(prod.Codigo, prod.Nombre, prod.Precio, prod.Cantidad,1);
+        //        lista.Add(producto);
+        //    }
+        //    return lista;
+        //}
 
         /// <summary>
         /// Serializa los productos correspondientes y los guarda en la ruta especificada. 
@@ -180,7 +180,7 @@ namespace Usuarios
             DateTime horaActual = DateTime.Now;
             string formatoHora = $"{horaActual.Hour}:{horaActual.Minute}:{horaActual.Second}";
             StringBuilder texto = new StringBuilder();
-            string datosUsuario = $"Nombre: {usuario.Nombre} Apellido: {usuario.Apellido} Correo Electronico: {usuario.CorreoElectronico} Perfil: {usuario.Perfil} ";
+            string datosUsuario = $"Nombre: {usuario.Nombre}, Apellido: {usuario.Apellido}, Correo: {usuario.CorreoElectronico}, Perfil: {usuario.Perfil}, ";
             texto.Append(datosUsuario);
             texto.Append("Fecha de ingreso: " + formatoDia + " Hora: " + formatoHora);
             return texto.ToString();

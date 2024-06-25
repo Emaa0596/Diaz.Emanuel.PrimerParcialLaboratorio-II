@@ -79,3 +79,4 @@ C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\NoxiePC\Desktop\Primer parcial Laboratorio II\Diaz.Emanuel\WinFormCrud\obj\Debug\net6.0-windows\WinFormCrud.FrmVisualizador.resources
