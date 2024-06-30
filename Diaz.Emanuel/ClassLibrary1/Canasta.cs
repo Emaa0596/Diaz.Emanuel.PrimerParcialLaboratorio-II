@@ -66,21 +66,21 @@ namespace Tiendas
             return total;
         }
 
-        public static Canasta operator + (Canasta carrito, ProductosCarniceria nuevoProducto)
+        public static Canasta operator +(Canasta carrito, ProductosCarniceria nuevoProducto)
         {
             if (carrito.listaCarniceria.Count > 0)
-            {   
+            {
                 bool coincidencia = false;
-                foreach(ProductosCarniceria producto in carrito.listaCarniceria)
+                foreach (ProductosCarniceria producto in carrito.listaCarniceria)
                 {
-                    if(producto == nuevoProducto)
+                    if (producto == nuevoProducto)
                     {
                         producto.Cantidad += 1;
                         coincidencia = true;
                         break;
                     }
                 }
-                if (!coincidencia) 
+                if (!coincidencia)
                 {
                     nuevoProducto.Cantidad += 1;
                     carrito.listaCarniceria.Add(nuevoProducto);
@@ -93,6 +93,34 @@ namespace Tiendas
             }
             return carrito;
         }
+
+        //public static Canasta operator +(Canasta carrito, ProductosCarniceria nuevoProducto)
+        //{
+        //    if (carrito.listaCarniceria.Count > 0)
+        //    {
+        //        bool coincidencia = false;
+        //        foreach (ProductosCarniceria producto in carrito.listaCarniceria)
+        //        {
+        //            if (producto == nuevoProducto)
+        //            {
+        //                producto.Cantidad += 1;
+        //                coincidencia = true;
+        //                break;
+        //            }
+        //        }
+        //        if (!coincidencia)
+        //        {
+        //            nuevoProducto.Cantidad += 1;
+        //            carrito.listaCarniceria.Add(nuevoProducto);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        nuevoProducto.Cantidad += 1;
+        //        carrito.listaCarniceria.Add(nuevoProducto);
+        //    }
+        //    return carrito;
+        //}
 
         public static Canasta operator + (Canasta carrito, ProductosAlmacen nuevoProducto)
         {

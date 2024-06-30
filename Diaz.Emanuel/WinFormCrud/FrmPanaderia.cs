@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tiendas;
+using Usuarios;
 
 namespace WinFormCrud
 {
@@ -40,6 +41,7 @@ namespace WinFormCrud
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosPanaderia prod = base.listaPanaderia[indice];
                 base.carrito += prod;
+                Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
                 this.ActualizarVisor();
                 lstViewProductos.Items[indice].Selected = true;
             }
@@ -61,6 +63,7 @@ namespace WinFormCrud
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosPanaderia prod = base.listaPanaderia[indice];
                 base.carrito -= prod;
+                Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
                 this.ActualizarVisor();
                 lstViewProductos.Items[indice].Selected = true;
             }

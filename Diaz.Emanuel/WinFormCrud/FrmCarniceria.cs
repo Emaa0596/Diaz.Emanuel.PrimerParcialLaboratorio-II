@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tiendas;
+using Usuarios;
 
 namespace WinFormCrud
 {
@@ -42,6 +43,7 @@ namespace WinFormCrud
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosCarniceria prod = base.listaCarniceria[indice];
                 base.carrito += prod;
+                Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
                 this.ActualizarVisor();
                 lstViewProductos.Items[indice].Selected = true;
             }
@@ -58,12 +60,13 @@ namespace WinFormCrud
         /// <param name="e"></param>
         protected override void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+
             if (base.lstViewProductos.SelectedIndices.Count > 0)
             {
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosCarniceria prod = base.listaCarniceria[indice];
                 base.carrito -= prod;
+                Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
                 this.ActualizarVisor();
                 lstViewProductos.Items[indice].Selected = true;
             }
@@ -132,6 +135,11 @@ namespace WinFormCrud
             base.MayorCantidadAMenorMenuItem_Click(sender, e);
             ObtenerListaOrdenada(base.productos);
             this.ActualizarVisor();
+        }
+
+        private void FrmCarniceria_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.ActualizarVisor();
         }
     }
 }

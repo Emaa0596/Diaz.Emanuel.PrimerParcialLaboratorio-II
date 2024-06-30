@@ -35,7 +35,7 @@ namespace WinFormCrud
             this.Precio.Text = this.Producto.Precio.ToString();
             this.Cantidad.Text = this.Producto.Cantidad.ToString();
             this.Codigo.Enabled = false;
-            this.Cantidad.Enabled = false;
+            //this.Cantidad.Enabled = false;
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -46,15 +46,31 @@ namespace WinFormCrud
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
+
             if (int.TryParse(Codigo.Text, out int codigo) && double.TryParse(Precio.Text,out double precio) && int.TryParse(Cantidad.Text, out int cantidad))
             {
                 int codigoTextbox = codigo;
                 string nombre = Nombre.Text.Trim();
                 double precioTxtbox = precio;
                 int unidad = cantidad;
-                this.Producto = new Producto(codigoTextbox, nombre, precioTxtbox,unidad);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                try
+                {
+                    if (unidad < 0) 
+                    { 
+                        throw new ErrorEnCantidadIngresadaException();
+                    }
+                }
+                catch (ErrorEnCantidadIngresadaException ex)
+                {
+                    unidad = 0;
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    this.Producto = new Producto(codigoTextbox, nombre, precioTxtbox, unidad);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
             else
             {
