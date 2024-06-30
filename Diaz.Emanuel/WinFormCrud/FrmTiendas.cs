@@ -21,6 +21,8 @@ namespace WinFormCrud
         internal protected Canasta carrito;
         public List<Productos.Producto> productos;
         internal protected string tipoUsuario;
+        internal protected Action? delegadoModificar;
+
         public FrmTiendas()
         {
             InitializeComponent();
@@ -150,18 +152,17 @@ namespace WinFormCrud
 
         private void AgregarProductoAlCarrito(Producto nuevoProducto)
         {
-            Type tipoProducto = typeof(Producto);
-            switch (tipoProducto.Name)
+            if (nuevoProducto is ProductosAlmacen)
             {
-                case nameof(ProductosCarniceria):
-                    this.carrito.listaCarniceria.Add((ProductosCarniceria)nuevoProducto);
-                    break;
-                case nameof(ProductosAlmacen):
-                    this.carrito.listaAlmacen.Add((ProductosAlmacen)nuevoProducto);
-                    break;
-                case nameof(ProductosPanaderia):
-                    this.carrito.listaPanaderia.Add((ProductosPanaderia)nuevoProducto);
-                    break;
+                this.carrito.listaAlmacen.Add((ProductosAlmacen)nuevoProducto);
+            }
+            else if(nuevoProducto is ProductosPanaderia)
+            {
+                this.carrito.listaPanaderia.Add((ProductosPanaderia)nuevoProducto);
+            }
+            else
+            { 
+                this.carrito.listaCarniceria.Add((ProductosCarniceria)nuevoProducto);
             }
         }
 
@@ -236,18 +237,21 @@ namespace WinFormCrud
             {
                 this.listaAlmacen.Add((ProductosAlmacen)producto);
                 Datos.basesql.AgregarProductoAlmacen((ProductosAlmacen)producto);
+                Datos.SerializarDatos(this.listaAlmacen, @"./productosAlmacen.json");
                 if (producto.cantidad > 0) { this.carrito.listaAlmacen.Add((ProductosAlmacen)producto); }
             }
             else if (tipoProducto.Name == nameof(ProductosCarniceria))
             {
                 this.listaCarniceria.Add((ProductosCarniceria)producto);
                 Datos.basesql.AgregarDatoCarniceriaoPanaderia((ProductosCarniceria)producto);
+                Datos.SerializarDatos(this.listaCarniceria, @"./productosCarniceria.json");
                 if (producto.cantidad > 0) { this.carrito.listaCarniceria.Add((ProductosCarniceria)producto); }
             }
             else
             {
                 this.listaPanaderia.Add((ProductosPanaderia)producto);
                 Datos.basesql.AgregarDatoCarniceriaoPanaderia((ProductosPanaderia)producto);
+                Datos.SerializarDatos(this.listaPanaderia, @"./productosPanaderia.json");
                 if (producto.cantidad > 0) { this.carrito.listaPanaderia.Add((ProductosPanaderia)producto); }
             }
         }
@@ -377,8 +381,12 @@ namespace WinFormCrud
                         if (resultado == DialogResult.OK)
                         {
                             ProductosAlmacen productoModificado = new ProductosAlmacen(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad);
-                            Datos.basesql.ModificarProductoAlmacen(productoModificado);
+                            //Datos.basesql.ModificarProductoAlmacen(productoModificado);
+                            this.delegadoModificar = () => Datos.basesql.ModificarProductoAlmacen(productoModificado);
+                            Task subProceso = Task.Run(this.delegadoModificar);
+                            subProceso.Wait();
                             this.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
+                            Datos.SerializarDatos(this.listaAlmacen, @"./productosAlmacen.json");
                             this.ActualizarCarrito(productoModificado);
                             this.ActualizarVisor();
                         }
@@ -390,8 +398,12 @@ namespace WinFormCrud
                         if (resultadoCarniceria == DialogResult.OK)
                         {
                             ProductosCarniceria productoModificado = new ProductosCarniceria(prodCarniceria.Productos.Codigo, prodCarniceria.Productos.Nombre, prodCarniceria.Productos.Precio, prodCarniceria.Productos.Cantidad, 1);
-                            Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            //Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            this.delegadoModificar = () => Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            Task subProceso = Task.Run(this.delegadoModificar);
+                            subProceso.Wait();
                             this.listaCarniceria = Datos.basesql.ObtenerListaCarniceria();
+                            Datos.SerializarDatos(this.listaCarniceria, @"./productosPanaderia.json");
                             this.ActualizarCarrito(productoModificado);
                             this.ActualizarVisor();
                         }
@@ -403,11 +415,13 @@ namespace WinFormCrud
                         if (resultadoPanaderia == DialogResult.OK)
                         {
                             ProductosPanaderia productoModificado = new ProductosPanaderia(prodPanaderia.Productos.Codigo, prodPanaderia.Productos.Nombre, prodPanaderia.Productos.Precio, prodPanaderia.Productos.Cantidad, 1);
-                            Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            //Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            this.delegadoModificar = () => Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                            Task subProceso = Task.Run(this.delegadoModificar);
+                            subProceso.Wait();
                             this.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
+                            Datos.SerializarDatos(this.listaPanaderia, @"./productosPanaderia.json");
                             this.ActualizarCarrito(productoModificado);
-
-                            //CORREGIR ESTO!!!
                             this.ActualizarVisor();
                         }
                         break;
@@ -440,6 +454,7 @@ namespace WinFormCrud
                         {
                             Datos.basesql.EliminarProducto(productoAModificar.Codigo, "productosAlmacen");
                             this.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
+                            Datos.SerializarDatos(this.listaAlmacen, @"./productosAlmacen.json");
                             this.ActualizarVisor();
                         }
                         break;
@@ -451,6 +466,7 @@ namespace WinFormCrud
                         {
                             Datos.basesql.EliminarProducto(productoAModificarCarniceria.Codigo, "productosCarniceria");
                             this.listaCarniceria = Datos.basesql.ObtenerListaCarniceria();
+                            Datos.SerializarDatos(this.listaCarniceria, @"./productosCarniceria.json");
                             this.ActualizarVisor();
                         }
                         break;
@@ -463,6 +479,7 @@ namespace WinFormCrud
                             
                             Datos.basesql.EliminarProducto(productoAModificarPanaderia.Codigo, "productosPanaderia");
                             this.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
+                            Datos.SerializarDatos(this.listaPanaderia, @"./productosPanaderia.json");
                             this.ActualizarVisor();
                         }
                         break;

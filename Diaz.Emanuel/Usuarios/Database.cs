@@ -286,10 +286,9 @@ namespace Usuarios
             return rta;
         }
 
-        public bool ModificarProductoAlmacen(ProductosAlmacen producto)
+        public void ModificarProductoAlmacen(ProductosAlmacen producto)
         {
             bool rta = true;
-
             try
             {
                 this.comando = new SqlCommand();
@@ -315,7 +314,6 @@ namespace Usuarios
                 {
                     rta = false;
                 }
-
             }
             catch (Exception)
             {
@@ -329,7 +327,6 @@ namespace Usuarios
                 }
             }
 
-            return rta;
         }
         
 
@@ -391,10 +388,9 @@ namespace Usuarios
             return rta;
         }
 
-        public bool EliminarProducto(int codigoDeProducto, string tabla)
+        public void EliminarProducto(int codigoDeProducto, string tabla)
         {
             bool rta = true;
-
             try
             {
                 this.comando = new SqlCommand();
@@ -429,8 +425,6 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
-            return rta;
         }
 
     }

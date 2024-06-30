@@ -135,7 +135,6 @@ namespace WinFormCrud
         private void btnCarniceria_Click(object sender, EventArgs e)
         {
             this.frmCarniceria.ShowDialog();
-            this.ActualizarCarritoDeserializado();
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
