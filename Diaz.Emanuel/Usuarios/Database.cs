@@ -70,7 +70,6 @@ namespace Usuarios
                 {
                     ProductosAlmacen item = new ProductosAlmacen();
 
-                    // ACCEDO POR NOMBRE, POR INDICE O POR GETTER (SEGUN TIPO DE DATO)
                     item.Codigo = (int)lector["codigo"];
                     item.Nombre = lector[1].ToString();
                     item.Precio = (double)lector[2];   
@@ -288,7 +287,6 @@ namespace Usuarios
 
         public void ModificarProductoAlmacen(ProductosAlmacen producto)
         {
-            bool rta = true;
             try
             {
                 this.comando = new SqlCommand();
@@ -308,16 +306,13 @@ namespace Usuarios
 
                 this.conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
-
-                if (filasAfectadas == 0)
-                {
-                    rta = false;
-                }
             }
             catch (Exception)
             {
-                rta = false;
+                if (this.conexion.State == ConnectionState.Open)
+                {
+                    this.conexion.Close();
+                }
             }
             finally
             {
@@ -390,7 +385,6 @@ namespace Usuarios
 
         public void EliminarProducto(int codigoDeProducto, string tabla)
         {
-            bool rta = true;
             try
             {
                 this.comando = new SqlCommand();
@@ -405,18 +399,13 @@ namespace Usuarios
                 this.comando.Connection = this.conexion;
 
                 this.conexion.Open();
-
-                int filasAfectadas = this.comando.ExecuteNonQuery();
-
-                if (filasAfectadas == 0)
-                {
-                    rta = false;
-                }
-
             }
             catch (Exception)
             {
-                rta = false;
+                if (this.conexion.State == ConnectionState.Open)
+                {
+                    this.conexion.Close();
+                }
             }
             finally
             {

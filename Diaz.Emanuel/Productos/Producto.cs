@@ -31,7 +31,7 @@ namespace Productos
             set { codigo = value; }
         }
 
-        public string Nombre
+        public string? Nombre
         {
             get { return nombre; }
             set { nombre = value; }

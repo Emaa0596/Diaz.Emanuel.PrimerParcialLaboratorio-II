@@ -24,7 +24,7 @@ namespace Productos
             set { base.Codigo = value; }
         }
 
-        public new string Nombre
+        public new string? Nombre
         {
             get { return base.Nombre; }
             set { base.Nombre = value; }

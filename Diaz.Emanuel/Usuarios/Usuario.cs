@@ -12,31 +12,31 @@ namespace Usuarios
         public string? perfil;
 
 
-        public string Nombre 
+        public string? Nombre 
         { 
             get { return nombre; }
             set { nombre = value; }
         }
 
-        public string Apellido
+        public string? Apellido
         {
             get { return apellido; }
             set {  apellido = value; }
         }
 
-        public string CorreoElectronico
+        public string? CorreoElectronico
         {
             get { return correoElectronico; }
             set { correoElectronico = value; }
         }
 
-        public string Clave 
+        public string? Clave 
         { 
             get { return clave; } 
             set {  clave = value; }
         }
 
-        public string Perfil
+        public string? Perfil
         { 
             get { return perfil; } 
             set {  perfil = value; }

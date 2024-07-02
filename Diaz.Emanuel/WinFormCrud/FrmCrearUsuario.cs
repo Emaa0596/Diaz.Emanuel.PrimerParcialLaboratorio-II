@@ -22,13 +22,43 @@ namespace WinFormCrud
             this.usuarios = new List<Usuario>();
         }
 
-        private void FormCrearUsuario_Load(object sender, EventArgs e)
+        public string Nombre
+        {
+            get { return textBoxNombre.Text; }
+            set { textBoxNombre.Text = value; }
+        }
+
+        public string Apellido
+        {
+            get { return textBoxApellido.Text; }
+            set { textBoxApellido.Text = value; }
+        }
+
+        public string CorreoElectronico
+        {
+            get { return textBoxCorreoElectronico.Text; }
+            set { textBoxCorreoElectronico.Text = value; }
+        }
+
+        public string Contraseña
+        {
+            get { return textBoxContraseña.Text; }
+            set { textBoxContraseña.Text = value; }
+        }
+
+        public string Perfil
+        {
+            get { return comboBoxPerfil.Text; }
+            set { comboBoxPerfil.Text = value; }
+        }
+
+        public void FormCrearUsuario_Load(object sender, EventArgs e)
         {
             this.usuarios = Datos.DeserializarDatos();
             this.comboBoxPerfil.SelectedIndex = 0;
         }
 
-        private void buttonCrearUsuario_Click(object sender, EventArgs e)
+        public void buttonCrearUsuario_Click(object sender, EventArgs e)
         {
             bool buscador = false;
             string nombre = this.textBoxNombre.Text;
@@ -55,6 +85,7 @@ namespace WinFormCrud
                 if (buscador)
                 {
                     MessageBox.Show("Ya existe un usuario con el mismo correo electronico", "Error", MessageBoxButtons.OK);
+                    this.DialogResult = DialogResult.Cancel;
                 }
                 else
                 {
@@ -68,7 +99,7 @@ namespace WinFormCrud
         private void TextBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            if (textBox != null) // Verificar si la conversión fue exitosa
+            if (textBox != null)
             {
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
