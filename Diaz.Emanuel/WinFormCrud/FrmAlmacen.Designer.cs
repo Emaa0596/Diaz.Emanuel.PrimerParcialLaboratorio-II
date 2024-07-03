@@ -35,10 +35,7 @@
             // 
             //lstProductos.BackColor = Color.PaleGreen;
             // 
-            // lblPrecio
-            // 
-            lblPrecio.Location = new Point(303, 48);
-            // 
+            //
             // FrmAlmacen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

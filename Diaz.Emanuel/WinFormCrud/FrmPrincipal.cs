@@ -39,6 +39,7 @@ namespace WinFormCrud
 
         private void FormularioPrincipal_Load(object sender, EventArgs e)
         {
+            Datos.basesql.errorConBaseDeDatos += MostrarMensajeErrorDatabase;
             this.usuarios = Datos.DeserializarDatos();
             this.usuarioLogueado = ObtenerUsuario();
             this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
@@ -52,6 +53,11 @@ namespace WinFormCrud
             this.frmAlmacen.tipoUsuario = this.usuarioLogueado.Perfil;
             this.frmCarniceria.tipoUsuario = this.usuarioLogueado.Perfil;
             this.frmPanaderia.tipoUsuario = this.usuarioLogueado.Perfil;
+        }
+
+        private void MostrarMensajeErrorDatabase()
+        {
+            MessageBox.Show("Error al conectar con la base de datos","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ActualizarCarritoDeserializado()

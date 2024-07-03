@@ -38,10 +38,17 @@ namespace WinFormCrud
             {
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosAlmacen prod = base.listaAlmacen[indice];
-                base.carrito += prod;
-                Datos.basesql.ModificarProductoAlmacen(prod);
-                this.ActualizarVisor();
-                lstViewProductos.Items[indice].Selected = true;
+                if(prod.Cantidad >= 5)
+                {
+                    base.DispararEventoCantidadMaximaPermitida();
+                }
+                else
+                {
+                    base.carrito += prod;
+                    Datos.basesql.ModificarProductoAlmacen(prod);
+                    this.ActualizarVisor();
+                    lstViewProductos.Items[indice].Selected = true;
+                }   
             }
             else
             {
@@ -60,16 +67,24 @@ namespace WinFormCrud
             {
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosAlmacen prod = base.listaAlmacen[indice];
-                base.carrito -= prod;
-                Datos.basesql.ModificarProductoAlmacen(prod);
-                this.ActualizarVisor();
-                lstViewProductos.Items[indice].Selected = true;
+                if (prod.Cantidad == 0)
+                {
+                    base.DispararEventoCantidadMaximaPermitida();
+                }
+                else
+                {
+                    base.carrito -= prod;
+                    Datos.basesql.ModificarProductoAlmacen(prod);
+                    this.ActualizarVisor();
+                    lstViewProductos.Items[indice].Selected = true;
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione el producto que desea eliminar", "Error", MessageBoxButtons.OK);
             }
         }
+
 
         /// <summary>
         /// Actualiza los productos en el listbox de panaderia
@@ -133,6 +148,44 @@ namespace WinFormCrud
             base.MayorCantidadAMenorMenuItem_Click(sender, e);
             ObtenerListaOrdenada(base.productos);
             this.ActualizarVisor();
+        }
+
+        protected override void CrearProductoStripMenu_Click(object sender, EventArgs e)
+        {
+            FrmProducto nuevoProducto = new FrmProducto();
+            DialogResult dialogo = nuevoProducto.ShowDialog();
+            if (dialogo == DialogResult.OK)
+            {
+                Producto productoAgregado = nuevoProducto.Productos;
+                bool coincidenciaPanaderia = false;
+                ProductosAlmacen productoAlmacen = new ProductosAlmacen(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad);
+                foreach (Producto prod in this.listaAlmacen)
+                {
+                    if (prod == productoAlmacen)
+                    {
+                        coincidenciaPanaderia = true;
+                    }
+                }
+                if (!coincidenciaPanaderia)
+                {
+                    base.AgregarProducto(productoAlmacen);
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe ese producto", "Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                base.CrearProductoStripMenu_Click(sender, e);
+            }
+        }
+
+        protected override void BtnInfoProducto_Click(object sender, EventArgs e)
+        {
+            if (lstViewProductos.SelectedItems.Count > 0)
+            {
+                int indice = this.lstViewProductos.SelectedIndices[0];
+                Producto prod = this.listaAlmacen[indice];
+                MessageBox.Show(prod.Mostrar(), $"{prod.Nombre}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -53,6 +53,11 @@ namespace Productos
             set { PrecioFinalPesado = value; }
         }
 
+        public override string Mostrar()
+        {
+            return $"Producto de Panaderia, su precio es ${this.precio} xKG, cantidad maxima de Kilos: 5";
+        }
+
         ProductosPanaderia IConversionProductos<ProductosPanaderia>.ConvertirProductos(Producto producto)
         {
             ProductosPanaderia productoConvertido = new ProductosPanaderia(producto.Codigo, producto.Nombre, producto.Precio, producto.Cantidad, 1);

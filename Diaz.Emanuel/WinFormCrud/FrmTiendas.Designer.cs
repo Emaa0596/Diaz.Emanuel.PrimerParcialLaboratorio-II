@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblProducto = new Label();
-            lblPrecio = new Label();
-            lblCantidad = new Label();
             btnAgregar = new Button();
             btnEliminar = new Button();
             menuStrip1 = new MenuStrip();
@@ -51,39 +48,10 @@
             clmProductos = new ColumnHeader();
             clmPrecio = new ColumnHeader();
             clmCantidad = new ColumnHeader();
+            BtnInfoProducto = new Button();
             menuStrip1.SuspendLayout();
             menuStrip2.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblProducto
-            // 
-            lblProducto.AutoSize = true;
-            lblProducto.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProducto.Location = new Point(54, 48);
-            lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(80, 20);
-            lblProducto.TabIndex = 1;
-            lblProducto.Text = "Productos";
-            // 
-            // lblPrecio
-            // 
-            lblPrecio.AutoSize = true;
-            lblPrecio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(265, 48);
-            lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(52, 20);
-            lblPrecio.TabIndex = 2;
-            lblPrecio.Text = "Precio";
-            // 
-            // lblCantidad
-            // 
-            lblCantidad.AutoSize = true;
-            lblCantidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCantidad.Location = new Point(456, 48);
-            lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(71, 20);
-            lblCantidad.TabIndex = 3;
-            lblCantidad.Text = "Cantidad";
             // 
             // btnAgregar
             // 
@@ -158,7 +126,7 @@
             menuStrip2.Items.AddRange(new ToolStripItem[] { AdministradorMenuStrip, SupervisorMenuStrip });
             menuStrip2.Location = new Point(294, 9);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(297, 24);
+            menuStrip2.Size = new Size(177, 24);
             menuStrip2.TabIndex = 8;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -172,21 +140,21 @@
             // crearProductoToolStripMenuItem
             // 
             crearProductoToolStripMenuItem.Name = "crearProductoToolStripMenuItem";
-            crearProductoToolStripMenuItem.Size = new Size(180, 22);
+            crearProductoToolStripMenuItem.Size = new Size(178, 22);
             crearProductoToolStripMenuItem.Text = "Crear Producto";
             crearProductoToolStripMenuItem.Click += CrearProductoStripMenu_Click;
             // 
             // actualizarProductoToolStripMenuItem
             // 
             actualizarProductoToolStripMenuItem.Name = "actualizarProductoToolStripMenuItem";
-            actualizarProductoToolStripMenuItem.Size = new Size(180, 22);
+            actualizarProductoToolStripMenuItem.Size = new Size(178, 22);
             actualizarProductoToolStripMenuItem.Text = "Actualizar Producto";
             actualizarProductoToolStripMenuItem.Click += ActualizarProductoMenuItem_Click;
             // 
             // eliminarProductoToolStripMenuItem
             // 
             eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            eliminarProductoToolStripMenuItem.Size = new Size(180, 22);
+            eliminarProductoToolStripMenuItem.Size = new Size(178, 22);
             eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
             eliminarProductoToolStripMenuItem.Click += EliminarProductoMenuItem_Click;
             // 
@@ -224,32 +192,41 @@
             // 
             // clmProductos
             // 
-            clmProductos.Text = "Productos";
+            clmProductos.Text = "PRODUCTOS";
             clmProductos.Width = 200;
             // 
             // clmPrecio
             // 
-            clmPrecio.Text = "Precio";
+            clmPrecio.Text = "PRECIO";
             clmPrecio.TextAlign = HorizontalAlignment.Center;
             clmPrecio.Width = 100;
             // 
             // clmCantidad
             // 
-            clmCantidad.Text = "Cantidad";
+            clmCantidad.Text = "CANTIDAD";
             clmCantidad.TextAlign = HorizontalAlignment.Right;
             clmCantidad.Width = 150;
+            // 
+            // BtnInfoProducto
+            // 
+            BtnInfoProducto.BackColor = Color.Transparent;
+            BtnInfoProducto.Location = new Point(54, 54);
+            BtnInfoProducto.Name = "BtnInfoProducto";
+            BtnInfoProducto.Size = new Size(173, 24);
+            BtnInfoProducto.TabIndex = 10;
+            BtnInfoProducto.Text = "Informacion del producto";
+            BtnInfoProducto.UseVisualStyleBackColor = false;
+            BtnInfoProducto.Click += BtnInfoProducto_Click;
             // 
             // FrmTiendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(573, 349);
+            Controls.Add(BtnInfoProducto);
             Controls.Add(lstViewProductos);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
-            Controls.Add(lblCantidad);
-            Controls.Add(lblPrecio);
-            Controls.Add(lblProducto);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -266,12 +243,8 @@
         }
 
         #endregion
-
-        private Label lblProducto;
-        private Label lblCantidad;
         private Button btnAgregar;
         private Button btnEliminar;
-        protected Label lblPrecio;
         private MenuStrip menuStrip1;
         protected ToolStripMenuItem OrdenarMenuStrip;
         protected ToolStripMenuItem menorPrecioAMayorToolStripMenuItem;
@@ -290,5 +263,6 @@
         protected ColumnHeader clmProductos;
         protected ColumnHeader clmPrecio;
         protected ColumnHeader clmCantidad;
+        private Button BtnInfoProducto;
     }
 }

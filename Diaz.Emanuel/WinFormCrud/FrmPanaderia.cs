@@ -24,7 +24,6 @@ namespace WinFormCrud
 
         private void FrmPanaderia_Load(object sender, EventArgs e)
         {
-            this.lblPrecio.Text = "Precio por Kilo";
             base.ConfigurarPermisos();
             this.ActualizarVisor();
         }
@@ -40,10 +39,17 @@ namespace WinFormCrud
             {
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosPanaderia prod = base.listaPanaderia[indice];
-                base.carrito += prod;
-                Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
-                this.ActualizarVisor();
-                lstViewProductos.Items[indice].Selected = true;
+                if (prod.Cantidad >= 5)
+                {
+                    base.DispararEventoCantidadMaximaPermitida();
+                }
+                else
+                {
+                    base.carrito += prod;
+                    Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
+                    this.ActualizarVisor();
+                    lstViewProductos.Items[indice].Selected = true;
+                }
             }
             else
             {
@@ -62,10 +68,17 @@ namespace WinFormCrud
             {
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosPanaderia prod = base.listaPanaderia[indice];
-                base.carrito -= prod;
-                Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
-                this.ActualizarVisor();
-                lstViewProductos.Items[indice].Selected = true;
+                if (prod.Cantidad == 0)
+                {
+                    base.DispararEventoCantidadMaximaPermitida();
+                }
+                else
+                {
+                    base.carrito -= prod;
+                    Datos.basesql.ModificarProductoCarniceriaOPanaderia(prod);
+                    this.ActualizarVisor();
+                    lstViewProductos.Items[indice].Selected = true;
+                }
             }
             else
             {
@@ -136,5 +149,42 @@ namespace WinFormCrud
             this.ActualizarVisor();
         }
 
+        protected override void CrearProductoStripMenu_Click(object sender, EventArgs e)
+        {
+            FrmProducto nuevoProducto = new FrmProducto();
+            DialogResult dialogo = nuevoProducto.ShowDialog();
+            if(dialogo == DialogResult.OK)
+            {
+                Producto productoAgregado = nuevoProducto.Productos;
+                bool coincidenciaPanaderia = false;
+                ProductosPanaderia productoPanaderia = new ProductosPanaderia(productoAgregado.Codigo, productoAgregado.Nombre, productoAgregado.Precio, productoAgregado.Cantidad, 1);
+                foreach (Producto prod in this.listaPanaderia)
+                {
+                    if (prod == productoPanaderia)
+                    {
+                        coincidenciaPanaderia = true;
+                    }
+                }
+                if (!coincidenciaPanaderia)
+                {
+                    base.AgregarProducto(productoPanaderia);
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe ese producto", "Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                base.CrearProductoStripMenu_Click(sender, e);
+            } 
+        }
+
+        protected override void BtnInfoProducto_Click(object sender, EventArgs e)
+        {
+            if (lstViewProductos.SelectedItems.Count > 0)
+            {
+                int indice = this.lstViewProductos.SelectedIndices[0];
+                Producto prod = this.listaPanaderia[indice];
+                MessageBox.Show(prod.Mostrar(), $"{prod.Nombre}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

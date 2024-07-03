@@ -42,6 +42,11 @@ namespace Productos
             set { base.Cantidad = value; }
         }
 
+        public override string Mostrar()
+        {
+            return $"Producto de almacen, su precio es ${this.precio} xUnidad, cantidad maxima de unidades: 5";
+        }
+
         public ProductosAlmacen ConvertirProductos(Producto producto)
         {
             ProductosAlmacen productoConvertido = new ProductosAlmacen(producto.Codigo, producto.Nombre, producto.Precio, producto.Cantidad);

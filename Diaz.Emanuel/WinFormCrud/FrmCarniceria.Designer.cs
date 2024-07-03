@@ -40,7 +40,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCarniceria";
             Text = "Carniceria";
-            FormClosing += FrmCarniceria_FormClosing;
             Load += FrmCarniceria_Load;
             ResumeLayout(false);
             PerformLayout();

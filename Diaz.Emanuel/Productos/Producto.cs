@@ -53,9 +53,9 @@ namespace Productos
         /// 
         /// </summary>
         /// <returns></returns>
-        public string Mostrar()
+        public virtual string Mostrar()
         {
-            return $"{this.nombre}        \t\t\t${this.precio}\t\t\t {this.cantidad}";
+            return $"{this.nombre} {this.precio} {this.cantidad}";
         }
 
         public static bool operator == (Producto primerProducto, Producto segundoProducto)
@@ -75,25 +75,5 @@ namespace Productos
         {
             return !(primerProducto == segundoProducto);
         }
-
-        //public ProductosAlmacen ConvertirProductoAlmacen()
-        //{
-        //    ProductosAlmacen nuevoProducto = new ProductosAlmacen(this.Codigo, this.Nombre, this.Precio, this.Cantidad);
-        //    return nuevoProducto;
-        //}
-
-        //public ProductosCarniceria ConvertirProductoCarniceria()
-        //{
-        //    ProductosCarniceria nuevoProducto = new ProductosCarniceria(this.Codigo, this.Nombre, this.Precio, this.Cantidad,1);
-        //    return nuevoProducto;
-        //}
-
-        //public ProductosPanaderia ConvertirProductoAPanaderia()
-        //{
-        //    ProductosPanaderia nuevoProducto = new ProductosPanaderia(this.Codigo, this.Nombre, this.Precio, this.Cantidad,1);
-        //    return nuevoProducto;
-        //}
-
-
     }
 }

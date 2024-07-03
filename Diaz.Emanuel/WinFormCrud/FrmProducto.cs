@@ -34,8 +34,7 @@ namespace WinFormCrud
             this.Nombre.Text = this.Producto.Nombre;
             this.Precio.Text = this.Producto.Precio.ToString();
             this.Cantidad.Text = this.Producto.Cantidad.ToString();
-            this.Codigo.Enabled = false;
-            //this.Cantidad.Enabled = false;
+            this.Codigo.Enabled = false;;
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -55,14 +54,21 @@ namespace WinFormCrud
                 int unidad = cantidad;
                 try
                 {
-                    if (unidad < 0) 
-                    { 
+                    if (unidad < 0 || unidad > 5)
+                    {
                         throw new ErrorEnCantidadIngresadaException();
                     }
                 }
                 catch (ErrorEnCantidadIngresadaException ex)
                 {
-                    unidad = 0;
+                    if(unidad < 0)
+                    {
+                        unidad = 0;
+                    }
+                    else
+                    {
+                        unidad = 5;
+                    }
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally

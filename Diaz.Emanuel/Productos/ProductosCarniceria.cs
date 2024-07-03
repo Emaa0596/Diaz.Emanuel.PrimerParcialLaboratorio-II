@@ -45,18 +45,22 @@ namespace Productos
             set { base.Cantidad = value; }
         }
 
-        public new float Peso
+        public float Peso
         {
             get { return peso; }
             set { Peso = value; } 
         }
 
-        public new double PrecioFinalPesado
+        public double PrecioFinalPesado
         {
             get { return precioFinalPesado; }
             set { PrecioFinalPesado = value; }
         }
 
+        public override string Mostrar()
+        {
+            return $"Producto de carniceria, su precio es ${this.precio} xKG, se puede adquirir una cantidad maxima de 5 Kilos";
+        }
         public ProductosCarniceria ConvertirProductos(Producto producto)
         {
             ProductosCarniceria productoConvertido = new ProductosCarniceria(producto.Codigo, producto.Nombre, producto.Precio, producto.Cantidad, 1);

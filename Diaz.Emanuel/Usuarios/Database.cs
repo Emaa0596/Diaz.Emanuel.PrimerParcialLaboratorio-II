@@ -16,6 +16,7 @@ namespace Usuarios
         private SqlConnection conexion;
         private SqlCommand? comando;
         private SqlDataReader? lector;
+        public event Action? errorConBaseDeDatos;
 
         static Database()
         {
@@ -37,6 +38,10 @@ namespace Usuarios
             }
             catch (Exception e)
             {
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
                 rta = false;
             }
             finally
@@ -83,7 +88,10 @@ namespace Usuarios
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
             }
             finally
             {
@@ -115,24 +123,22 @@ namespace Usuarios
                 while (lector.Read())
                 {
                     ProductosPanaderia item = new ProductosPanaderia();
-
-                    // ACCEDO POR NOMBRE, POR INDICE O POR GETTER (SEGUN TIPO DE DATO)
                     item.codigo = (int)lector["codigo"];
                     item.nombre = lector[1].ToString();
                     item.precio = (double)(decimal)lector[2];
                     item.cantidad = (int)lector[3];
                     item.peso = (float)(double)lector[4];
                     item.precioFinalPesado = (double)(decimal)lector[5];
-
                     lista.Add(item);
                 }
-
                 lector.Close();
-
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
             }
             finally
             {
@@ -181,7 +187,10 @@ namespace Usuarios
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
             }
             finally
             {
@@ -194,9 +203,9 @@ namespace Usuarios
             return lista;
         }
 
-        public bool AgregarProductoAlmacen(ProductosAlmacen producto)
+        public void AgregarProductoAlmacen(ProductosAlmacen producto)
         {
-            bool rta = true;
+            bool coincidencias = true;
 
             try
             {
@@ -215,13 +224,15 @@ namespace Usuarios
 
                 if (filasAfectadas == 0)
                 {
-                    rta = false;
+                    coincidencias = false;
                 }
-
             }
             catch (Exception e)
             {
-                rta = false;
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
             }
             finally
             {
@@ -230,13 +241,11 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
-            return rta;
         }
 
-        public bool AgregarDatoCarniceriaoPanaderia(ProductosCarniceria? productoCarniceriaoPanaderia)
+        public void AgregarDatoCarniceriaoPanaderia(ProductosCarniceria? productoCarniceriaoPanaderia)
         {
-            bool rta = true;
+            bool coincidencia = true;
             string tabla;
             if (productoCarniceriaoPanaderia.GetType() == typeof(ProductosCarniceria)) 
             {
@@ -246,8 +255,7 @@ namespace Usuarios
             else 
             {
                 tabla = "productosPanaderia";
-            }
-                
+            }  
             try
             {
                 string sql = $"INSERT INTO {tabla} (codigo, producto, precio, cantidad, peso, precioFinalPesado) VALUES(";
@@ -266,13 +274,17 @@ namespace Usuarios
 
                 if (filasAfectadas == 0)
                 {
-                    rta = false;
+                    coincidencia = false;
                 }
 
             }
             catch (Exception e)
             {
-                rta = false;
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
+                coincidencia = false;
             }
             finally
             {
@@ -281,8 +293,6 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
-            return rta;
         }
 
         public void ModificarProductoAlmacen(ProductosAlmacen producto)
@@ -309,9 +319,9 @@ namespace Usuarios
             }
             catch (Exception)
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (this.errorConBaseDeDatos != null)
                 {
-                    this.conexion.Close();
+                    this.errorConBaseDeDatos.Invoke();
                 }
             }
             finally
@@ -325,7 +335,7 @@ namespace Usuarios
         }
         
 
-        public bool ModificarProductoCarniceriaOPanaderia(ProductosCarniceria? producto)
+        public void ModificarProductoCarniceriaOPanaderia(ProductosCarniceria? producto)
         {
             bool rta = true;
             string tabla;
@@ -370,6 +380,10 @@ namespace Usuarios
             }
             catch (Exception)
             {
+                if (this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
                 rta = false;
             }
             finally
@@ -379,8 +393,6 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
-            return rta;
         }
 
         public void EliminarProducto(int codigoDeProducto, string tabla)
@@ -399,12 +411,18 @@ namespace Usuarios
                 this.comando.Connection = this.conexion;
 
                 this.conexion.Open();
+                int rowsAffected = comando.ExecuteNonQuery();
+
+                if (rowsAffected == 0)
+                {
+                    Console.WriteLine("No se encontró el producto con el código especificado.");
+                }
             }
             catch (Exception)
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if(this.errorConBaseDeDatos != null)
                 {
-                    this.conexion.Close();
+                    this.errorConBaseDeDatos.Invoke();
                 }
             }
             finally
