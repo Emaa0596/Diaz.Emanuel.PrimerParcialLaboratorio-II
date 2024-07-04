@@ -12,6 +12,14 @@ namespace Tiendas
         internal List<ProductosAlmacen> productos;
         public string promociones;
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="listaProductos"></param>
+        /// <param name="promociones"></param>
         public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> listaProductos, string promociones) 
             :base(direccion, cantidadEmpleados, tipoDeProductos)
         {
@@ -19,6 +27,14 @@ namespace Tiendas
             this.promociones = promociones;
         }
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro, sin promociones.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="listaProductos"></param>
+        /// <param name="promociones"></param>
         public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> listaProductos)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
@@ -26,6 +42,14 @@ namespace Tiendas
             this.promociones = "";
         }
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro, con una lista de productos vacia.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="listaProductos"></param>
+        /// <param name="promociones"></param>
         public Almacen(string direccion, int cantidadEmpleados, string tipoDeProductos, string promociones)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {

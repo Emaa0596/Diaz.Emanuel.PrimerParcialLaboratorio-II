@@ -13,10 +13,15 @@ namespace Productos
         public double precio;
         public int cantidad;
 
-        public Producto()
-        {
+        public Producto() { }
 
-        }
+        /// <summary>
+        /// Le asiga a los atributos los valores pasados por parametro.
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <param name="nombre"></param>
+        /// <param name="precio"></param>
+        /// <param name="cantidad"></param>
         public Producto(int codigo, string nombre, double precio, int cantidad)
         {
             this.codigo = codigo;
@@ -50,7 +55,7 @@ namespace Productos
         }
 
         /// <summary>
-        /// 
+        /// Muestra datos del producto
         /// </summary>
         /// <returns></returns>
         public virtual string Mostrar()

@@ -15,6 +15,10 @@ namespace WinFormCrud
     public partial class FrmCrearUsuario : Form
     {
         List<Usuario> usuarios;
+
+        /// <summary>
+        /// Inicializa el form y el atributo.
+        /// </summary>
         public FrmCrearUsuario()
         {
             InitializeComponent();
@@ -58,6 +62,11 @@ namespace WinFormCrud
             this.comboBoxPerfil.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Valida que los datos ingresados sean correctos, y si el perfil lo requiere, solicita la clave para crearlo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void buttonCrearUsuario_Click(object sender, EventArgs e)
         {
             bool buscador = false;
@@ -96,6 +105,11 @@ namespace WinFormCrud
             }
         }
 
+        /// <summary>
+        /// Valida que los datos ingresados en los textbox sean correctos. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox textBox = (TextBox)sender;

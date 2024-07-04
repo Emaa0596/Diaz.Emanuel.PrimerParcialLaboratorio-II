@@ -141,8 +141,11 @@
             Controls.Add(Precio);
             Controls.Add(Nombre);
             Controls.Add(Codigo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmProducto";
-            Text = "FrmProducto";
+            Text = "Producto";
             ResumeLayout(false);
             PerformLayout();
         }

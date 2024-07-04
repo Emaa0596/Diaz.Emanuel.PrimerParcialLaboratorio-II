@@ -13,6 +13,9 @@ namespace Usuarios
         private static List<Usuario> listaUsuarios;
         public static Database basesql;
 
+        /// <summary>
+        /// Inicializa los atributos.
+        /// </summary>
         static Datos()
         {
             listaUsuarios = new List<Usuario>();
@@ -43,45 +46,6 @@ namespace Usuarios
         }
 
         /// <summary>
-        /// Castea los productos al tipo correspondiente
-        /// </summary>
-        /// <param name="listaProductos"></param>
-        /// <returns>La lista de productos casteada</returns>
-        //public static List<ProductosCarniceria> ConvertirProductosCarniceria(List<Producto> listaProductos)
-        //{
-        //    List<ProductosCarniceria> lista = new List<ProductosCarniceria>();
-        //    foreach(Producto prod in listaProductos)
-        //    {
-        //        ProductosCarniceria producto = new ProductosCarniceria(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad,1);
-        //        lista.Add(producto);
-        //    }
-        //    return lista;
-        //}
-
-        //public static List<ProductosAlmacen> ConvertirProductosAlmacen(List<Producto> listaProductos)
-        //{
-        //    List<ProductosAlmacen> lista = new List<ProductosAlmacen>();
-        //    foreach (Producto prod in listaProductos)
-        //    {
-        //        ProductosAlmacen producto = new ProductosAlmacen(prod.Codigo,prod.Nombre,prod.Precio,prod.Cantidad);
-        //        lista.Add(producto);
-        //    }
-        //    return lista;
-        //}
-
-        //public static List<ProductosPanaderia> ConvertirProductosPanaderia(List<Producto> listaProductos)
-        //{
-        //    List<ProductosPanaderia> lista = new List<ProductosPanaderia>();
-        //    foreach (Producto prod in listaProductos)
-        //    {
-        //        //ProductosPanaderia producto = (ProductosPanaderia)prod;
-        //        ProductosPanaderia producto = new ProductosPanaderia(prod.Codigo, prod.Nombre, prod.Precio, prod.Cantidad,1);
-        //        lista.Add(producto);
-        //    }
-        //    return lista;
-        //}
-
-        /// <summary>
         /// Serializa los productos correspondientes y los guarda en la ruta especificada. 
         /// </summary>
         /// <param name="listaProductos"></param>
@@ -97,31 +61,6 @@ namespace Usuarios
                 json.WriteLine(archivoJson);
             }
         }
-
-        //public static void SerializarDatos(List<ProductosCarniceria> listaProductos, string ruta)
-        //{
-        //    JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
-        //    formatoDeSerializado.WriteIndented = true;
-
-        //    using (StreamWriter json = new StreamWriter(@$"{ruta}"))
-        //    {
-        //        string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
-        //        json.WriteLine(archivoJson);
-        //    }
-        //}
-
-        //public static void SerializarDatos(List<ProductosPanaderia> listaProductos, string ruta)
-        //{
-        //    JsonSerializerOptions formatoDeSerializado = new JsonSerializerOptions();
-        //    formatoDeSerializado.WriteIndented = true;
-
-        //    using (StreamWriter json = new StreamWriter(@$"{ruta}"))
-        //    {
-        //        string archivoJson = System.Text.Json.JsonSerializer.Serialize(listaProductos, formatoDeSerializado);
-        //        json.WriteLine(archivoJson);
-        //    }
-        //}
-
 
         public static List<Usuario> DeserializarDatos()
         {   

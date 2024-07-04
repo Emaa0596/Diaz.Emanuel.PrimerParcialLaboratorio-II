@@ -6,7 +6,12 @@
         public int cantidadDeEmpleados;
         public string tipoDeproductos;
 
-
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadDeEmpleados"></param>
+        /// <param name="tipoDeproductos"></param>
         public Tienda(string direccion, int cantidadDeEmpleados, string tipoDeproductos)
         {
             this.direccion = direccion;
@@ -16,6 +21,11 @@
 
         protected abstract string DatosDeLatienda();
 
+        /// <summary>
+        /// Compara por tipo, cantidad de empleados y tipo de productos.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             bool retorno = false;

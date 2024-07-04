@@ -14,6 +14,10 @@ namespace WinFormCrud
     public partial class FrmProducto : Form
     {
         private Producto? Producto;
+
+        /// <summary>
+        /// Inicializa el form y lo centra.
+        /// </summary>
         public FrmProducto()
         {
             InitializeComponent();
@@ -25,6 +29,10 @@ namespace WinFormCrud
             get { return this.Producto; }
         }
 
+        /// <summary>
+        /// Inicializa el form y le agrega a los textbox los atributos del producto.
+        /// </summary>
+        /// <param name="producto">Producto que se va a mostrar en el formulario.</param>
         public FrmProducto(Producto producto)
         {
             InitializeComponent();
@@ -43,6 +51,11 @@ namespace WinFormCrud
             this.Close();
         }
 
+        /// <summary>
+        /// Verifica que los datos ingresados sean correctos, y si las unidades no son las correctas lanza una excepcion propia y las configura correctamente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Aceptar_Click(object sender, EventArgs e)
         {
 

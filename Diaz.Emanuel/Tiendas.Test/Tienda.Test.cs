@@ -13,6 +13,9 @@ namespace Tiendas.Test
             this.almacenDos = new Almacen("San martin 2342", 2, "Varios", "2x1 en gaseosas");
         }
 
+        /// <summary>
+        /// Verifica el Equals sobreescrito en la clase Almacen.
+        /// </summary>
         [TestMethod]
         public void TestEquals()
         {

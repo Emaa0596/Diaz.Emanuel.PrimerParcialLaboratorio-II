@@ -23,7 +23,9 @@ namespace WinFormCrud
         {
            this.CargarDatosAlVisualizador();
         }
-
+        /// <summary>
+        /// Carga los datos de los usuarios ingresados al visualizador. Si no existe el archivo lanza una excepcion propia.
+        /// </summary>
         private void CargarDatosAlVisualizador()
         {
             try

@@ -12,6 +12,13 @@ namespace Tiendas
         public List<ProductosAlmacen> productos;
         public string formasDePago;
 
+        /// <summary>
+        /// Inicializa los atributos con forma de pago solo en efectivo.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="listaDeProductos"></param>
         public Panaderia(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> listaDeProductos)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
@@ -19,6 +26,13 @@ namespace Tiendas
             this.formasDePago = "Efectivo";
         }
 
+        /// <summary>
+        /// Inicializa los atributos con forma de pago solo en venta online.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="listaDeProductos"></param>
         public Panaderia(int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> productosDisponibles, string formasDePago)
             : base(direccion: "Solo venta online", cantidadEmpleados, tipoDeProductos)
         {
@@ -26,6 +40,13 @@ namespace Tiendas
             this.formasDePago = formasDePago;
         }
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="listaDeProductos"></param>
         public Panaderia(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen>productosDisponibles, string formasDePago)
             :base(direccion,cantidadEmpleados,tipoDeProductos)
         {

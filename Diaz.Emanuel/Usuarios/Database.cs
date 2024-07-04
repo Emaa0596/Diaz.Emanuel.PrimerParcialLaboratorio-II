@@ -19,11 +19,17 @@ namespace Usuarios
         private SqlDataReader? lector;
         public event Action? errorConBaseDeDatos;
 
+        /// <summary>
+        /// Inicializa el atributo con el string de conexion para la base de datos sql.
+        /// </summary>
         static Database()
         {
             Database.cadena_conexion = "Data Source=DESKTOP-9544MJ9\\SQLEXPRESS;Initial Catalog=productos;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
         }
 
+        /// <summary>
+        /// Inicializa el atributo para conectar a la base de datos asignandole el string de conexion
+        /// </summary>
         public Database()
         {
             this.conexion = new SqlConnection(Database.cadena_conexion);
@@ -32,7 +38,6 @@ namespace Usuarios
         public bool ProbarConexion()
         {
             bool rta = true;
-
             try
             {
                 this.conexion.Open();
@@ -52,7 +57,6 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
             return rta;
         }
 
@@ -63,13 +67,10 @@ namespace Usuarios
             try
             {
                 this.comando = new SqlCommand();
-
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = "SELECT * FROM productosAlmacen";
                 this.comando.Connection = this.conexion;
-
                 this.conexion.Open();
-
                 this.lector = comando.ExecuteReader();
 
                 while (lector.Read())
@@ -83,9 +84,7 @@ namespace Usuarios
 
                     lista.Add(item);
                 }
-
                 lector.Close();
-
             }
             catch (Exception ex)
             {
@@ -101,14 +100,12 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
             return lista;
         }
 
         public List<ProductosPanaderia> ObtenerListaPanaderia()
         {
             List<ProductosPanaderia> lista = new List<ProductosPanaderia>();
-
             try
             {
                 this.comando = new SqlCommand();
@@ -148,7 +145,6 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
             return lista;
         }
 
@@ -159,20 +155,15 @@ namespace Usuarios
             try
             {
                 this.comando = new SqlCommand();
-
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = "SELECT * FROM productosCarniceria";
                 this.comando.Connection = this.conexion;
-
                 this.conexion.Open();
-
                 this.lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
                     ProductosCarniceria item = new ProductosCarniceria();
-
-                    // ACCEDO POR NOMBRE, POR INDICE O POR GETTER (SEGUN TIPO DE DATO)
                     item.codigo = (int)lector["codigo"];
                     item.nombre = lector[1].ToString();
                     item.precio = (double)(decimal)lector[2];
@@ -182,9 +173,7 @@ namespace Usuarios
 
                     lista.Add(item);
                 }
-
                 lector.Close();
-
             }
             catch (Exception ex)
             {
@@ -200,29 +189,23 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
             return lista;
         }
 
         public void AgregarProductoAlmacen(ProductosAlmacen producto)
         {
             bool coincidencias = true;
-
             try
             {
                 string sql = "INSERT INTO productosAlmacen (codigo, producto, precio, cantidad) VALUES(";
                 sql = sql + producto.Codigo.ToString() + ", '" + producto.Nombre + "' ," + producto.Precio.ToString() + "," + producto.Cantidad.ToString() +")";
-
                 this.comando = new SqlCommand();
-
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = sql;
                 this.comando.Connection = this.conexion;
-
                 this.conexion.Open();
 
                 int filasAfectadas = this.comando.ExecuteNonQuery();
-
                 if (filasAfectadas == 0)
                 {
                     coincidencias = false;
@@ -252,7 +235,6 @@ namespace Usuarios
             {
                 tabla = "productosCarniceria"; 
             }
-
             else 
             {
                 tabla = "productosPanaderia";
@@ -262,22 +244,17 @@ namespace Usuarios
                 string sql = $"INSERT INTO {tabla} (codigo, producto, precio, cantidad, peso, precioFinalPesado) VALUES(";
                 sql += productoCarniceriaoPanaderia.Codigo.ToString() + ", '" + productoCarniceriaoPanaderia.Nombre + "' ," + productoCarniceriaoPanaderia.Precio.ToString() + ",";
                 sql += productoCarniceriaoPanaderia.Cantidad.ToString() +","+ productoCarniceriaoPanaderia.Peso.ToString() +","+ productoCarniceriaoPanaderia.PrecioFinalPesado.ToString()+")";
-
                 this.comando = new SqlCommand();
-
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = sql;
                 this.comando.Connection = this.conexion;
-
                 this.conexion.Open();
 
                 int filasAfectadas = this.comando.ExecuteNonQuery();
-
                 if (filasAfectadas == 0)
                 {
                     coincidencia = false;
                 }
-
             }
             catch (Exception e)
             {
@@ -301,7 +278,6 @@ namespace Usuarios
             try
             {
                 this.comando = new SqlCommand();
-
                 this.comando.Parameters.AddWithValue("@codigo", producto.Codigo);
                 this.comando.Parameters.AddWithValue("@producto", producto.Nombre);
                 this.comando.Parameters.AddWithValue("@precio", producto.Precio);
@@ -314,16 +290,13 @@ namespace Usuarios
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = sql;
                 this.comando.Connection = this.conexion;
-
                 this.conexion.Open();
 
                 int filasAfectadas = this.comando.ExecuteNonQuery();
-
                 if (filasAfectadas == 0 && this.errorConBaseDeDatos != null)
                 {
                     this.errorConBaseDeDatos.Invoke();
                 }
-
             }
             catch (Exception)
             {
@@ -339,7 +312,6 @@ namespace Usuarios
                     this.conexion.Close();
                 }
             }
-
         }
         
 
@@ -351,12 +323,10 @@ namespace Usuarios
             {
                 tabla = "productosCarniceria";
             }
-
             else
             {
                 tabla = "productosPanaderia";
             }
-
             try
             {
                 this.comando = new SqlCommand();
@@ -384,7 +354,6 @@ namespace Usuarios
                 {
                     rta = false;
                 }
-
             }
             catch (Exception)
             {
@@ -408,16 +377,12 @@ namespace Usuarios
             try
             {
                 this.comando = new SqlCommand();
-
                 this.comando.Parameters.AddWithValue("@codigo", codigoDeProducto);
-
                 string sql = $"DELETE FROM {tabla} ";
                 sql += "WHERE codigo = @codigo";
-
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = sql;
                 this.comando.Connection = this.conexion;
-
                 this.conexion.Open();
                 int rowsAffected = comando.ExecuteNonQuery();
 

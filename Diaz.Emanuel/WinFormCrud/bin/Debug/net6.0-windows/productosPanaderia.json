@@ -3,7 +3,7 @@
     "Codigo": 3003,
     "Nombre": "Medialunas",
     "Precio": 6000,
-    "Cantidad": 0,
+    "Cantidad": 1,
     "Peso": 1,
     "PrecioFinalPesado": 6000
   },
@@ -22,5 +22,13 @@
     "Cantidad": 0,
     "Peso": 1,
     "PrecioFinalPesado": 2500
+  },
+  {
+    "Codigo": 123131,
+    "Nombre": "Bizcochos",
+    "Precio": 1200,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 1200
   }
 ]

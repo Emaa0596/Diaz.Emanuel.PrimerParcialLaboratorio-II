@@ -13,6 +13,14 @@ namespace Tiendas
         public string descuento;
         public string tipoDeCarne;
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro, y un descuento del 10%.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="productosDisponibles"></param>
+        /// <param name="tipoDeCarne"></param>
         public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosCarniceria> productosDisponibles, string tipoDeCarne)
             :base(direccion,cantidadEmpleados, tipoDeProductos)
         {
@@ -21,6 +29,14 @@ namespace Tiendas
             this.tipoDeCarne = tipoDeCarne;
         }
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="productosDisponibles"></param>
+        /// <param name="tipoDeCarne"></param>
         public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosCarniceria> productosDisponibles, string porcentajeDescuento, string tipoDeCarne)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
@@ -29,6 +45,14 @@ namespace Tiendas
             this.tipoDeCarne= tipoDeCarne;
         }
 
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro, y tipo de carne variada.
+        /// </summary>
+        /// <param name="direccion"></param>
+        /// <param name="cantidadEmpleados"></param>
+        /// <param name="tipoDeProductos"></param>
+        /// <param name="productosDisponibles"></param>
+        /// <param name="tipoDeCarne"></param>
         public Carniceria(string direccion, int cantidadEmpleados, string tipoDeProductos, string porcentajeDescuento)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {

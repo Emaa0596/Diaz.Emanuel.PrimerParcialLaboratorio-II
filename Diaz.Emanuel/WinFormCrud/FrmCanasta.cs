@@ -16,6 +16,11 @@ namespace WinFormCrud
     public partial class FrmCanasta : Form
     {
         public Canasta carrito;
+
+        /// <summary>
+        /// Inicializa el atributo y el formulario
+        /// </summary>
+        /// <param name="carrito"></param>
         public FrmCanasta(Canasta carrito)
         {
             InitializeComponent();
@@ -60,8 +65,7 @@ namespace WinFormCrud
                     lstViewCanasta.Items.Add(item);
                 }
             }
-
-            string totalApagar = this.carrito.CalcularTotal();
+            string totalApagar = this.carrito.CalcularTotalAPagar();
             this.lblTotalAPagarDouble.Text = totalApagar;
         }
 
@@ -192,5 +196,4 @@ namespace WinFormCrud
             }
         }
     }
-
 }

@@ -15,6 +15,9 @@ namespace Tiendas
         public List<ProductosPanaderia> listaPanaderia;
         private double totalAPagar;
 
+        /// <summary>
+        /// Inicializa los atributos
+        /// </summary>
         public Canasta()
         {
             this.listaAlmacen = new List<ProductosAlmacen>();
@@ -23,22 +26,7 @@ namespace Tiendas
             this.totalAPagar = 0.0;
         }
 
-        //public void AgregarProducto(Almacen almacen)
-        //{
-        //    this.listaAlmacen = almacen.productos;
-        //}
-
-        //public void AgregarProducto(Carniceria carniceria)
-        //{
-        //    this.listaCarniceria = carniceria.productos;
-        //}
-
-        //public void AgregarProducto(Panaderia panaderia)
-        //{
-        //    this.listaPanaderia = panaderia.productos;
-        //}
-
-        public string CalcularTotal()
+        public string CalcularTotalAPagar()
         {
             this.totalAPagar = 0.0;
             if (this.listaAlmacen.Count > 0)
@@ -66,7 +54,13 @@ namespace Tiendas
             return total;
         }
 
-        public static Canasta operator +(Canasta carrito, ProductosCarniceria nuevoProducto)
+        /// <summary>
+        /// Agrega el producto al carrito o le suma 1 cantidad.
+        /// </summary>
+        /// <param name="carrito"></param>
+        /// <param name="nuevoProducto"></param>
+        /// <returns></returns>
+        public static Canasta operator + (Canasta carrito, ProductosCarniceria nuevoProducto)
         {
             if (carrito.listaCarniceria.Count > 0)
             {
@@ -94,33 +88,6 @@ namespace Tiendas
             return carrito;
         }
 
-        //public static Canasta operator +(Canasta carrito, ProductosCarniceria nuevoProducto)
-        //{
-        //    if (carrito.listaCarniceria.Count > 0)
-        //    {
-        //        bool coincidencia = false;
-        //        foreach (ProductosCarniceria producto in carrito.listaCarniceria)
-        //        {
-        //            if (producto == nuevoProducto)
-        //            {
-        //                producto.Cantidad += 1;
-        //                coincidencia = true;
-        //                break;
-        //            }
-        //        }
-        //        if (!coincidencia)
-        //        {
-        //            nuevoProducto.Cantidad += 1;
-        //            carrito.listaCarniceria.Add(nuevoProducto);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        nuevoProducto.Cantidad += 1;
-        //        carrito.listaCarniceria.Add(nuevoProducto);
-        //    }
-        //    return carrito;
-        //}
 
         public static Canasta operator +(Canasta carrito, ProductosAlmacen nuevoProducto)
         {
@@ -178,6 +145,12 @@ namespace Tiendas
             return carrito;
         }
 
+        /// <summary>
+        /// Elimina un producto del carrito o le quita 1 unidad.
+        /// </summary>
+        /// <param name="carrito"></param>
+        /// <param name="nuevoProducto"></param>
+        /// <returns></returns>
         public static Canasta operator -(Canasta carrito, ProductosCarniceria nuevoProducto)
         {
             if (carrito.listaCarniceria.Count > 0)

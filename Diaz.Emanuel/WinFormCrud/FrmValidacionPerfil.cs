@@ -15,6 +15,11 @@ namespace WinFormCrud
         private string claveSupervisor;
         private string claveAdministrador;
         private string perfilSolicitado;
+
+        /// <summary>
+        /// Inicializa los atributos de las claves para los perfiles y el perfil solicitado.
+        /// </summary>
+        /// <param name="perfilSolicitado"></param>
         public FrmValidacionPerfil(string perfilSolicitado)
         {
             InitializeComponent();
@@ -25,6 +30,11 @@ namespace WinFormCrud
             this.DialogResult = DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// Verifica que se haya ingresado la clave correcta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnIngresarPerfil_Click(object sender, EventArgs e)
         {
             string claveIngresada = this.TxtBoxClavePerfil.Text;

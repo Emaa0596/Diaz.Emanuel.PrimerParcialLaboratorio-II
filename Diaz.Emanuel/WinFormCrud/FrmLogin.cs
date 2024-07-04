@@ -15,6 +15,9 @@ namespace WinFormCrud
     {
         private List<Usuario> usuarios;
 
+        /// <summary>
+        /// Inicializa el atributo y el form.
+        /// </summary>
         public FrmLogin()
         {
             InitializeComponent();
@@ -29,6 +32,11 @@ namespace WinFormCrud
             this.usuarios = Datos.DeserializarDatos();
         }
 
+        /// <summary>
+        /// Valida si el usuario y contraseña existe y son correctos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void botonIngresar_Click(object sender, EventArgs e)
         {
             string correoElectronico = this.textBoxUsuario.Text;
@@ -37,7 +45,6 @@ namespace WinFormCrud
             bool buscadorUsuarios = Datos.BuscarUsuarios(nuevoUsuario);
             if (buscadorUsuarios)
             {
-                //this.DialogResult = DialogResult.OK;
                 FrmPrincipal FrmPrincipal = new FrmPrincipal(nuevoUsuario);
                 this.Hide();
                 DialogResult cierreApp = FrmPrincipal.ShowDialog();

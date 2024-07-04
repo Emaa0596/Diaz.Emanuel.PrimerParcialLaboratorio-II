@@ -14,6 +14,9 @@ namespace Datos.Test
             lista = new List<Producto>() { new ProductosAlmacen(1235,"alfajores",1000,0) };
         }
 
+        /// <summary>
+        /// Verifica que se serialice correctamente la lista creada en el initialize. una vez que termina, borra el archivo.
+        /// </summary>
         [TestMethod]
         public void TestMetodoSerializar()
         {

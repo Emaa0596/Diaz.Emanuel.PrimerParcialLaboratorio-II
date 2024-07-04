@@ -16,6 +16,11 @@ namespace WinFormCrud
         private Almacen almacen;
         private Carniceria carniceria;
         private Panaderia panaderia;
+
+        /// <summary>
+        /// Inicializa los atributos y componentes del form
+        /// </summary>
+        /// <param name="usuarioIngresado"></param>
         public FrmPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
@@ -37,15 +42,17 @@ namespace WinFormCrud
             set { this.usuarios = value; }
         }
 
+        /// <summary>
+        /// Obtiene los datos de la base sql, inicializa atributos y adhiere un metodo al evento de la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormularioPrincipal_Load(object sender, EventArgs e)
         {
             Datos.basesql.errorConBaseDeDatos += MostrarMensajeErrorDatabase;
             this.usuarios = Datos.DeserializarDatos();
             this.usuarioLogueado = ObtenerUsuario();
             this.LblUsuarioConectado.Text = ObtenerDiaYUsuario();
-            //List<Producto> productosCarniceria = Datos.DeserializarProductos(@"./productosCarniceria.json");
-            //List<Producto> productosAlmacen = Datos.DeserializarProductos(@"./productosAlmacen.json");
-            //List<Producto> productosPanaderia = Datos.DeserializarProductos(@"./productosPanaderia.json");
             this.frmCarniceria.listaCarniceria = Datos.basesql.ObtenerListaCarniceria();
             this.frmAlmacen.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
             this.frmPanaderia.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
@@ -285,6 +292,11 @@ namespace WinFormCrud
             this.ActualizarCarritoDeserializado();
         }
 
+        /// <summary>
+        /// Muestra el registro de ingreso de los usuarios al programa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PBoxVisualizador_Click(object sender, EventArgs e)
         {
             FrmVisualizador visualizador = new FrmVisualizador();
