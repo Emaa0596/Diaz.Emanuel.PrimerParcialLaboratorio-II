@@ -18,8 +18,8 @@
 > **Nota 5:** El crud se realiza en paralelo, con SQL y Json. Se pueden elegir ubicaciones para la serializacion/deserializacion tambien. Les dejo 1 archivo json por cada tipo de producto para que puedan chequearlo. Por default trae todos los datos al iniciar de la base de datos SQL.
 
 ## 
-![Productos Panaderia](Diaz.Emanuel/productosPanaderiaJson.json)
 ![Productos Almacen](Diaz.Emanuel/productosAlmacenJson.json)
+![Productos Panaderia](Diaz.Emanuel/productosPanaderiaJson.json)
 ![Productos Carniceria](Diaz.Emanuel/productosCarniceriaJson.json)
 ## Diagramas de clases
 ##
