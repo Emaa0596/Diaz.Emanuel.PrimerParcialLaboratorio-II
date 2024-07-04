@@ -7,9 +7,9 @@
 ##
 ## Anotaciones Importantes
 
-> **Nota 1:** la clave para crear un perfil Administrador es: superadministrador
+> **Nota 1:** La clave para crear un perfil Administrador es: superadministrador
 
-> **Nota 2:** la clave para crear un perfil Supervisor es: supersupervisor
+> **Nota 2:** La clave para crear un perfil Supervisor es: supersupervisor
 
 > **Nota 3:** Script para la base de datos SQL: ![ScriptSQL](Diaz.Emanuel/SQLQueryProductos.sql). Usa autenticacion windows,  Cifrado opcional, Trust server certificate.
 
