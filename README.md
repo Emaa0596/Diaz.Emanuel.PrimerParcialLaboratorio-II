@@ -39,7 +39,7 @@
 ##
 ![Diagrama de clases](Diaz.Emanuel/DiagramaLogs1.png)
 ## Aplicacion de hilos al modificar productos.
-![Aplicacion de hilos](Diaz.Emanuel/hilos.png)
+![Aplicacion de hilos](Diaz.Emanuel/Hilos.png)
 ###
 ## Script SQL:
 USE [master]
