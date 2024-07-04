@@ -38,6 +38,8 @@
 ![Diagrama de clases](Diaz.Emanuel/DiagramaFrmPrincipalYExcepciones.png)
 ##
 ![Diagrama de clases](Diaz.Emanuel/DiagramaLogs1.png)
+## Aplicacion de hilos al modificar productos.
+![Aplicacion de hilos](Diaz.Emanuel/hilos.png)
 ###
 ## Script SQL:
 USE [master]
