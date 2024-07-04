@@ -21,23 +21,23 @@
 ##
 ![Diagrama de clases](Diaz.Emanuel/DiagramaTiendas1.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\\DiagramaTiendas2.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaTiendas2.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaProductos.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaProductos.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaCanasta.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaCanasta.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaDatos.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaDatos.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaUsuarioYOrdenamiento.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaUsuarioYOrdenamiento.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaFormsTiendas1.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaFormsTiendas1.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaFormsTiendas2.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaFormsTiendas2.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaFrmPrincipalYExcepciones.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaFrmPrincipalYExcepciones.png)
 ##
-![Diagrama de clases](Diaz.Emanuel\DiagramaLogs1.png)
+![Diagrama de clases](Diaz.Emanuel/DiagramaLogs1.png)
 ###
 ## Script SQL:
 USE [master]
