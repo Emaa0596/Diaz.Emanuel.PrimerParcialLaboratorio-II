@@ -11,7 +11,7 @@
 
 > **Nota 2:** la clave para crear un perfil Supervisor es: supersupervisor
 
-> **Nota 3:** Script para la base de datos SQL: ![ScriptSQL](C:\Users\NoxiePC\Desktop\SQLQueryProductos.sql). Usa autenticacion windows,  Cifrado opcional, Trust server certificate.
+> **Nota 3:** Script para la base de datos SQL: ![ScriptSQL](Diaz.Emanuel/SQLQueryProductos.sql). Usa autenticacion windows,  Cifrado opcional, Trust server certificate.
 
 > **Nota 4:** En caso de no funcionar el script, al final del Readme lo dejo entero.
 
