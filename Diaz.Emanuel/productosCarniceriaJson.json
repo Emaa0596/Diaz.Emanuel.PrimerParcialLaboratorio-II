@@ -1,0 +1,50 @@
+[
+  {
+    "Codigo": 2004,
+    "Nombre": "Tira de asado desde json",
+    "Precio": 7000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 7000
+  },
+  {
+    "Codigo": 2005,
+    "Nombre": "Carne picada desde json",
+    "Precio": 5000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 5000
+  },
+  {
+    "Codigo": 2006,
+    "Nombre": "Paleta desde json",
+    "Precio": 6000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 6000
+  },
+  {
+    "Codigo": 2007,
+    "Nombre": "Asado desde json",
+    "Precio": 7500,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 7500
+  },
+  {
+    "Codigo": 2008,
+    "Nombre": "Cuadrada desde json",
+    "Precio": 6500,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 6500
+  },
+  {
+    "Codigo": 56497,
+    "Nombre": "Vacio desde json",
+    "Precio": 7000,
+    "Cantidad": 1,
+    "Peso": 1,
+    "PrecioFinalPesado": 7000
+  }
+]

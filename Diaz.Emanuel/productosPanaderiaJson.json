@@ -1,0 +1,34 @@
+[
+  {
+    "Codigo": 1241,
+    "Nombre": "Churros desde json",
+    "Precio": 6000,
+    "Cantidad": 1,
+    "Peso": 1,
+    "PrecioFinalPesado": 6000
+  },
+  {
+    "Codigo": 301404,
+    "Nombre": "Pasteleras desde json",
+    "Precio": 1200,
+    "Cantidad": 0,
+    "Peso": 0.25,
+    "PrecioFinalPesado": 300
+  },
+  {
+    "Codigo": 304505,
+    "Nombre": "Pepas desde json",
+    "Precio": 3000,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 2500
+  },
+  {
+    "Codigo": 12870031,
+    "Nombre": "Sanguche de miga desde json",
+    "Precio": 1200,
+    "Cantidad": 0,
+    "Peso": 1,
+    "PrecioFinalPesado": 1200
+  }
+]

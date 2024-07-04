@@ -1,0 +1,38 @@
+[
+  {
+    "Codigo": 14,
+    "Nombre": "Lavandina desde json",
+    "Precio": 1000,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 15,
+    "Nombre": "Harina integral desde json",
+    "Precio": 900,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 16,
+    "Nombre": "Cafe molido cabrales desde json",
+    "Precio": 3900,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 17,
+    "Nombre": "Arvejas secas desde json",
+    "Precio": 800,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 1234,
+    "Nombre": "Manteca desde json",
+    "Precio": 1000,
+    "Cantidad": 0
+  },
+  {
+    "Codigo": 6900,
+    "Nombre": "Gaseosa desde json",
+    "Precio": 1200,
+    "Cantidad": 0
+  }
+]
