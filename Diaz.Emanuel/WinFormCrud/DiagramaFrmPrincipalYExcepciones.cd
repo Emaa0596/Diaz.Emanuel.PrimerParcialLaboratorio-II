@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="WinFormCrud.ErrorAlLeerLogsException">
+    <Position X="8.25" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ErrorAlLeerLogsException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormCrud.ErrorEnCantidadIngresadaException">
+    <Position X="8.25" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ErrorEnCantidadIngresadaException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormCrud.FrmPrincipal">
+    <Position X="2" Y="0.5" Width="5.25" />
+    <Members>
+      <Field Name="almacenToolStripMenuItem" Hidden="true" />
+      <Field Name="almacenToolStripMenuItem1" Hidden="true" />
+      <Field Name="btnAlmacen" Hidden="true" />
+      <Field Name="btnCanasta" Hidden="true" />
+      <Field Name="btnCarniceria" Hidden="true" />
+      <Field Name="btnPanaderia" Hidden="true" />
+      <Field Name="carniceriaToolStripMenuItem" Hidden="true" />
+      <Field Name="carniceriaToolStripMenuItem1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="deserializarProductosToolStripMenuItem" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="LblUsuarioConectado" Hidden="true" />
+      <Field Name="menuStrip1" Hidden="true" />
+      <Field Name="openFileDialogSerializar" Hidden="true" />
+      <Field Name="panaderiaToolStripMenuItem" Hidden="true" />
+      <Field Name="panaderiaToolStripMenuItem1" Hidden="true" />
+      <Field Name="PBoxInfoAlmacen" Hidden="true" />
+      <Field Name="PBoxInfoCarniceria" Hidden="true" />
+      <Field Name="PBoxInfoPanaderia" Hidden="true" />
+      <Field Name="PBoxVisualizador" Hidden="true" />
+      <Field Name="saveFileDialogDeserializar" Hidden="true" />
+      <Field Name="serializarProductosToolStripMenuItem" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>YwAQAD4ggDQkaCAiUMCAiAgOEAIgMQIAAAASEBgAIAg=</HashCode>
+      <FileName>FrmPrincipal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

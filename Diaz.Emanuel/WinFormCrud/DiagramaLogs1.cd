@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="WinFormCrud.FrmCrearUsuario">
+    <Position X="6.25" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACgAQRIMAQDAgAACAACAAAAAQBAiAAgAAAQ=</HashCode>
+      <FileName>FrmCrearUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormCrud.FrmLogin">
+    <Position X="10.5" Y="0.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAgAAAACAAEBAAQACAAAACAAAAAAQAgAACQAAAAgQ=</HashCode>
+      <FileName>FrmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormCrud.FrmValidacionPerfil">
+    <Position X="2.25" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAABAgAACAgAACAAAIIAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>FrmValidacionPerfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormCrud.FrmVisualizador">
+    <Position X="2.25" Y="4.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAIAACAAAEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>FrmVisualizador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

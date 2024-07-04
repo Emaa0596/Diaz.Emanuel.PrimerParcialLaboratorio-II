@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Usuarios.Ordenamiento">
+    <Position X="5.25" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ordenamiento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Usuarios.Usuario">
+    <Position X="5" Y="2" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQBABCEAQAAgAAAAAAAAAAAABAQAAAAEiA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Usuarios.EOrdenamiento">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>EOrdenamiento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

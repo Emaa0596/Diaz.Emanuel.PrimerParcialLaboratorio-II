@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\usuarios\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6494AB0F-7A66-42C9-B916-909B7651136B}|Usuarios\\Usuarios.csproj|solutionrelative:usuarios\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|c:\\users\\noxiepc\\desktop\\primer parcial laboratorio ii\\diaz.emanuel\\winformcrud\\frmvalidacionperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81525555-354A-4DE8-BEFE-768F7B7CC9D9}|WinFormCrud\\WinFormCrud.csproj|solutionrelative:winformcrud\\frmvalidacionperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Database.cs",
+              "RelativeDocumentMoniker": "Usuarios\\Database.cs",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\Usuarios\\Database.cs",
+              "RelativeToolTip": "Usuarios\\Database.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T05:40:35.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmValidacionPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmValidacionPerfil.cs",
+              "RelativeDocumentMoniker": "WinFormCrud\\FrmValidacionPerfil.cs",
+              "ToolTip": "C:\\Users\\NoxiePC\\Desktop\\Primer parcial Laboratorio II\\Diaz.Emanuel\\WinFormCrud\\FrmValidacionPerfil.cs",
+              "RelativeToolTip": "WinFormCrud\\FrmValidacionPerfil.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T04:59:32.814Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Usuarios.Database">
+    <Position X="3" Y="0.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAMEAAAAAAAAEABAAAAUAAAAKBAAIBAAAAAAAAEAAE=</HashCode>
+      <FileName>Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Usuarios.Datos">
+    <Position X="9" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABAAAAAAAAAIAAAAAAAAAABhAAAAAAAkABAABA=</HashCode>
+      <FileName>Datos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

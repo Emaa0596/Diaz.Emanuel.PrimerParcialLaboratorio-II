@@ -24,8 +24,8 @@ namespace WinFormCrud
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.claveSupervisor = "@supersupervisor";
-            this.claveAdministrador = "@superadministrador";
+            this.claveSupervisor = "supersupervisor";
+            this.claveAdministrador = "superadministrador";
             this.perfilSolicitado = perfilSolicitado;
             this.DialogResult = DialogResult.Cancel;
         }

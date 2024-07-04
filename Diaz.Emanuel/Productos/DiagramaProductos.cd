@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Productos.Producto">
+    <Position X="6.75" Y="1.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AQABAAEAAQQAAACAAAAAgAAQAAAAEAAAAAAAAAAAAiA=</HashCode>
+      <FileName>Producto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Productos.ProductosAlmacen">
+    <Position X="7.5" Y="6.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAQQQAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductosAlmacen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Productos.ProductosCarniceria">
+    <Position X="0.5" Y="1.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>ACAAAEEAQQRAAAgAAAAAgAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductosCarniceria.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Productos.ProductosPanaderia">
+    <Position X="0.5" Y="6" Width="6.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAEAAQRAAAAAAAAAgAAQAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductosPanaderia.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Productos.IConversionProductos&lt;T&gt;">
+    <Position X="5.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IConversionProductos.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
