@@ -1,29 +1,5 @@
 [
   {
-    "Codigo": 3000,
-    "Nombre": "Pastafrola",
-    "Precio": 5000,
-    "Cantidad": 0,
-    "Peso": 1,
-    "PrecioFinalPesado": 5000
-  },
-  {
-    "Codigo": 3001,
-    "Nombre": "Bizcochos",
-    "Precio": 1200,
-    "Cantidad": 0,
-    "Peso": 1,
-    "PrecioFinalPesado": 1200
-  },
-  {
-    "Codigo": 3002,
-    "Nombre": "Pan flauta",
-    "Precio": 1300,
-    "Cantidad": 0,
-    "Peso": 1,
-    "PrecioFinalPesado": 1300
-  },
-  {
     "Codigo": 3003,
     "Nombre": "Medialunas",
     "Precio": 6000,
@@ -46,29 +22,5 @@
     "Cantidad": 0,
     "Peso": 1,
     "PrecioFinalPesado": 2500
-  },
-  {
-    "Codigo": 3006,
-    "Nombre": "Pepas",
-    "Precio": 2500,
-    "Cantidad": 0,
-    "Peso": 1,
-    "PrecioFinalPesado": 2500
-  },
-  {
-    "Codigo": 3007,
-    "Nombre": "Alfajores de maicena",
-    "Precio": 2500,
-    "Cantidad": 0,
-    "Peso": 1,
-    "PrecioFinalPesado": 2500
-  },
-  {
-    "Codigo": 52342,
-    "Nombre": "Velas de cumplea\u00F1os",
-    "Precio": 2000,
-    "Cantidad": 2,
-    "Peso": 1,
-    "PrecioFinalPesado": 2000
   }
 ]

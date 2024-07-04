@@ -23,20 +23,20 @@ namespace Tiendas
             this.totalAPagar = 0.0;
         }
 
-        public void AgregarProducto(Almacen almacen)
-        {
-            this.listaAlmacen = almacen.productos;
-        }
+        //public void AgregarProducto(Almacen almacen)
+        //{
+        //    this.listaAlmacen = almacen.productos;
+        //}
 
-        public void AgregarProducto(Carniceria carniceria)
-        {
-            this.listaCarniceria = carniceria.productos;
-        }
+        //public void AgregarProducto(Carniceria carniceria)
+        //{
+        //    this.listaCarniceria = carniceria.productos;
+        //}
 
-        public void AgregarProducto(Panaderia panaderia)
-        {
-            this.listaPanaderia = panaderia.productos;
-        }
+        //public void AgregarProducto(Panaderia panaderia)
+        //{
+        //    this.listaPanaderia = panaderia.productos;
+        //}
 
         public string CalcularTotal()
         {
@@ -62,7 +62,7 @@ namespace Tiendas
                     this.totalAPagar += (prod.Precio * prod.Cantidad);
                 }
             }
-            string total ="$"+this.totalAPagar.ToString();
+            string total = "$" + this.totalAPagar.ToString();
             return total;
         }
 
@@ -122,7 +122,7 @@ namespace Tiendas
         //    return carrito;
         //}
 
-        public static Canasta operator + (Canasta carrito, ProductosAlmacen nuevoProducto)
+        public static Canasta operator +(Canasta carrito, ProductosAlmacen nuevoProducto)
         {
             if (carrito.listaAlmacen.Count > 0)
             {
@@ -186,7 +186,7 @@ namespace Tiendas
                 {
                     if (producto == nuevoProducto)
                     {
-                        if(producto.Cantidad > 1)
+                        if (producto.Cantidad > 1)
                         {
                             producto.Cantidad -= 1;
                         }
@@ -194,7 +194,7 @@ namespace Tiendas
                         {
                             carrito.listaCarniceria.Remove(producto);
                             producto.Cantidad = 0;
-                        }  
+                        }
                         break;
                     }
                 }

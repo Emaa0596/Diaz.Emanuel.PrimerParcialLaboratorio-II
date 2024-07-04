@@ -1,23 +1,5 @@
 [
   {
-    "Codigo": 1,
-    "Nombre": "Leche La Serenisima",
-    "Precio": 1100,
-    "Cantidad": 0
-  },
-  {
-    "Codigo": 3,
-    "Nombre": "Arroz largo",
-    "Precio": 1200,
-    "Cantidad": 0
-  },
-  {
-    "Codigo": 13,
-    "Nombre": "Aceite",
-    "Precio": 1700,
-    "Cantidad": 0
-  },
-  {
     "Codigo": 14,
     "Nombre": "Azucar",
     "Precio": 1000,
@@ -48,39 +30,9 @@
     "Cantidad": 0
   },
   {
-    "Codigo": 5245,
-    "Nombre": "Te Sabor Menta",
-    "Precio": 800,
-    "Cantidad": 0
-  },
-  {
     "Codigo": 6900,
     "Nombre": "Gaseosa",
     "Precio": 1200,
     "Cantidad": 0
-  },
-  {
-    "Codigo": 7897,
-    "Nombre": "Tomate en lata",
-    "Precio": 1000,
-    "Cantidad": 0
-  },
-  {
-    "Codigo": 56465,
-    "Nombre": "pilas AAA",
-    "Precio": 4000,
-    "Cantidad": 0
-  },
-  {
-    "Codigo": 12341151,
-    "Nombre": "Nescafe Dolca",
-    "Precio": 4500,
-    "Cantidad": 0
-  },
-  {
-    "Codigo": 1231321,
-    "Nombre": "Chicles Beldent",
-    "Precio": 1000,
-    "Cantidad": 1
   }
 ]

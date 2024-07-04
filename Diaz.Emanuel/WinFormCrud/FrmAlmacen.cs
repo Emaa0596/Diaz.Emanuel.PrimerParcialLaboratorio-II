@@ -15,12 +15,22 @@ namespace WinFormCrud
 {
     public partial class FrmAlmacen : FrmTiendas
     {
+        /// <summary>
+        /// Inicializa el formulario y configura su posicion
+        /// </summary>
+        /// <param name="carrito">Canasta que se envia a la clase base</param>
         public FrmAlmacen(Canasta carrito)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             base.carrito = carrito;
         }
+
+        /// <summary>
+        /// Configura los permisos segun perfil de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAlmacen_Load(object sender, EventArgs e)
         {
             base.ConfigurarPermisos();
@@ -38,7 +48,7 @@ namespace WinFormCrud
             {
                 int indice = lstViewProductos.SelectedIndices[0];
                 ProductosAlmacen prod = base.listaAlmacen[indice];
-                if(prod.Cantidad >= 5)
+                if (prod.Cantidad >= 5)
                 {
                     base.DispararEventoCantidadMaximaPermitida();
                 }
@@ -48,7 +58,7 @@ namespace WinFormCrud
                     Datos.basesql.ModificarProductoAlmacen(prod);
                     this.ActualizarVisor();
                     lstViewProductos.Items[indice].Selected = true;
-                }   
+                }
             }
             else
             {
@@ -85,7 +95,6 @@ namespace WinFormCrud
             }
         }
 
-
         /// <summary>
         /// Actualiza los productos en el listbox de panaderia
         /// </summary>
@@ -97,7 +106,6 @@ namespace WinFormCrud
                 ListViewItem item = new ListViewItem(productos.Nombre);
                 item.SubItems.Add(productos.Precio.ToString());
                 item.SubItems.Add(productos.Cantidad.ToString());
-                //string item = productos.Mostrar();
                 lstViewProductos.Items.Add(item);
             }
         }
@@ -150,6 +158,11 @@ namespace WinFormCrud
             this.ActualizarVisor();
         }
 
+        /// <summary>
+        /// Crea un producto siempre y cuando no exista en la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void CrearProductoStripMenu_Click(object sender, EventArgs e)
         {
             FrmProducto nuevoProducto = new FrmProducto();
@@ -178,6 +191,85 @@ namespace WinFormCrud
             }
         }
 
+        /// <summary>
+        /// Actualiza el producto seleccionado en un subproceso (en archivos y base sql)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected override void ActualizarProductoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.lstViewProductos.SelectedItems.Count > 0)
+            {
+                int indice = lstViewProductos.SelectedIndices[0];
+                ProductosAlmacen productoAModificar = this.listaAlmacen[indice];
+                FrmProducto prod = new FrmProducto(productoAModificar);
+                DialogResult resultado = prod.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    ProductosAlmacen productoModificado = new ProductosAlmacen(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad);
+                    base.delegadoModificar = () => Datos.basesql.ModificarProductoAlmacen(productoModificado);
+                    Task subProceso = Task.Run(base.delegadoModificar);
+                    subProceso.Wait();
+                    this.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
+                    Datos.SerializarDatos(this.listaAlmacen, @"./productosAlmacen.json");
+
+                    base.ActualizarCarrito(productoModificado);
+                    this.ActualizarVisor();
+                }
+            }
+            else
+            {
+                base.ActualizarProductoMenuItem_Click(sender, e);
+            }
+        }
+
+        /// <summary>
+        /// Elimina el producto seleccionado en archivos y base sql
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected override void EliminarProductoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.lstViewProductos.SelectedItems.Count > 0)
+            {
+                int indice = lstViewProductos.SelectedIndices[0];
+                ProductosAlmacen productoAModificar = this.listaAlmacen[indice];
+                FrmProducto prod = new FrmProducto(productoAModificar);
+                DialogResult resultado = prod.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    Datos.basesql.EliminarProducto(productoAModificar.Codigo, "productosAlmacen");
+                    this.listaAlmacen = Datos.basesql.ObtenerListaAlmacen();
+                    Datos.SerializarDatos(this.listaAlmacen, @"./productosAlmacen.json");
+                    this.EliminarProductoDelCarrito(productoAModificar);
+                    this.ActualizarVisor();
+                }
+            }
+            else
+            {
+                base.EliminarProductoMenuItem_Click(sender, e);
+            } 
+        }
+
+        protected override void EliminarProductoDelCarrito(Producto prod)
+        {
+            if (base.carrito.listaAlmacen.Count > 0)
+            {
+                for (int i = 0; i < this.carrito.listaAlmacen.Count; i++)
+                {
+                    if (base.carrito.listaAlmacen[i] == prod)
+                    {
+                        base.carrito.listaAlmacen.Remove(base.carrito.listaAlmacen[i]);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Muestra la informacion del producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void BtnInfoProducto_Click(object sender, EventArgs e)
         {
             if (lstViewProductos.SelectedItems.Count > 0)
@@ -185,6 +277,10 @@ namespace WinFormCrud
                 int indice = this.lstViewProductos.SelectedIndices[0];
                 Producto prod = this.listaAlmacen[indice];
                 MessageBox.Show(prod.Mostrar(), $"{prod.Nombre}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                base.BtnInfoProducto_Click(sender,e);
             }
         }
     }

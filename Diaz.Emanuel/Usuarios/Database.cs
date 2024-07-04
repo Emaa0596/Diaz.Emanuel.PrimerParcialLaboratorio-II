@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
@@ -315,6 +316,13 @@ namespace Usuarios
                 this.comando.Connection = this.conexion;
 
                 this.conexion.Open();
+
+                int filasAfectadas = this.comando.ExecuteNonQuery();
+
+                if (filasAfectadas == 0 && this.errorConBaseDeDatos != null)
+                {
+                    this.errorConBaseDeDatos.Invoke();
+                }
 
             }
             catch (Exception)

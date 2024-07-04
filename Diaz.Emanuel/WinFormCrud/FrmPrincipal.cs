@@ -28,7 +28,7 @@ namespace WinFormCrud
             this.frmPanaderia = new FrmPanaderia(this.carrito);
             this.almacen = new Almacen("25 de mayo 989", 4, "Panificados", new List<ProductosAlmacen>());
             this.carniceria = new Carniceria("Dorrego 1245", 7, "Carne", new List<ProductosCarniceria>(), "Vacuna");
-            this.panaderia = new Panaderia("Bustamante 45", 3, "Panificados", new List<ProductosPanaderia>(), "Efectivo");
+            this.panaderia = new Panaderia("Bustamante 45", 3, "Panificados", new List<ProductosAlmacen>(), "Efectivo");
         }
 
         public List<Usuario> ListaUsuarios

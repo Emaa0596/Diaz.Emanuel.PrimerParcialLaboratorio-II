@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Productos
 {
-    public class ProductosPanaderia :ProductosCarniceria, IConversionProductos<ProductosPanaderia>
+    public class ProductosPanaderia : ProductosCarniceria, IConversionProductos<ProductosPanaderia>
     {
-        public ProductosPanaderia() :base(0,"",0,0,0)
+        public ProductosPanaderia() : base(0, "", 0, 0, 0)
         {
 
         }

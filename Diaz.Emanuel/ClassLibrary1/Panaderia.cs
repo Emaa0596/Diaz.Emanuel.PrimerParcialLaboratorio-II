@@ -9,24 +9,24 @@ namespace Tiendas
 {
     public class Panaderia : Tienda
     {
-        public List<ProductosPanaderia> productos;
+        public List<ProductosAlmacen> productos;
         public string formasDePago;
 
-        public Panaderia(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosPanaderia> listaDeProductos)
+        public Panaderia(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> listaDeProductos)
             : base(direccion, cantidadEmpleados, tipoDeProductos)
         {
             this.productos = listaDeProductos;
             this.formasDePago = "Efectivo";
         }
 
-        public Panaderia(int cantidadEmpleados, string tipoDeProductos, List<ProductosPanaderia> productosDisponibles, string formasDePago)
+        public Panaderia(int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen> productosDisponibles, string formasDePago)
             : base(direccion: "Solo venta online", cantidadEmpleados, tipoDeProductos)
         {
             this.productos = productosDisponibles;
             this.formasDePago = formasDePago;
         }
 
-        public Panaderia(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosPanaderia>productosDisponibles, string formasDePago)
+        public Panaderia(string direccion, int cantidadEmpleados, string tipoDeProductos, List<ProductosAlmacen>productosDisponibles, string formasDePago)
             :base(direccion,cantidadEmpleados,tipoDeProductos)
         {
             this.productos = productosDisponibles;

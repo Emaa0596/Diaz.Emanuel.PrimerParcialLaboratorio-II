@@ -177,7 +177,6 @@
             actualizarProductoToolStripMenuItem1.Name = "actualizarProductoToolStripMenuItem1";
             actualizarProductoToolStripMenuItem1.Size = new Size(178, 22);
             actualizarProductoToolStripMenuItem1.Text = "Actualizar Producto";
-            actualizarProductoToolStripMenuItem1.Click += actualizarProductoToolStripMenuItem1_Click;
             // 
             // lstViewProductos
             // 

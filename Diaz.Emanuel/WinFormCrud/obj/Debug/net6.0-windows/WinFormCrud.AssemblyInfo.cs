@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinFormCrud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+487254f3256ca8f53a7fe272286480258331ec89")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45d6ceebeb2457a9eb2eda74d0848e7d24332fe1")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinFormCrud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinFormCrud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

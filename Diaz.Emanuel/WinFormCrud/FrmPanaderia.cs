@@ -15,6 +15,10 @@ namespace WinFormCrud
 {
     public partial class FrmPanaderia : FrmTiendas
     {
+        /// <summary>
+        /// Inicializa el formulario y configura su posicion
+        /// </summary>
+        /// <param name="carrito">Canasta que se envia a la clase padre</param>
         public FrmPanaderia(Canasta carrito)
         {
             InitializeComponent();
@@ -22,6 +26,11 @@ namespace WinFormCrud
             base.carrito = carrito;
         }
 
+        /// <summary>
+        /// Configura los permisos segun perfil de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPanaderia_Load(object sender, EventArgs e)
         {
             base.ConfigurarPermisos();
@@ -97,10 +106,10 @@ namespace WinFormCrud
                 ListViewItem item = new ListViewItem(productos.Nombre);
                 item.SubItems.Add(productos.Precio.ToString());
                 item.SubItems.Add(productos.Cantidad.ToString());
-                //string item = productos.Mostrar();
                 lstViewProductos.Items.Add(item);
             }
         }
+
         /// <summary>
         /// Guarda los productos ordenados que se encuentran en la lista de la clase padre
         /// </summary>
@@ -149,6 +158,11 @@ namespace WinFormCrud
             this.ActualizarVisor();
         }
 
+        /// <summary>
+        /// Crea un producto siempre y cuando no exista en la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void CrearProductoStripMenu_Click(object sender, EventArgs e)
         {
             FrmProducto nuevoProducto = new FrmProducto();
@@ -177,13 +191,96 @@ namespace WinFormCrud
             } 
         }
 
+        /// <summary>
+        /// Actualiza el producto seleccionado en un subproceso (en archivos y base sql)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected override void ActualizarProductoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.lstViewProductos.SelectedItems.Count > 0)
+            {
+                int indice = lstViewProductos.SelectedIndices[0];
+                ProductosPanaderia productoAModificar = this.listaPanaderia[indice];
+                FrmProducto prod = new FrmProducto(productoAModificar);
+                DialogResult resultado = prod.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    ProductosPanaderia productoModificado = new ProductosPanaderia(prod.Productos.Codigo, prod.Productos.Nombre, prod.Productos.Precio, prod.Productos.Cantidad,1);
+                    base.delegadoModificar = () => Datos.basesql.ModificarProductoCarniceriaOPanaderia(productoModificado);
+                    Task subProceso = Task.Run(base.delegadoModificar);
+                    subProceso.Wait();
+                    this.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
+                    Datos.SerializarDatos(this.listaPanaderia, @"./productosPanaderia.json");
+
+                    base.ActualizarCarrito(productoModificado);
+                    this.ActualizarVisor();
+                }
+            }
+            else
+            {
+                base.ActualizarProductoMenuItem_Click(sender, e);
+            }
+        }
+
+        /// <summary>
+        /// Elimina el producto seleccionado en archivos y base sql
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected override void EliminarProductoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.lstViewProductos.SelectedItems.Count > 0)
+            {
+                int indice = lstViewProductos.SelectedIndices[0];
+                ProductosPanaderia productoAModificar = this.listaPanaderia[indice];
+                FrmProducto prod = new FrmProducto(productoAModificar);
+                DialogResult resultado = prod.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    Datos.basesql.EliminarProducto(productoAModificar.Codigo, "productosPanaderia");
+                    this.listaPanaderia = Datos.basesql.ObtenerListaPanaderia();
+                    Datos.SerializarDatos(this.listaPanaderia, @"./productosPanaderia.json");
+                    this.EliminarProductoDelCarrito(productoAModificar);
+                    this.ActualizarVisor();
+                }
+            }
+            else
+            {
+                base.EliminarProductoMenuItem_Click(sender, e);
+            }
+        }
+
+        protected override void EliminarProductoDelCarrito(Producto prod)
+        {
+            if (base.carrito.listaPanaderia.Count > 0)
+            {
+                for (int i = 0; i < this.carrito.listaPanaderia.Count; i++)
+                {
+                    if (base.carrito.listaPanaderia[i] == prod)
+                    {
+                        base.carrito.listaPanaderia.Remove(base.carrito.listaPanaderia[i]);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Muestra la informacion del producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void BtnInfoProducto_Click(object sender, EventArgs e)
         {
             if (lstViewProductos.SelectedItems.Count > 0)
             {
                 int indice = this.lstViewProductos.SelectedIndices[0];
-                Producto prod = this.listaPanaderia[indice];
+                ProductosPanaderia prod = this.listaPanaderia[indice];
                 MessageBox.Show(prod.Mostrar(), $"{prod.Nombre}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                base.BtnInfoProducto_Click(sender, e);
             }
         }
     }
